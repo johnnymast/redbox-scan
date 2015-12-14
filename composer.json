@@ -13,7 +13,8 @@
   ],
   "require": {
     "php": ">=5.4.0",
-    "redbox/cli": "1.1"
+    "redbox/cli": "1.1",
+    "symfony/yaml": "^3.0"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.6"

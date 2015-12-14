@@ -1,5 +1,5 @@
 <?php
-namespace Redbox\Scan\Resource;
+namespace Redbox\Scan\FileSystem;
 
 
 class FileInfo extends \SplFileInfo {

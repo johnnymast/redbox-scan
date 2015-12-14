@@ -1,7 +1,7 @@
 <?php
 namespace Redbox\Scan;
 
-interface SourceAdapterInterface {
+interface DataSourceAdapterInterface {
     public function read();
-    public function write();
+    public function write($data);
 }

@@ -1,0 +1,17 @@
+scan:
+    dame: scan
+    date: '2015-12-14T23:07:46+00:00'
+    path: ./src
+    items:
+        ./src/DataSource:
+            ./src/DataSource/AbstractAdapter.php: d7167ab7fee86539cbc2c8ca42e9f20d
+            ./src/DataSource/DataSource.php: 357fdbe2bad478db1b488e62ec027a8b
+            ./src/DataSource/Filesystem.php: 89f15c5969982eb41d6b6a9cfeb37c30
+        ./src/DataSource/Resource:
+            ./src/DataSource/Resource/File.php: c5febb44b88a7a31d7917f287e5bf09b
+            ./src/DataSourceAdapterInterface.php: 25551bfa819ea4d5cddcad2acecbe123
+        ./src/Filesystem:
+            ./src/Filesystem/FileInfo.php: 3698ae6c5157f51cbb8e7ab2dee95722
+            ./src/Filesystem/RecursiveDirectoryIterator.php: f1b7287ad09ca4451efebee43addab43
+        ./src/Indexer:
+            ./src/Scan.php: dcfe89f9ac415cff57283b6f40da4179

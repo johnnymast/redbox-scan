@@ -1,6 +1,7 @@
 <?php
-namespace Redbox\Source;
+namespace Redbox\Scan\DataSource;
+use Redbox\Scan\DataSourceAdapterInterface;
 
-abstract class AbstractAdapter implements SourceAdapterInterface {
+abstract class AbstractAdapter implements DataSourceAdapterInterface {
 
 }

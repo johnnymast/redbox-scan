@@ -1,0 +1,34 @@
+{
+  "name": "redbox/scan",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Johnny Mast",
+      "email": "mastjohnny@gmail.com",
+      "homepage": "https://github.com/johnnymast",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "redbox/cli": "1.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Redbox\\Scan\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Redbox\\Scan\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit"
+  }
+}

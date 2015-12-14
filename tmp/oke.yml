@@ -1,0 +1,10 @@
+event1:
+  name: My Event
+  date: !date 25.05.2001
+  Items:
+    abc1:
+      File: abc
+      Hash: u239083292
+    abc2:
+      File: abc
+      Hash: u2390832922

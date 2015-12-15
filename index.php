@@ -32,7 +32,7 @@ $path = commandLine();
 */
 $path = "./";
 $scan = new Redbox\Scan\ScanService(new Redbox\Scan\Adapter\Filesystem('tmp/data.yml'));
-$scan->index($path);
+$scan->scan($path);
 
 //$files = $scan->scan($path);
 

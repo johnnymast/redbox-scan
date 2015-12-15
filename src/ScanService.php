@@ -91,7 +91,7 @@ class ScanService {
 
         // Todo: could throw exceptions for permission denied
 
-        $items = $adapter->getAdapter()->read()['scan']['items'];
+        $items = $adapter->read()['scan']['items'];
 
         foreach($items as $path => $files) {
             if ($path != './tmp') continue;

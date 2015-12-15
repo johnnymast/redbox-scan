@@ -1,6 +1,6 @@
 <?php
 require 'vendor/autoload.php';
-
+/*
 use Redbox\Cli\Cli as CLI;
 
 use Redbox\Scan\Adapter\Filesystem as FilesystemAdaptor;
@@ -29,7 +29,8 @@ function commandLine() {
 
 
 $path = commandLine();
-
+*/
+$path = "/";
 $scan = new Redbox\Scan\ScanService(new Redbox\Scan\Adapter\Filesystem('tmp/data.yml'), $path);
 
 $scan->index($path);

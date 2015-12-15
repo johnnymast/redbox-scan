@@ -63,8 +63,8 @@ class ScanService {
                 continue;
 
             if ($object->isDir()) {
-                $items[$path] = array();
                 $activePath = $object->getPathName();
+                $items[$activePath] = array();
             } else {
                 $items[$activePath][$object->getPathname()] = $object->getMD5Hash();
             }

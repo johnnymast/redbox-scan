@@ -1,12 +1,11 @@
 scan:
     dame: scan
-    date: '2015-12-15T19:34:13+00:00'
+    date: '2015-12-15T20:50:54+00:00'
     path: ./
     items:
-        ./:
-            ./.DS_Store: 7b24dcaaa092225aee88073f0d8a7722
+        ./: {  }
         ./.git/branches:
-            ./.git/COMMIT_EDITMSG: d339beec76398b0ccced48c53de0bda4
+            ./.git/COMMIT_EDITMSG: ca0981493945ce8bbef98c0ecced153a
             ./.git/config: 1426b2949e0b989e9c0d3251aeec4324
             ./.git/description: a0a7c3fff21f2aea3cfa1d0316dd816c
             ./.git/FETCH_HEAD: 0f8ec398a02a464b31657f3e4ae585d7
@@ -21,45 +20,58 @@ scan:
             ./.git/hooks/pre-rebase.sample: 81005745454846bb79cc3c7c0c57658d
             ./.git/hooks/prepare-commit-msg.sample: 7dfe15854212a30f346da5255c1d794b
             ./.git/hooks/update.sample: f51b02427757e79621b5235d7efdf117
-            ./.git/index: acbe171dbf074e6f19cb0d9c40c958fd
+            ./.git/index: eed199940073d32f82821c83d35e1ce4
         ./.git/info:
             ./.git/info/exclude: 036208b4a1ab4a235d75c181e685e5a3
         ./.git/logs:
-            ./.git/logs/HEAD: 3378fd7d0cbedfee07184767b7c1db20
-        ./.git/logs/refs: {  }
+            ./.git/logs/HEAD: ab0aa4a813376b4ae44b6a84a0516afb
         ./.git/logs/refs/heads:
-            ./.git/logs/refs/heads/master: 3378fd7d0cbedfee07184767b7c1db20
-        ./.git/logs/refs/remotes: {  }
+            ./.git/logs/refs/heads/master: ab0aa4a813376b4ae44b6a84a0516afb
         ./.git/logs/refs/remotes/origin:
             ./.git/logs/refs/remotes/origin/HEAD: 9cdac51781411f8f8a9894b9cf6144c1
-            ./.git/logs/refs/remotes/origin/master: c4aeedac32cafa97bcbe060761a47152
-        ./.git/objects: {  }
+            ./.git/logs/refs/remotes/origin/master: 71b2d519b304b80d73baf2687f3ddf6a
+        ./.git/objects/03:
+            ./.git/objects/03/c22d9b43f283d24ce7e918d04db43979226bd9: b5e6a415d73d658fca3ff47ffa62a2a1
         ./.git/objects/07:
             ./.git/objects/07/bc37fd0290c12e74276eddac09fc13277c14f2: 39f3e2b5e3171e7cb0ba22ea1735da0f
         ./.git/objects/09:
+            ./.git/objects/09/11b81bfecdc8023fbbada89b63929f607e7ee0: 1ab12fc433121d448965518a1edafa79
             ./.git/objects/09/e26f8404a635dd59b7c95e4c7223d83009266d: d07b178f84313a392b5d8b3feb7e33fd
         ./.git/objects/0b:
             ./.git/objects/0b/831e19c74798836ed82fbe6bb9c8f2eb6bcd8b: 6b2e2367f9d1440f09fa8814fce1f618
+        ./.git/objects/0c:
+            ./.git/objects/0c/44f4bf03977a739793babdd8408afa900e791e: b80b211425979b0192298b3345bc9522
         ./.git/objects/0d:
             ./.git/objects/0d/83a7b4bf3fd38ec9e367b46fabf149e1765da3: 9ff08f72f87d7dbc270f629addb16372
             ./.git/objects/0d/e3e084eec76758a6d38e4243023181849451eb: 4d826e8268aa04df2e842635035948ba
         ./.git/objects/0e:
+            ./.git/objects/0e/842cfaa70969bff35f3bd484be6e53d9dec8c7: 47ef6530dcc37271bed6442671dfc1f0
             ./.git/objects/0e/8ff283512d190e659827d899eaf3fd2649adc1: 6c66c6144e26fb0d4a023dfaa9eb1b18
         ./.git/objects/0f:
             ./.git/objects/0f/18827236418ab3ab214ef4101d4ecd67223f2a: 0d9780a47a8309d9fe14c9849a3ac474
+            ./.git/objects/0f/25d3ce4c7d489f8326cea9cd126492cbf9d828: aee54892aa0847949a0c1de9caa4e79a
         ./.git/objects/10:
             ./.git/objects/10/750cd3f5fe15c9151fc9cff3c965edfdf6fbb8: e4a8181e855ac0c23bad051cd4bd8f1d
             ./.git/objects/10/a1ef138b4d19ad6c6934cf73d2cc6daef638a3: 4085820295216392a2055a68589e86d6
         ./.git/objects/11:
             ./.git/objects/11/9b1ff97f7aeea865bf58d24a51e57f53713856: 10da2fc91bc3b4114867272e56bf4c84
+        ./.git/objects/18:
+            ./.git/objects/18/eff0721e7e59999e2bb65b21d546e1f72dffa5: 925367cf32bb87e854d0a00159079ff5
+        ./.git/objects/19:
+            ./.git/objects/19/a0b49340c8c0b31c575c1d6bf1a7cf4cc05407: 57bc601e60ff7031abb0d57bf0fa7515
         ./.git/objects/1f:
             ./.git/objects/1f/343dfca97aa5d4317b65bab385cb8491bc63b4: 5a17bc5f291c465f7d5e7cf5256faa64
+        ./.git/objects/21:
+            ./.git/objects/21/1c0d4c414de331232fde2f3cef0303f867674e: ce89864efa683eb625bf2bc831fffac3
         ./.git/objects/26:
             ./.git/objects/26/3b88dd3610493e3db586fea79ea3bb5a0b5a8b: e64302fe4565f01eac0b6259dee2d358
+        ./.git/objects/29:
+            ./.git/objects/29/d4e4cb2d87fa2a22c0ba2c63eba75f540c45a0: d5a327f1bfa53ec8eda9105927a8b3f3
         ./.git/objects/37:
             ./.git/objects/37/e5573c041b8abc9b1b8b0f30da4b712632ed46: d1e8073f57ad40f93c0abac176fad42e
         ./.git/objects/3a:
             ./.git/objects/3a/693c92d725810b1caa7cfcd1020474256bc397: 51d58628dbcaefbf54e6a73e63218ab2
+            ./.git/objects/3a/ea8568c7c2c7a72b2564065b74edc4c7fe5d4b: abbd436782c20c21559c8778ee6a5fca
         ./.git/objects/3d:
             ./.git/objects/3d/88db2e76fc6df7077d5487c2b775e52d914a0d: a9516eb15b2752ce276120da2d45b28a
             ./.git/objects/3d/c4758e604b78c9a6d67d9c3bfe82df43e5e85c: be072e0a993b821eac5124096cf357cd
@@ -68,22 +80,35 @@ scan:
         ./.git/objects/40:
             ./.git/objects/40/3a651b78f9f6b22446137c4b1d8bd07123389a: c546aac64854e8cfde74127da27bca8a
             ./.git/objects/40/935814bbde70c74a9e1627dd1e80c304dec555: d5dab20b228991ba0382ae228b54b2a0
+        ./.git/objects/41:
+            ./.git/objects/41/ff29a4423376e697a8db59a2b6053e676e361e: d47de58f0693e33275511acd518ecbd9
+        ./.git/objects/42:
+            ./.git/objects/42/d876c43ae19ae61a81eb4e39e4ce7bbd487eb8: e3d6e514995104eeeb216ecb52a44b51
         ./.git/objects/45:
             ./.git/objects/45/8372b8e24ff5d8504eff6d822d313a0ae30b8e: 7b5101c2769bb4ee84d917f273747ce2
             ./.git/objects/45/c75096aa86180a9a8203fe1e69f8c2059493ff: 699d7ce05dbc1ffa2dca8356b95e9a5f
         ./.git/objects/46:
             ./.git/objects/46/2ccfd072ec2a4c35b8acc95c5cccba9cdccb1e: 4772de35bfb3443b2e19ba154b7ba02a
+            ./.git/objects/46/32656873b855ecd24c65be97386ab2bfc4c6eb: 628290dc80c88d87ce006a80756c20fd
             ./.git/objects/46/a274b89546f9ab5eba315fe6e1b3e5f5d5f40f: 0d159e1073a78ea91d690f9ee0dec18e
+            ./.git/objects/46/edc983d7353f8ee331a490890eb69d3a88e726: 38b7d06d1cc85cbcc6991b8882c52870
         ./.git/objects/49:
             ./.git/objects/49/8ea98fce02c8140a10093a716eee66b65177af: c3bfddfabe5bbffc4ccc24df5a4dd77b
         ./.git/objects/4a:
             ./.git/objects/4a/16ff9416fa53203feea562d814e136b640a576: 4e768f21ecd57f03d9ef551c1108e889
             ./.git/objects/4a/30e47170e74f9269957e0de391ff5116eda2a6: c9f9282cc729c72a34d3656b68605380
+            ./.git/objects/4a/5d4636d1bf9c4918f6a05c0ed35d6386c5eaa9: 4a4ed23a6a3e59546f42b1d429daf648
             ./.git/objects/4a/82a1beb4a5785000259e197c5d7974fd104ea6: f6c610672fcb227d9c5e9a3bad445908
+            ./.git/objects/4a/d2a6612b9f5f009c760b045c4792a8940d7432: 9eb1b9cb3a637f534f68691709dbb687
         ./.git/objects/4c:
             ./.git/objects/4c/bda8653dda5cba38952071701c99fdeb7f3eea: dafe5cb42608b85c64237806992eb4cd
+        ./.git/objects/50:
+            ./.git/objects/50/65bdcd9cdf39e12a0f32cf6e5e701dc90e758e: bd9b66eda86282768feb984fdf6ff509
         ./.git/objects/51:
             ./.git/objects/51/78af6da393ce8393ef27499c07200084bfe57b: 082637e95bb14a5478360811f456246f
+            ./.git/objects/51/c66056fc4f6db203085103b8d245023ae26f6f: d7b9cc5b2d0924b70cc99a0074aac91b
+        ./.git/objects/52:
+            ./.git/objects/52/5e82c9ccbd3712ee6640bd932ca6389274ade4: 2e1525e25a3150929deb7f64baff8470
         ./.git/objects/53:
             ./.git/objects/53/4c8752cf517cdbe4c1a6611d81824a95836b25: e5a4f97841b839ee7eabe20c1dc3de50
         ./.git/objects/57:
@@ -91,6 +116,10 @@ scan:
             ./.git/objects/57/8b54dca7394860df5c444cd3696a3ea48ceb07: f8e139ed6069b300d5f8a9f7b89a50b4
         ./.git/objects/5b:
             ./.git/objects/5b/4a67ab731bab374107856845691cf24c3b0358: 26ebc0f575d3f9f23db2059a5e8da2f6
+        ./.git/objects/5c:
+            ./.git/objects/5c/0c9e9aa6bfe997d36f82007138e35addf5c81c: 0c0194f4cbfe41c9c3adfd58c500bdab
+        ./.git/objects/5d:
+            ./.git/objects/5d/6aa1105e1e544d8e20b034430033db073afaed: 20e04b7a798656b5b6601f22acbb294e
         ./.git/objects/5f:
             ./.git/objects/5f/28400c90a477038afab8d83fddfa9b8be2eb37: 323e95a0aab09f77e3ade03a0b4f72ff
         ./.git/objects/60:
@@ -101,12 +130,16 @@ scan:
             ./.git/objects/65/88e9d00f38e87086d58468acf1f0aa4574b7dd: 917974e71c7e75ba53751194f13f7948
         ./.git/objects/66:
             ./.git/objects/66/b74f768fbe6b90e343e844b01d44185e7969f4: 51d9f58356448b77019ad8331917404b
+            ./.git/objects/66/f359fd5ea16be8dc4e4e7106c0366f5a25f2ce: 277a32c514d163eff672d604daac65e1
         ./.git/objects/67:
+            ./.git/objects/67/8b3bb369cba8ba6abfe182e50a632ef499bf07: 955e8eced62e804aeaeb96be6a0b4b6f
             ./.git/objects/67/c0775348d00a3ad1d8b3a668e85437a9079365: e234b520aa1c61da14d492389f8a037b
         ./.git/objects/69:
             ./.git/objects/69/703b1ad44907978f797d698dd3d6caaa109b93: 8f645de09e337e1658257cacf775d050
         ./.git/objects/6c:
             ./.git/objects/6c/217552135b8682b10dfee8027e6f0a2cd8e83b: abe433810d9277263a8ad70d2ab3d797
+            ./.git/objects/6c/46cfc31e0087bd9f127c1110f386b80e60b478: 58758cf27362ca253e57116fc4533578
+            ./.git/objects/6c/b70e58e682080d5118f7ad62ef06e471021809: 8cb9aa5c64504db206082fe83ad1d881
             ./.git/objects/6c/cf6985a773d033f71f84d77c447f07e2d9da85: 96c97c25cbb594114721a13d240887b1
         ./.git/objects/6e:
             ./.git/objects/6e/864fd68e6117a9a5b5d96396e41e750d050901: 60ba3e7defb228f818ffb1fcc9e98ade
@@ -133,12 +166,16 @@ scan:
             ./.git/objects/84/623ac8eff4947faff47e45b58e8bcf73d07f8b: e880facfb0ba00198b8f24b6e780185e
         ./.git/objects/85:
             ./.git/objects/85/f2ca10b05690123e5700a733d9f871fa61a158: 72c0de88a2074efd0fa82e7390eb72a3
+            ./.git/objects/85/fd524e54b30d2b532ab09c637b9732c3c92f2b: be64ac4eed5ca343471de3c880930697
         ./.git/objects/8b:
             ./.git/objects/8b/745696b025d4eca620595dc0558e50bb7e24ae: 0ecfaaf407ae7ad25f3bb8349d29372b
+        ./.git/objects/8c:
+            ./.git/objects/8c/e26b0415755c857fd0e523072366a190d1df13: 98ad69711c9d42f81a846660db51aa94
         ./.git/objects/92:
             ./.git/objects/92/f4f1d2692ecf2d6b80b2e305fc183d67a8d839: b223cf1fbd7d61f119740f042dacec12
         ./.git/objects/94:
             ./.git/objects/94/8c701765dd160e33e26afa7faf4da2397b521b: cc22c4271f443193bd9403b1489db6d4
+            ./.git/objects/94/9f66ad8d5ec9ccf08489ffd79df5b68e467027: 48ac9cc3071ca8a98fe97eff6415d44b
         ./.git/objects/95:
             ./.git/objects/95/39a13927344caef1475051853b2bfbb9c91e41: 6dbf3868c9460727b43f687851c6ca73
         ./.git/objects/98:
@@ -146,14 +183,24 @@ scan:
             ./.git/objects/98/ee1c390da47f0811b733070b02cbd8df0d37fb: 5e144c8743e8a88045678c100f9f3fac
         ./.git/objects/99:
             ./.git/objects/99/b613f3fe7d4f9ff9f19ed9db5107e8de5d62c8: 906ddab5610c0d110add7d10c135a44f
+        ./.git/objects/9a:
+            ./.git/objects/9a/911759ecb547e4cfce171e39fd168328e9b8d2: 550df218c3d8fcdbe9ee2aafc492dc9c
+            ./.git/objects/9a/ca4b64bda14774b4948294d8a29e63e10f59a1: f7bb7455b8430ae228c20fed37026c64
         ./.git/objects/9c:
             ./.git/objects/9c/d976fe2e7e1e990049b809ed310b2e78f724a4: 1d99029d2d86dde2738151f90452baad
+        ./.git/objects/9d:
+            ./.git/objects/9d/be1fed07da8f3072cf6c9bfccd04b24da5eeed: dd294d3bd5f6670fb3f40d433eb0546f
         ./.git/objects/9e:
             ./.git/objects/9e/06e0ce0a3364dfa8dc09d89b958cb885cbf833: 5317bb4fe21515837a9e830f9df8071c
+        ./.git/objects/ab:
+            ./.git/objects/ab/579f1b28a65cc31d6fe592c79c18e76c1ed481: a784eb74bf12a7bdee7629dbe232b69a
         ./.git/objects/ac:
+            ./.git/objects/ac/1162a197cf4bac98e40f2c10824d836338329e: cbaf9d2be5c5c4f24d0ff86464d29259
             ./.git/objects/ac/a18b7c945c8ff3bf725d408ed79ae3e58bd21a: e97da0d70198be47dd2202a93fd22421
         ./.git/objects/b0:
             ./.git/objects/b0/c822f0db4b42d42188dedf03f35f8b876b4abb: 4b88d40706d419b1023e67de4ac20df1
+        ./.git/objects/b2:
+            ./.git/objects/b2/d34a3db9f741d787c9d5df7d4b5bae5e8104f3: fb9798403509e545f87e4478bbb455c3
         ./.git/objects/b4:
             ./.git/objects/b4/0be8d899c7c9d20632921bb683bc09f3578a8a: 3de5087c12d8f4596ebe7ddfd537beb5
         ./.git/objects/b8:
@@ -168,21 +215,32 @@ scan:
             ./.git/objects/c1/0c7b2e35056b5d902bd619250b7ede92d5bf40: c37ee89f4219daf1b3fa4d42780f340d
         ./.git/objects/c2:
             ./.git/objects/c2/3c2627b5bbbdaf8cdd03510c1c772d531b15bf: ab92fdbfc31a525c3b86ff198efa15b8
+        ./.git/objects/c5:
+            ./.git/objects/c5/c346a81f6d7c7bdafdf7a2335092a4802a5407: 9283755a478300f0084fec19bf270fe4
         ./.git/objects/c8:
             ./.git/objects/c8/2123681d3142b2ca53ee87fd9c9a5a9f14434c: ba49773818f927baf497024c4302e2af
         ./.git/objects/ca:
             ./.git/objects/ca/4d13163ddf323ef83cb91c9d5a0f734b52f9c2: 7ece00fdeaa66dbbc72370c1abc1c979
             ./.git/objects/ca/77ea9cca71f60223338064898229e58206a792: 8c461fc25591439bea026f074097c931
+        ./.git/objects/cb:
+            ./.git/objects/cb/6025f1de959893baeca6777a07c2e71b3324cb: 5c852bc8bb671d18be3155df79a0cd38
         ./.git/objects/cc:
             ./.git/objects/cc/0da3b255daab155932903c909de385e86b3db6: d3df2b053ad2fd826b0eeceeed372c7c
         ./.git/objects/cd:
             ./.git/objects/cd/ec231613ca6667dedd02dd6475c69a6f77c458: a6263c6ebd59c8419929bdd52f71504d
+        ./.git/objects/d0:
+            ./.git/objects/d0/40bc615c9dae0bbd0c42af19e34b1166c7c177: 5ca700d6ed347df56009742e25e4683f
         ./.git/objects/d2:
             ./.git/objects/d2/c99d2ac1759bec8f63678e6e8e44050e8e8d4c: 140783a85243a4f7a4dadf2375a05086
         ./.git/objects/d4:
             ./.git/objects/d4/2372a5e665d1a74d69566e7f1b62766c71016e: 066ddae30726e1761a487f75fbda0681
             ./.git/objects/d4/722acc4ad216eb0971efe1e4b4a03c78450c22: ac6c97c59d1a0e8766b8c66fb6e9fe8d
+        ./.git/objects/d5:
+            ./.git/objects/d5/8d92956960a3c6c6f3aeca06f19b74d4512ef6: ce89725da058a57b68bb497b36f36cda
+        ./.git/objects/db:
+            ./.git/objects/db/22302c57a0ba6eb1ec7840d124ed10bfe19a17: abdd3825badc15e44909f03633d1e66a
         ./.git/objects/de:
+            ./.git/objects/de/a427673cbf3207e90eb6f217cb1b7622e439fe: c3ef968e093011b6f8afff2c0ae75d75
             ./.git/objects/de/c2ffcf6af4501f81ac8272437f22265b4dd7b7: df700d525038857219003494806004a2
         ./.git/objects/e1:
             ./.git/objects/e1/07a694410515f12c1f815feb5455fbb56461b5: 5b4509042a4ca7ec9a6525bb7f5c265a
@@ -194,6 +252,8 @@ scan:
         ./.git/objects/e8:
             ./.git/objects/e8/7c8bac4a8fe21cc7d454405ddfa153b7bbce5a: d7737ef8fd9d1030e8a2e363769dc566
             ./.git/objects/e8/dee2cdd0d695fa0c72e7a67bd2245a20348f1a: 63a8e4389813fef0ca936f0a96ae48b2
+        ./.git/objects/ee:
+            ./.git/objects/ee/fe65723327fb8b085ba96a4d3088bfa0884bb4: bcfc0e24b05a4edbd56ff6e908774487
         ./.git/objects/ef:
             ./.git/objects/ef/0bed16d9b0c6f1e27829fe63d8d0d8bee28183: a9790fd33f49f002e0d1775694d66279
         ./.git/objects/f0:
@@ -209,56 +269,52 @@ scan:
             ./.git/objects/f9/fffe3040b7621377d0075656598fd366f2997a: 92cab84795755616d1d0f6510350b454
         ./.git/objects/fc:
             ./.git/objects/fc/aeb3c1b2ab3458ed62724e7ad7bbf9853f89bc: cdae0cf4290f4d9a27837bed8f679b62
-        ./.git/objects/info: {  }
         ./.git/objects/pack:
             ./.git/ORIG_HEAD: 06b6089aa6ba9ab0d4ec77d229d1a93d
             ./.git/packed-refs: 078145597288afca2179d8ceeec77a69
-        ./.git/refs: {  }
         ./.git/refs/heads:
-            ./.git/refs/heads/master: 0165ee0d83da6ee1808e593827d5bf40
-        ./.git/refs/remotes: {  }
+            ./.git/refs/heads/master: bf7ab356e3fa027809876592c0df724f
         ./.git/refs/remotes/origin:
             ./.git/refs/remotes/origin/HEAD: 73a00957034783b7b5c8294c54cd3e12
-            ./.git/refs/remotes/origin/master: 0165ee0d83da6ee1808e593827d5bf40
+            ./.git/refs/remotes/origin/master: bf7ab356e3fa027809876592c0df724f
         ./.git/refs/tags:
             ./.gitignore: 1a5042913c2660f031bd8bf950f26abf
+        ./.idea:
             ./.idea/.name: 2a752983a2e74b970f384c27e1e83fda
             ./.idea/encodings.xml: e983e7004bf05890eb93973f0a475914
             ./.idea/misc.xml: d4903297c0891c70e3e46496b9937e16
             ./.idea/modules.xml: ee9b38a94c7ee3e6dd87cc5f4f554a12
             ./.idea/redbox-scan.iml: c9bd9f053e6a09728e39aac3967676f1
             ./.idea/vcs.xml: 166acef3d301bd241d0d6da15bc5ad3c
-            ./.idea/workspace.xml: 272eb0703a8a47edb5f55d8ffe0eb499
-            ./composer.json: 34aca6147eae5d7d85b1cfea7d070778
-            ./composer.lock: 16b6a447110ba9ae5917a6e9f614ace2
-            ./index.php: d0e27bd12efc8f12ca668367aa9ecab4
+            ./.idea/workspace.xml: fe97d1cea9b3c6849b16abba00b89a0d
+            ./.scrutinizer.yml: 065191d5f84b4f94c8f64dd2bc48e09e
+            ./.travis.yml: 345b472bb1e65f7c0fb139d573bf8a72
+            ./composer.json: b29f7007bb748f238b7cf2ded6d0c589
+            ./composer.lock: c1022b05f631d3cba1074186d305e91a
+            ./index.php: d95fcc84997a7a8ad2ba9612a277012f
             ./LICENSE: 23e963eace05cd6c5c4b0d9e3cce308d
-            ./phpunit.xml: 83e8177c9498f4547cb7482977f5a2df
+            ./phpunit.xml: cc8b107d8a8302ca6a081f22b4c3c5dd
             ./README.md: 9c70ca8b7d9523d34e3eb8349cad5748
-        ./src: {  }
         ./src/Adapter:
             ./src/Adapter/AbstractAdapter.php: 02669dcefb1f244bec15b7f88b2b29de
             ./src/Adapter/AdapterInterface.php: 49aee26b00919146806dbe2c98d0dd0e
-            ./src/Adapter/Datasource.php: bc62691c1ddae81aad2494eb21581343
             ./src/Adapter/Filesystem.php: 7ff2c36893a496c840643807b6270794
         ./src/Adapter/Resource:
             ./src/Adapter/Resource/File.php: 5c19d46072d74226b5aaa35ce0e5c900
-            ./src/DataSourceAdapterInterface.php: 9cee699a9c43e7036d700c7b8bbc1d2e
         ./src/Exception:
             ./src/Exception/RuntimeException.php: a690241183f4a9c8b5da54cce02441ac
         ./src/Filesystem:
             ./src/Filesystem/FileInfo.php: 3698ae6c5157f51cbb8e7ab2dee95722
             ./src/Filesystem/RecursiveDirectoryIterator.php: f1b7287ad09ca4451efebee43addab43
         ./src/Indexer:
-            ./src/ScanService.php: 22c33d04f9b5a9aa4a9d62b9f1607e52
-        ./tests: {  }
-        ./tests/Assets: {  }
-        ./tests/Assets/Adaptor:
-            ./tests/Assets/Adaptor/WithoutAbstract.php: 9ab58778612b2c16ffafccc735f28dce
-            ./tests/bootstrap.php: 57730b440c7270956732033be0279db3
+            ./src/ScanService.php: 0ce22f90d2f3416af544fb0d1fdbe58c
+        ./tests/Assets/Adapter:
+            ./tests/Assets/Adapter/WithoutAbstract.php: 0e0aa748bcd7a2920b41be217a09aeb8
+            ./tests/Assets/TestBase.php: d2f3e6d1f1acf2cece830489322ffebf
+            ./tests/ScanServiceTest.php: 94dcd2a0c8f119f33464a0917116a410
         ./tmp:
             ./tmp/data.txt: d75f65b62b7bebb1eadffdb341a9cbce
-            ./tmp/data.yml: 787af32c3f497b02d1ccfa85bcda400a
+            ./tmp/data.yml: e476eca85fbb9b3cf1d95b9fa086efac
             ./tmp/Nieuw.txt: d41d8cd98f00b204e9800998ecf8427e
             ./tmp/oke.yml: 4d1ffa89c8827e63689fdcedba9b1fac
         ./vendor:
@@ -268,12 +324,11 @@ scan:
         ./vendor/composer:
             ./vendor/composer/autoload_classmap.php: ff1b6df4943116e0d83350a0fc8c6c9c
             ./vendor/composer/autoload_namespaces.php: f99a52877f7a89092adf556035cc9c55
-            ./vendor/composer/autoload_psr4.php: d8f324850bb96be5bc52a71aef6eb1ae
+            ./vendor/composer/autoload_psr4.php: e636d2eacc6efca349fb0c67a13ba6e8
             ./vendor/composer/autoload_real.php: 11ba9d0639a0605fb08684fad0f34d2b
             ./vendor/composer/ClassLoader.php: 3e420cbf8bc3c56158e3dcd277613b03
-            ./vendor/composer/installed.json: 1aebe4e9db47385f9c043352e6155e6b
+            ./vendor/composer/installed.json: 9e65ac102e48556ddb55f16f81e5c98b
             ./vendor/composer/LICENSE: 084a034acbad39464e3df608c6dc064f
-        ./vendor/doctrine: {  }
         ./vendor/doctrine/instantiator:
             ./vendor/doctrine/instantiator/.gitignore: b72e2fc9bdf095edeb22e448b73adb3c
             ./vendor/doctrine/instantiator/.scrutinizer.yml: 218a0825aefed54c12e8f93d71ea355e
@@ -285,20 +340,14 @@ scan:
             ./vendor/doctrine/instantiator/phpmd.xml.dist: e2a7452cb0d9e1a3507e133773c14b3f
             ./vendor/doctrine/instantiator/phpunit.xml.dist: a9df85d69657a89561c27122809f530d
             ./vendor/doctrine/instantiator/README.md: 203712290e0ed73ebc5ffd3a5d18ea27
-        ./vendor/doctrine/instantiator/src: {  }
-        ./vendor/doctrine/instantiator/src/Doctrine: {  }
-        ./vendor/doctrine/instantiator/src/Doctrine/Instantiator: {  }
         ./vendor/doctrine/instantiator/src/Doctrine/Instantiator/Exception:
             ./vendor/doctrine/instantiator/src/Doctrine/Instantiator/Exception/ExceptionInterface.php: 84ad24a17513e05bf401c66444cc71bd
             ./vendor/doctrine/instantiator/src/Doctrine/Instantiator/Exception/InvalidArgumentException.php: 742702056447aaef18b421465bec90c4
             ./vendor/doctrine/instantiator/src/Doctrine/Instantiator/Exception/UnexpectedValueException.php: 106a3afd02321d3ceac76f7093eebc72
             ./vendor/doctrine/instantiator/src/Doctrine/Instantiator/Instantiator.php: b471e9766e58011c7c53e5841ca6f536
             ./vendor/doctrine/instantiator/src/Doctrine/Instantiator/InstantiatorInterface.php: e64f01113543f94d70f52cf68c0fb31d
-        ./vendor/doctrine/instantiator/tests: {  }
-        ./vendor/doctrine/instantiator/tests/DoctrineTest: {  }
         ./vendor/doctrine/instantiator/tests/DoctrineTest/InstantiatorPerformance:
             ./vendor/doctrine/instantiator/tests/DoctrineTest/InstantiatorPerformance/InstantiatorPerformanceEvent.php: 9e4a696bddafc38140e3999d1ff90b6c
-        ./vendor/doctrine/instantiator/tests/DoctrineTest/InstantiatorTest: {  }
         ./vendor/doctrine/instantiator/tests/DoctrineTest/InstantiatorTest/Exception:
             ./vendor/doctrine/instantiator/tests/DoctrineTest/InstantiatorTest/Exception/InvalidArgumentExceptionTest.php: e968500e29d73f48f6edc75226520e7e
             ./vendor/doctrine/instantiator/tests/DoctrineTest/InstantiatorTest/Exception/UnexpectedValueExceptionTest.php: cac7b001b3055008f5b822d435948857
@@ -317,7 +366,6 @@ scan:
             ./vendor/doctrine/instantiator/tests/DoctrineTest/InstantiatorTestAsset/UnserializeExceptionArrayObjectAsset.php: 7d588a23cdd439af61dd0f1daa8e2e5d
             ./vendor/doctrine/instantiator/tests/DoctrineTest/InstantiatorTestAsset/WakeUpNoticesAsset.php: 800237f5f1caa0419ae8c4300b3afc47
             ./vendor/doctrine/instantiator/tests/DoctrineTest/InstantiatorTestAsset/XMLReaderAsset.php: 74b4c88f0138319d3fe2e8912ffad4a5
-        ./vendor/phpdocumentor: {  }
         ./vendor/phpdocumentor/reflection-docblock:
             ./vendor/phpdocumentor/reflection-docblock/.gitignore: ada3b572897ab66697162ec5005ec0d1
             ./vendor/phpdocumentor/reflection-docblock/.travis.yml: 2e908edd9106037f53afe9a551e3992f
@@ -326,9 +374,6 @@ scan:
             ./vendor/phpdocumentor/reflection-docblock/LICENSE: 7bad6f67feb4324e1b8e6127e09194a3
             ./vendor/phpdocumentor/reflection-docblock/phpunit.xml.dist: 10761d266e15b8d872f7ed2f72c933b0
             ./vendor/phpdocumentor/reflection-docblock/README.md: d92974d09492a320006c71a2a22bded6
-        ./vendor/phpdocumentor/reflection-docblock/src: {  }
-        ./vendor/phpdocumentor/reflection-docblock/src/phpDocumentor: {  }
-        ./vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection: {  }
         ./vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock:
             ./vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Context.php: 023460319db12599993776196f7f07ff
             ./vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Description.php: 460d3287f305da6d31ecbcd809149fdd
@@ -357,9 +402,6 @@ scan:
         ./vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Type:
             ./vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Type/Collection.php: 28fdce749327c1d70b754ad60ddecdee
             ./vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock.php: 8976a740885ffb90bf7e56ac153eaf98
-        ./vendor/phpdocumentor/reflection-docblock/tests: {  }
-        ./vendor/phpdocumentor/reflection-docblock/tests/phpDocumentor: {  }
-        ./vendor/phpdocumentor/reflection-docblock/tests/phpDocumentor/Reflection: {  }
         ./vendor/phpdocumentor/reflection-docblock/tests/phpDocumentor/Reflection/DocBlock:
             ./vendor/phpdocumentor/reflection-docblock/tests/phpDocumentor/Reflection/DocBlock/DescriptionTest.php: 17134d7c2b2e4ee4386806dab8c1746a
         ./vendor/phpdocumentor/reflection-docblock/tests/phpDocumentor/Reflection/DocBlock/Tag:
@@ -381,7 +423,6 @@ scan:
         ./vendor/phpdocumentor/reflection-docblock/tests/phpDocumentor/Reflection/DocBlock/Type:
             ./vendor/phpdocumentor/reflection-docblock/tests/phpDocumentor/Reflection/DocBlock/Type/CollectionTest.php: 34c6d5bff587cf0bdd5ff94aaa679a2f
             ./vendor/phpdocumentor/reflection-docblock/tests/phpDocumentor/Reflection/DocBlockTest.php: 4b047a19d0d69d30f3a6bf4d58556d08
-        ./vendor/phpspec: {  }
         ./vendor/phpspec/prophecy:
             ./vendor/phpspec/prophecy/.gitignore: f23f4ccd09b6b06a0ac80e8eb88599af
             ./vendor/phpspec/prophecy/.travis.yml: 49369432537d0b362af6e2c4001305f8
@@ -391,8 +432,6 @@ scan:
             ./vendor/phpspec/prophecy/CONTRIBUTING.md: ecc97bb69f5d523fce7fa9b7fd19d7f2
             ./vendor/phpspec/prophecy/LICENSE: 919ed3cf53f990487db45922626b96de
             ./vendor/phpspec/prophecy/README.md: ab8190127e2ae48c7ef141e7cee3bc1b
-        ./vendor/phpspec/prophecy/spec: {  }
-        ./vendor/phpspec/prophecy/spec/Prophecy: {  }
         ./vendor/phpspec/prophecy/spec/Prophecy/Argument:
             ./vendor/phpspec/prophecy/spec/Prophecy/Argument/ArgumentsWildcardSpec.php: 4a6ea9d02a9f7001715d5b9e4efc4c70
         ./vendor/phpspec/prophecy/spec/Prophecy/Argument/Token:
@@ -416,7 +455,6 @@ scan:
         ./vendor/phpspec/prophecy/spec/Prophecy/Comparator:
             ./vendor/phpspec/prophecy/spec/Prophecy/Comparator/ClosureComparatorSpec.php: e8d0fcd91e28fc6db0b26336eaab0181
             ./vendor/phpspec/prophecy/spec/Prophecy/Comparator/FactorySpec.php: ace944d00bb0b3e9739d7fe7d00ad766
-        ./vendor/phpspec/prophecy/spec/Prophecy/Doubler: {  }
         ./vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch:
             ./vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/DisableConstructorPatchSpec.php: cbc9f50796e55dd7e5d6d448ff95201d
             ./vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/HhvmExceptionPatchSpec.php: 84cc0ff40b3db2192b9504a0481f0025
@@ -437,7 +475,6 @@ scan:
             ./vendor/phpspec/prophecy/spec/Prophecy/Doubler/Generator/Node/MethodNodeSpec.php: 8017dadf06cc86c148edbffa3140be38
             ./vendor/phpspec/prophecy/spec/Prophecy/Doubler/LazyDoubleSpec.php: 11e7e2dfc015cd2b824f5b741422e9c3
             ./vendor/phpspec/prophecy/spec/Prophecy/Doubler/NameGeneratorSpec.php: 2fc48ac6fd45eabcff361c21001a4c52
-        ./vendor/phpspec/prophecy/spec/Prophecy/Exception: {  }
         ./vendor/phpspec/prophecy/spec/Prophecy/Exception/Call:
             ./vendor/phpspec/prophecy/spec/Prophecy/Exception/Call/UnexpectedCallExceptionSpec.php: 8a505a7c2b2db9f0e83e92a8dc273d84
         ./vendor/phpspec/prophecy/spec/Prophecy/Exception/Doubler:
@@ -472,8 +509,6 @@ scan:
             ./vendor/phpspec/prophecy/spec/Prophecy/ProphetSpec.php: 5119ac6ffefff21334dadbda5c5bfd02
         ./vendor/phpspec/prophecy/spec/Prophecy/Util:
             ./vendor/phpspec/prophecy/spec/Prophecy/Util/StringUtilSpec.php: 904154b4244579fe18e1e1600263ab96
-        ./vendor/phpspec/prophecy/src: {  }
-        ./vendor/phpspec/prophecy/src/Prophecy: {  }
         ./vendor/phpspec/prophecy/src/Prophecy/Argument:
             ./vendor/phpspec/prophecy/src/Prophecy/Argument/ArgumentsWildcard.php: a2752f7d812ec1afe49b5ad06046374c
         ./vendor/phpspec/prophecy/src/Prophecy/Argument/Token:
@@ -523,7 +558,6 @@ scan:
             ./vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ReflectionInterface.php: 8b80045be0c63010c3f899ea445d3fa5
             ./vendor/phpspec/prophecy/src/Prophecy/Doubler/LazyDouble.php: c8999a3aa65e0c40f031a620fe5d39b9
             ./vendor/phpspec/prophecy/src/Prophecy/Doubler/NameGenerator.php: 675d79e3e73296fab242c55192764eca
-        ./vendor/phpspec/prophecy/src/Prophecy/Exception: {  }
         ./vendor/phpspec/prophecy/src/Prophecy/Exception/Call:
             ./vendor/phpspec/prophecy/src/Prophecy/Exception/Call/UnexpectedCallException.php: ddf78c90b22dc5fe213b8317c7462298
         ./vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler:
@@ -571,7 +605,6 @@ scan:
         ./vendor/phpspec/prophecy/src/Prophecy/Util:
             ./vendor/phpspec/prophecy/src/Prophecy/Util/ExportUtil.php: e490bd70fde393e9d87770da3d631358
             ./vendor/phpspec/prophecy/src/Prophecy/Util/StringUtil.php: 3d2eab568dcc8044fa11903c1fc0dd50
-        ./vendor/phpunit: {  }
         ./vendor/phpunit/php-code-coverage:
             ./vendor/phpunit/php-code-coverage/.gitattributes: 4925aa0fa603ab62f1b327710cc9b790
             ./vendor/phpunit/php-code-coverage/.gitignore: af764bbd47d332bb257d91ed27620e7a
@@ -588,8 +621,6 @@ scan:
         ./vendor/phpunit/php-code-coverage/scripts:
             ./vendor/phpunit/php-code-coverage/scripts/auto_append.php: 1f894beb45e5f1af9d3b3f2e770b8898
             ./vendor/phpunit/php-code-coverage/scripts/auto_prepend.php: 3864daef243ecda1ad504069528ea5f0
-        ./vendor/phpunit/php-code-coverage/src: {  }
-        ./vendor/phpunit/php-code-coverage/src/CodeCoverage: {  }
         ./vendor/phpunit/php-code-coverage/src/CodeCoverage/Driver:
             ./vendor/phpunit/php-code-coverage/src/CodeCoverage/Driver/HHVM.php: e13976cb29562db97ee7c1ecb9074dea
             ./vendor/phpunit/php-code-coverage/src/CodeCoverage/Driver/PHPDBG.php: 69be060ff0748db5e771b6dd997011c9
@@ -603,7 +634,6 @@ scan:
             ./vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/Clover.php: 3d8676f18b867b8cadfd581179bbe439
             ./vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/Crap4j.php: 14f40d5e1a0bd5af70edd5697d5facd4
             ./vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/Factory.php: b2eb20c097f79379029a13483df03208
-        ./vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML: {  }
         ./vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer:
             ./vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer/Dashboard.php: 2e9014188032173ff79d11e2ad9a3630
             ./vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer/Directory.php: 635741ec9084e4ff4b37625bcaa2c386
@@ -660,7 +690,6 @@ scan:
             ./vendor/phpunit/php-code-coverage/src/CodeCoverage/Util/InvalidArgumentHelper.php: 49e4995373f201811fc3811cd117fbdf
             ./vendor/phpunit/php-code-coverage/src/CodeCoverage/Util.php: 34699504f6e71400fbe315e7b0d87707
             ./vendor/phpunit/php-code-coverage/src/CodeCoverage.php: e5bb4dc3701f53dc8484e64234d83bfb
-        ./vendor/phpunit/php-code-coverage/tests: {  }
         ./vendor/phpunit/php-code-coverage/tests/_files:
             ./vendor/phpunit/php-code-coverage/tests/_files/BankAccount-clover.xml: 8fb2e8875a0519dfe41051766d4fa312
             ./vendor/phpunit/php-code-coverage/tests/_files/BankAccount.php: 1fa57c931da01a8107b82bcf4b1fb15c
@@ -706,7 +735,6 @@ scan:
             ./vendor/phpunit/php-code-coverage/tests/_files/source_with_oneline_annotations.php: e96b8b72e308bd417b6699fcbef673ac
             ./vendor/phpunit/php-code-coverage/tests/_files/source_without_ignore.php: 04a707fa08b9df780bec3dbf2fc6b074
             ./vendor/phpunit/php-code-coverage/tests/_files/source_without_namespace.php: 7316c8e4818931d5521a3c590b14f999
-        ./vendor/phpunit/php-code-coverage/tests/PHP: {  }
         ./vendor/phpunit/php-code-coverage/tests/PHP/CodeCoverage:
             ./vendor/phpunit/php-code-coverage/tests/PHP/CodeCoverage/FilterTest.php: 1c0b8d42b7089a867a46d93cf5975f1a
         ./vendor/phpunit/php-code-coverage/tests/PHP/CodeCoverage/Report:
@@ -755,13 +783,10 @@ scan:
             ./vendor/phpunit/php-token-stream/composer.json: dfa10f4977d247d2ee0e8def26c5892f
             ./vendor/phpunit/php-token-stream/LICENSE: b4f42b89683b8003b2041d565bf2c225
             ./vendor/phpunit/php-token-stream/README.md: c048364d3bcfff33d0dee7518dfb8d29
-        ./vendor/phpunit/php-token-stream/src: {  }
-        ./vendor/phpunit/php-token-stream/src/Token: {  }
         ./vendor/phpunit/php-token-stream/src/Token/Stream:
             ./vendor/phpunit/php-token-stream/src/Token/Stream/CachingFactory.php: ae8459fadfe3ff3e4dfa1a51c15a3fc2
             ./vendor/phpunit/php-token-stream/src/Token/Stream.php: fa4ca407084bd134aa3630a4aa412179
             ./vendor/phpunit/php-token-stream/src/Token.php: 5a2550ab83f5420edc337c1ef8e6f780
-        ./vendor/phpunit/php-token-stream/tests: {  }
         ./vendor/phpunit/php-token-stream/tests/_fixture:
             ./vendor/phpunit/php-token-stream/tests/_fixture/class_with_method_that_declares_anonymous_class.php: 329c904e158590b64cd11ce769953a74
             ./vendor/phpunit/php-token-stream/tests/_fixture/class_with_method_that_declares_anonymous_class2.php: dcc6e71046486f885822d23060044f16
@@ -792,7 +817,6 @@ scan:
             ./vendor/phpunit/phpunit/.gitignore: e9a65d1ad17cffe4dd9f6865dc5d5645
             ./vendor/phpunit/phpunit/.php_cs: 7383fe829a424e77676e5eb40b7e9fb1
             ./vendor/phpunit/phpunit/.travis.yml: 3c20dd59bf3833224434417fe01e65be
-        ./vendor/phpunit/phpunit/build: {  }
         ./vendor/phpunit/phpunit/build/bin:
             ./vendor/phpunit/phpunit/build/bin/phpab: 67641190b5843bbf6318d6dacac0576f
             ./vendor/phpunit/phpunit/build/binary-phar-autoload.php.in: 1b395ee032b6629cb0964184aa331027
@@ -829,7 +853,6 @@ scan:
             ./vendor/phpunit/phpunit/src/Extensions/RepeatedTest.php: 625b224cfda7acebdc67dbe34a7ef60b
             ./vendor/phpunit/phpunit/src/Extensions/TestDecorator.php: 94ea35f8f877180b4e6a493f11c55086
             ./vendor/phpunit/phpunit/src/Extensions/TicketListener.php: eaa0e7d4044c0ed4b1aa819b07e5aaa0
-        ./vendor/phpunit/phpunit/src/Framework: {  }
         ./vendor/phpunit/phpunit/src/Framework/Assert:
             ./vendor/phpunit/phpunit/src/Framework/Assert/Functions.php: ddd500c7299b71c818c5bdf369d2bfa0
             ./vendor/phpunit/phpunit/src/Framework/Assert.php: c7c09ff14917ecdfc6f5ad8bfd765213
@@ -962,7 +985,6 @@ scan:
             ./vendor/phpunit/phpunit/src/Util/TestSuiteIterator.php: 032e8098534d0e4833c4976b65a7a86e
             ./vendor/phpunit/phpunit/src/Util/Type.php: 35bb108ad6d9621aecb663929d6960d9
             ./vendor/phpunit/phpunit/src/Util/XML.php: 50d9550be2cfd6997344d69ea9b24ee6
-        ./vendor/phpunit/phpunit/tests: {  }
         ./vendor/phpunit/phpunit/tests/_files:
             ./vendor/phpunit/phpunit/tests/_files/AbstractTest.php: b214b8e36440dade916874968bbc5dde
             ./vendor/phpunit/phpunit/tests/_files/Author.php: be706f3c088e397fc67243ef15d96a0c
@@ -1118,7 +1140,6 @@ scan:
             ./vendor/phpunit/phpunit/tests/Framework/TestFailureTest.php: 6127b62c702bf0eff8a4277a70aa30e6
             ./vendor/phpunit/phpunit/tests/Framework/TestImplementorTest.php: 8e8705fc3161361b02cf43e4cf565ca8
             ./vendor/phpunit/phpunit/tests/Framework/TestListenerTest.php: 86efb7d03940709e268d97bdc1e2155c
-        ./vendor/phpunit/phpunit/tests/Regression: {  }
         ./vendor/phpunit/phpunit/tests/Regression/1021:
             ./vendor/phpunit/phpunit/tests/Regression/1021/Issue1021Test.php: 517a2792d6097c6236c5ef67fe0f95fd
             ./vendor/phpunit/phpunit/tests/Regression/1021.phpt: 36feb7cf05d3be3eb3d5de1fb00bf473
@@ -1137,7 +1158,6 @@ scan:
             ./vendor/phpunit/phpunit/tests/Regression/783/ParentSuite.php: 1357c2cef604bfaec07e3a52cb6cd96d
             ./vendor/phpunit/phpunit/tests/Regression/783/TwoTest.php: 80c0c32aae2300cc55754ac5757efc1a
             ./vendor/phpunit/phpunit/tests/Regression/783.phpt: 172d04899221c5127f289c8a55846e3c
-        ./vendor/phpunit/phpunit/tests/Regression/GitHub: {  }
         ./vendor/phpunit/phpunit/tests/Regression/GitHub/1149:
             ./vendor/phpunit/phpunit/tests/Regression/GitHub/1149/Issue1149Test.php: 425d9176092c931ba74590ac19c525d2
             ./vendor/phpunit/phpunit/tests/Regression/GitHub/1149.phpt: 46a050d44537dc8bac7db6c77e824763
@@ -1319,9 +1339,6 @@ scan:
             ./vendor/phpunit/phpunit-mock-objects/LICENSE: da658d4f706c367641055579050c99c3
             ./vendor/phpunit/phpunit-mock-objects/phpunit.xml.dist: 5a24d450e5fd33b7d3ba94534760aec7
             ./vendor/phpunit/phpunit-mock-objects/README.md: 1fdf261027c33e510051976e7c6d8bc8
-        ./vendor/phpunit/phpunit-mock-objects/src: {  }
-        ./vendor/phpunit/phpunit-mock-objects/src/Framework: {  }
-        ./vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject: {  }
         ./vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Builder:
             ./vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Builder/Identity.php: 51cb171c7bc0a1d08b9e3d7c82ffb50b
             ./vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Builder/InvocationMocker.php: f3265feaac2b407f10ac7c8bf9580ed3
@@ -1380,7 +1397,6 @@ scan:
             ./vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Stub/ReturnValueMap.php: a7829768a90e5a9508f8edb4a1d33919
             ./vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Stub.php: c7db02488916a49d3c140889291eb318
             ./vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Verifiable.php: f18efaaa2e2a64ee1e241e51875c8a92
-        ./vendor/phpunit/phpunit-mock-objects/tests: {  }
         ./vendor/phpunit/phpunit-mock-objects/tests/_fixture:
             ./vendor/phpunit/phpunit-mock-objects/tests/_fixture/AbstractMockTestClass.php: 7fedbceab74d50c0389173b2750bc8b6
             ./vendor/phpunit/phpunit-mock-objects/tests/_fixture/AbstractTrait.php: a569607ba756ad04c9eb54418629274d
@@ -1444,32 +1460,6 @@ scan:
             ./vendor/phpunit/phpunit-mock-objects/tests/MockObject/wsdl_class_partial.phpt: 4640a82f3dcd2f4a68105e7a37140cc9
             ./vendor/phpunit/phpunit-mock-objects/tests/MockObjectTest.php: 44e8d97c90e23259528a1dd3b7de52ff
             ./vendor/phpunit/phpunit-mock-objects/tests/ProxyObjectTest.php: db29eb5fe880acb825da6f580ec0bd81
-        ./vendor/redbox: {  }
-        ./vendor/redbox/cli:
-            ./vendor/redbox/cli/.gitignore: cdabc67fda5c3d7ec49e6008ede72bd9
-            ./vendor/redbox/cli/.scrutinizer.yml: 065191d5f84b4f94c8f64dd2bc48e09e
-            ./vendor/redbox/cli/.travis.yml: 849db82d40e5c5fffbdb659edc3688e9
-            ./vendor/redbox/cli/CHANGELOG.md: 74180c54e1a994509e3efd35bf618a03
-            ./vendor/redbox/cli/composer.json: be01103118f1156ec3639bacf5567714
-        ./vendor/redbox/cli/examples:
-            ./vendor/redbox/cli/examples/basic.php: 9398e509618dcdef1eb67905f0b3a095
-            ./vendor/redbox/cli/examples/defaultvalue.php: a52c2c25dcf6f16488502dd4f8ee5312
-            ./vendor/redbox/cli/LICENSE.md: 27b6cb568db951474db4d9c47190bae8
-            ./vendor/redbox/cli/phpunit.xml: 83e8177c9498f4547cb7482977f5a2df
-            ./vendor/redbox/cli/README.md: 7f674d6b2fb903595e065219d645c804
-        ./vendor/redbox/cli/src: {  }
-        ./vendor/redbox/cli/src/Arguments:
-            ./vendor/redbox/cli/src/Arguments/Argument.php: 577dd914cc2068a243bc000a7d597401
-            ./vendor/redbox/cli/src/Arguments/Filter.php: 9c61fa66102ab8843e5c1d342b84bf28
-            ./vendor/redbox/cli/src/Arguments/Manager.php: f342dd5fe26f7d2631d10d0e5c624e51
-            ./vendor/redbox/cli/src/Arguments/Parser.php: 716b3a1df2453e2cd6d46d0c1fe64d75
-            ./vendor/redbox/cli/src/Cli.php: 737b6e4a1564e96644c5830b1203f597
-        ./vendor/redbox/cli/src/Object:
-            ./vendor/redbox/cli/src/Object/Object.php: e86fd07411eb89c03980c0ae121b3753
-        ./vendor/redbox/cli/tests:
-            ./vendor/redbox/cli/tests/ArgumentsTest.php: 219beb48db8b3ea88f11ed4ded6c2e2b
-            ./vendor/redbox/cli/tests/TestBase.php: 57730b440c7270956732033be0279db3
-        ./vendor/sebastian: {  }
         ./vendor/sebastian/comparator:
             ./vendor/sebastian/comparator/.gitignore: 6688911322aac3a70b11a38dad9e5bee
             ./vendor/sebastian/comparator/.travis.yml: 386c3106699df022ab3bc0d33eabb5e0
@@ -1496,7 +1486,6 @@ scan:
             ./vendor/sebastian/comparator/src/ScalarComparator.php: 8bb2fd1ddac0bf843983364cea637936
             ./vendor/sebastian/comparator/src/SplObjectStorageComparator.php: eeb68e7a1b65c009a45957c872bed7e2
             ./vendor/sebastian/comparator/src/TypeComparator.php: 00a006ce4ddaa8f6158da379e1a8ff07
-        ./vendor/sebastian/comparator/tests: {  }
         ./vendor/sebastian/comparator/tests/_files:
             ./vendor/sebastian/comparator/tests/_files/Author.php: bd551237dbd13ad6e98245f83a12f1ec
             ./vendor/sebastian/comparator/tests/_files/Book.php: fe14f4d0318259bf566d8866991bd4ec
@@ -1588,7 +1577,6 @@ scan:
             ./vendor/sebastian/global-state/src/Restorer.php: ff082139937d7ac654dc00aca4048522
             ./vendor/sebastian/global-state/src/RuntimeException.php: 157c6e7d8fa97749d30807c5db4a71f7
             ./vendor/sebastian/global-state/src/Snapshot.php: e9a33047d2225395575291d0630be9c2
-        ./vendor/sebastian/global-state/tests: {  }
         ./vendor/sebastian/global-state/tests/_fixture:
             ./vendor/sebastian/global-state/tests/_fixture/BlacklistedChildClass.php: 89c4830f5056b641bf1d0e397b193108
             ./vendor/sebastian/global-state/tests/_fixture/BlacklistedClass.php: e2f5de9a4cf6de3942b105df12a20a31
@@ -1622,7 +1610,6 @@ scan:
             ./vendor/sebastian/version/README.md: 69d774cde2e397a13078fbaf108caaf8
         ./vendor/sebastian/version/src:
             ./vendor/sebastian/version/src/Version.php: 852905ae26e23d94e8d92781f4acc746
-        ./vendor/symfony: {  }
         ./vendor/symfony/yaml:
             ./vendor/symfony/yaml/.gitignore: a1155c508134e9bda943ae266aee1819
             ./vendor/symfony/yaml/CHANGELOG.md: 180ec3a49e06553fc15a2788ee1138a7

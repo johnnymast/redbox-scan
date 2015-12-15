@@ -36,12 +36,15 @@ class ScanService {
     }
 
 
+    // TODO: Write to collection
+
     public function index($path = "", Adapter\AdapterInterface $adapter = null)
     {
         if (!$adapter) {
             if (!$this->getAdapter()) {
                 throw new Exception\RuntimeException('An Adaptor must been set before calling index()');
             }
+            $adapter = $this->getAdapter();
         }
 
 
@@ -49,31 +52,31 @@ class ScanService {
         $data = array(
             'scan' => [
                 'dame'  => 'scan',
-                'date'  => @date(DATE_ATOM),
+                'date'  => @date(DATE_ATOM), // TODO: Fix date ..
                 'path'  => $path,
                 'items' => array(),
             ]
         );
+
+        // TODO: This should be the relative with to
         $activePath = './';
+        $items = array();
 
-        foreach ($objects as $name => $object){
-            if ($object->isDir() and $object->getFilename()[0] === '.'){
+        foreach ($objects as $name => $object) {
+
+            if ($object->getFilename() == '.' || $object->getFilename() == '..')
                 continue;
-            }
-            $path = $object->getPathName();
-            print_r($object->filename)."\n\n";
-         //   if ($path !== 'tmp') continue;
-
 
             if ($object->isDir()) {
                 $items[$path] = array();
-                $activePath = $path;
+                $activePath = $object->getPathName();
             } else {
                 $items[$activePath][$object->getPathname()] = $object->getMD5Hash();
             }
         }
         $data['scan']['items'] = $items;
-        $this->getAdapter()->write($data);
+
+        $adapter->write($data);
         return $data;
     }
 
@@ -84,6 +87,8 @@ class ScanService {
                 throw new Exception\RuntimeException('An Adaptor must been set before calling scan()');
             }
         }
+
+        // Todo: could throw exceptions for permission denied
 
         $objects = new \RecursiveIteratorIterator(new TestDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
         $items = $this->datasource->getAdapter()->read()['scan']['items'];

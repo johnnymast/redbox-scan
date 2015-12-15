@@ -48,7 +48,6 @@ class ScanService {
         }
 
 
-        $objects = new \RecursiveIteratorIterator(new TestDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
         $data = array(
             'scan' => [
                 'dame'  => 'scan',
@@ -62,6 +61,7 @@ class ScanService {
         $activePath = './';
         $items = array();
 
+        $objects = new \RecursiveIteratorIterator(new TestDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
         foreach ($objects as $name => $object) {
 
             if ($object->getFilename() == '.' || $object->getFilename() == '..')
@@ -86,12 +86,12 @@ class ScanService {
             if (!$this->getAdapter()) {
                 throw new Exception\RuntimeException('An Adaptor must been set before calling scan()');
             }
+            $adapter = $this->getAdapter();
         }
 
         // Todo: could throw exceptions for permission denied
 
-        $objects = new \RecursiveIteratorIterator(new TestDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
-        $items = $this->datasource->getAdapter()->read()['scan']['items'];
+        $items = $adapter->getAdapter()->read()['scan']['items'];
 
         foreach($items as $path => $files) {
             if ($path != './tmp') continue;

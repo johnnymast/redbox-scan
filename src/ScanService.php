@@ -2,6 +2,7 @@
 namespace Redbox\Scan;
 use Redbox\Scan\FileSystem\RecursiveDirectoryIterator as TestDirectoryIterator;
 use Redbox\Scan\Adapter\DataSource as DataSource;
+use Redbox\Scan\Exception;
 
 /**
  * Note just a draft POC atm ..
@@ -12,16 +13,18 @@ use Redbox\Scan\Adapter\DataSource as DataSource;
  * Class Scan
  * @package Redbox\Scan
  */
-class Scan {
+class ScanService {
 
     /**
      * @var Adapter\AdapterInterface $adapter;
      */
     protected $adapter;
 
-    public function __construct(Adapter\AdapterInterface $adapter, $path="")
+    public function __construct(Adapter\AdapterInterface $adapter = null)
     {
-        $this->adapter = $adapter;
+        if ($adapter)
+            $this->adapter = $adapter;
+
     }
 
     /**
@@ -33,15 +36,15 @@ class Scan {
     }
 
 
-
-    /**
-     * This will return modified files ..
-     *
-     * @param $path
-     * @return array
-     */
-    public function index($path)
+    public function index($path = "", Adapter\AdapterInterface $adapter = null)
     {
+        if (!$adapter) {
+            if (!$this->getAdapter()) {
+                throw new Exception\RuntimeException('An Adaptor must been set before calling index()');
+            }
+        }
+
+
         $objects = new \RecursiveIteratorIterator(new TestDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
         $data = array(
             'scan' => [
@@ -74,7 +77,14 @@ class Scan {
         return $data;
     }
 
-    public function scan($path) {
+    public function scan($path = "", Adapter\AdapterInterface $adapter = null)
+    {
+        if (!$adapter) {
+            if (!$this->getAdapter()) {
+                throw new Exception\RuntimeException('An Adaptor must been set before calling scan()');
+            }
+        }
+
         $objects = new \RecursiveIteratorIterator(new TestDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
         $items = $this->datasource->getAdapter()->read()['scan']['items'];
 

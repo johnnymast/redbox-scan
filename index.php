@@ -4,7 +4,7 @@ require 'vendor/autoload.php';
 use Redbox\Cli\Cli as CLI;
 
 use Redbox\Scan\Adapter\Filesystem as FilesystemAdaptor;
-use Redbox\Scan\Scan as Scan;
+use Redbox\Scan;
 
 function commandLine() {
     try {
@@ -30,7 +30,7 @@ function commandLine() {
 
 $path = commandLine();
 
-$scan = new Redbox\Scan\Scan(new Redbox\Scan\Adapter\Filesystem('tmp/data.yml'), $path);
+$scan = new Redbox\Scan\ScanService(new Redbox\Scan\Adapter\Filesystem('tmp/data.yml'), $path);
 
 $scan->index($path);
 

@@ -2,7 +2,8 @@
 namespace Redbox\Scan\FileSystem;
 
 
-class FileInfo extends \SplFileInfo {
+class FileInfo extends \SplFileInfo
+{
 
     public function __construct($filename) {
         parent::__construct($filename);

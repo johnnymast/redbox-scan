@@ -15,7 +15,7 @@ use Redbox\Scan\DataSource\DataSource as DataSource;
 class Scan {
 
     /**
-     * @var \Redbox\Scan\DataSource\DataSource $datasource;
+     * @var \Redbox\Scan\Datasource\Datasource $datasource;
      */
     public $datasource;
 
@@ -40,7 +40,7 @@ class Scan {
         $data = array(
             'scan' => [
                 'dame'  => 'scan',
-                'date'  => date(DATE_ATOM),
+                'date'  => @date(DATE_ATOM),
                 'path'  => $path,
                 'items' => array(),
             ]

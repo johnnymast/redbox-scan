@@ -1,5 +1,5 @@
 <?php
-namespace Redbox\Scan\DataSource;
+namespace Redbox\Scan\Datasource;
 use Symfony\Component\Yaml\Yaml;
 
 class Filesystem extends AbstractAdapter {

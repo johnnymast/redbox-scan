@@ -1,10 +1,10 @@
 <?php
-namespace Redbox\Scan\DataSource;
+namespace Redbox\Scan\Datasource;
 
-class DataSource {
+class Datasource {
 
     /**
-     * @var \Redbox\Scan\DataSource\AbstractAdapter
+     * @var \Redbox\Scan\Datasource\AbstractAdapter
      */
     protected $adaptor;
 
@@ -13,7 +13,7 @@ class DataSource {
     }
 
     /**
-     * @return \Redbox\Scan\DataSource\AbstractAdapter;
+     * @return \Redbox\Scan\Datasource\AbstractAdapter;
      */
     public function getAdaptor() {
         return $this->adaptor;

@@ -1,2 +1,2 @@
 <?php
-namespace Redbox\Scan\DataSource\Resource;
+namespace Redbox\Scan\Datasource\Resource;

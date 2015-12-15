@@ -1,8 +1,7 @@
 <?php
 namespace Redbox\Scan;
 use Redbox\Scan\FileSystem\RecursiveDirectoryIterator as TestDirectoryIterator;
-use Redbox\Scan\Adapter\DataSource as DataSource;
-use Redbox\Scan\Exception;
+
 
 /**
  * Note just a draft POC atm ..
@@ -37,6 +36,7 @@ class ScanService {
 
 
     // TODO: Write to collection
+    // Todo: could throw exceptions for permission denied
 
     public function index($path = "", Adapter\AdapterInterface $adapter = null)
     {
@@ -47,18 +47,13 @@ class ScanService {
             $adapter = $this->getAdapter();
         }
 
-
-        $data = array(
-            'scan' => [
-                'dame'  => 'scan',
-                'date'  => @date(DATE_ATOM), // TODO: Fix date ..
-                'path'  => $path,
-                'items' => array(),
-            ]
-        );
+        $report = new Report\Report();
+        $report->setName('a scan');
+        $report->setDate('Date');
+        $report->setPath($path);
 
         // TODO: This should be the relative with to
-        $activePath = './';
+        $activePath = $path;
         $items = array();
 
         $objects = new \RecursiveIteratorIterator(new TestDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
@@ -74,10 +69,8 @@ class ScanService {
                 $items[$activePath][$object->getPathname()] = $object->getMD5Hash();
             }
         }
-        $data['scan']['items'] = $items;
-
-        $adapter->write($data);
-        return $data;
+        $report->setItems($items);
+        $adapter->write($report);
     }
 
     public function scan($path = "", Adapter\AdapterInterface $adapter = null)
@@ -90,7 +83,6 @@ class ScanService {
         }
 
         // Todo: could throw exceptions for permission denied
-
         $items = $adapter->read()['scan']['items'];
 
         foreach($items as $path => $files) {

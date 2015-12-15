@@ -1,6 +1,7 @@
 <?php
 namespace Redbox\Scan\Adapter;
 use Symfony\Component\Yaml\Yaml;
+use Redbox\Scan\Report;
 
 class Filesystem extends AbstractAdapter
 {
@@ -17,7 +18,8 @@ class Filesystem extends AbstractAdapter
         return $data;
     }
 
-    public function write($data) {
+    public function write(Report\Report $report = null) {
+        $data = $report->toArray();
         $data = Yaml::dump($data,99);
         file_put_contents($this->filename, $data);
     }

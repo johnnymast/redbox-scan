@@ -1,7 +1,7 @@
 <?php
 namespace Redbox\Scan;
 use Redbox\Scan\FileSystem\RecursiveDirectoryIterator as TestDirectoryIterator;
-use Redbox\Scan\DataSource\DataSource as DataSource;
+use Redbox\Scan\Adapter\DataSource as DataSource;
 
 /**
  * Note just a draft POC atm ..
@@ -15,18 +15,24 @@ use Redbox\Scan\DataSource\DataSource as DataSource;
 class Scan {
 
     /**
-     * @var \Redbox\Scan\Datasource\Datasource $datasource;
+     * @var Adapter\AdapterInterface $adapter;
      */
-    public $datasource;
+    protected $adapter;
 
-    public function __construct($path="")
+    public function __construct(Adapter\AdapterInterface $adapter, $path="")
     {
-        $this->datasource = new DataSource();
+        $this->adapter = $adapter;
     }
 
-    public function test() {
-        $this->datasource->getAdaptor()->read();
+    /**
+     * @return Adapter\AdapterInterface
+     */
+    public function getAdapter()
+    {
+        return $this->adapter;
     }
+
+
 
     /**
      * This will return modified files ..
@@ -64,13 +70,13 @@ class Scan {
             }
         }
         $data['scan']['items'] = $items;
-        $this->datasource->getAdaptor()->write($data);
+        $this->getAdapter()->write($data);
         return $data;
     }
 
     public function scan($path) {
         $objects = new \RecursiveIteratorIterator(new TestDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
-        $items = $this->datasource->getAdaptor()->read()['scan']['items'];
+        $items = $this->datasource->getAdapter()->read()['scan']['items'];
 
         foreach($items as $path => $files) {
             if ($path != './tmp') continue;

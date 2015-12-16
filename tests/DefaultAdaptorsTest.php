@@ -21,8 +21,7 @@ class DefaultAdaptorsTest extends Assets\TestBase
             $this->setExpectedException('TypeError');
         }
 
-        $filesystem = new Scan\Adapter\Filesystem();
+        $filesystem = new Scan\Adapter\Filesystem('somefile.yml');
         $filesystem->write(new Assets\Report\InvalidReport());
     }
-
 }

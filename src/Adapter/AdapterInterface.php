@@ -4,7 +4,6 @@ use Redbox\Scan\Report;
 
 /**
  * Interface AdapterInterface
- * @package Redbox\Scan\Adapter
  */
 interface AdapterInterface
 {

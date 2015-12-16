@@ -1,6 +1,6 @@
 <?php
 namespace Redbox\Scan;
-use Redbox\Scan\FileSystem\RecursiveDirectoryIterator as TestDirectoryIterator;
+
 
 
 /**
@@ -57,7 +57,7 @@ class ScanService {
         $activePath = $path;
         $items = array();
 
-        $objects = new \RecursiveIteratorIterator(new TestDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
+        $objects = new \RecursiveIteratorIterator(new Filesystem\RecursiveDirectoryIterator($path), RecursiveIteratorIterator::SELF_FIRST);
         foreach ($objects as $name => $object) {
 
             if ($object->getFilename() == '.' || $object->getFilename() == '..') {
@@ -92,7 +92,7 @@ class ScanService {
                 continue;
             }
 
-            $objects = new \RecursiveIteratorIterator(new TestDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
+            $objects = new \RecursiveIteratorIterator(new Filesystem\RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
             foreach ($objects as $object) {
                 if ($object->isFile() && isset($files[$object->getPathname()])) {
                     if ($files[$object->getPathname()] != $object->getMD5Hash()) {

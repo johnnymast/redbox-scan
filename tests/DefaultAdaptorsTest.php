@@ -6,6 +6,8 @@ use Redbox\Scan;
 class DefaultAdaptorsTest extends Assets\TestBase
 {
 
+    // TODO: Update comments
+
     /**
      * This test will make sure that an PHPUnit_Framework_Error is thrown if there was no Adapter
      * set via either the constructor or via the scan method.
@@ -20,7 +22,6 @@ class DefaultAdaptorsTest extends Assets\TestBase
         } elseif (phpversion() >= 7.0) {
             $this->setExpectedException('TypeError');
         }
-
         $filesystem = new Scan\Adapter\Filesystem('somefile.yml');
         $filesystem->write(new Assets\Report\InvalidReport());
     }

@@ -9,7 +9,7 @@ namespace Redbox\Scan\Report;
  *
  * @package Redbox\Scan\Report
  */
-abstract class AbstractReport implements ReportInterface
+abstract class AbstractReport
 {
     /**
      * Return the items

@@ -1,15 +1,11 @@
 <?php
 namespace Redbox\Scan;
 
-
-
 /**
- * Note just a draft POC atm ..
+ * The ScanService indexes of scans the filesystem for changes. If there are
+ * any changes since the last index() then scan() will notify you about any changes
+ * made to the file system (Changes or added files).
  *
- */
-
-/**
- * Class Scan
  * @package Redbox\Scan
  */
 class ScanService {
@@ -24,10 +20,11 @@ class ScanService {
         if ($adapter) {
             $this->adapter = $adapter;
         }
-
     }
 
     /**
+     * Return the adapter, this could any kind of adapter.
+     *
      * @return Adapter\AdapterInterface
      */
     public function getAdapter()
@@ -35,10 +32,14 @@ class ScanService {
         return $this->adapter;
     }
 
-
-    // TODO: Write to collection
-    // Todo: could throw exceptions for permission denied
-
+    /**
+     * Index the filesystem based on the given $path. The results will the stored
+     * via the given adapter.
+     *
+     * @param string $path
+     * @param Adapter\AdapterInterface|null $adapter
+     * @throws Exception\RuntimeException
+     */
     public function index($path = "", Adapter\AdapterInterface $adapter = null)
     {
         if (!$adapter) {
@@ -48,22 +49,26 @@ class ScanService {
             $adapter = $this->getAdapter();
         }
 
+        // TODO: could throw exceptions for permission denied
+        // TODO: $activePath as a start should be relative .. maybe . ?
+
+        /**
+         * Start building a basic report
+         */
         $report = new Report\Report();
         $report->setName('a scan');
         $report->setDate(new \DateTime());
         $report->setPath($path);
 
-        // TODO: This should be the relative with to
+
         $activePath = $path;
         $items = array();
 
         $objects = new \RecursiveIteratorIterator(new Filesystem\RecursiveDirectoryIterator($path), RecursiveIteratorIterator::SELF_FIRST);
         foreach ($objects as $name => $object) {
-
             if ($object->getFilename() == '.' || $object->getFilename() == '..') {
                 continue;
             }
-
             if ($object->isDir()) {
                 $activePath = $object->getPathName();
                 $items[$activePath] = array();
@@ -75,6 +80,13 @@ class ScanService {
         $adapter->write($report);
     }
 
+    /**
+     * Scan() will scan the file system based on reports given by the adaptor.
+     * There should be a report from the history to call this function.
+     *
+     * @param Adapter\AdapterInterface|null $adapter
+     * @throws Exception\RuntimeException
+     */
     public function scan(Adapter\AdapterInterface $adapter = null)
     {
         if (!$adapter) {

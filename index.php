@@ -39,7 +39,4 @@ $scan->index($path);
 //$files = $scan->scan($path);
 
 
-
-print_r($files);
-
 echo 'Path: '.$path."\n";

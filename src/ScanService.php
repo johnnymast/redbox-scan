@@ -1,5 +1,6 @@
 <?php
 namespace Redbox\Scan;
+use Redbox\Scan\FileSystem;
 
 /**
  * The ScanService indexes of scans the filesystem for changes. If there are
@@ -63,7 +64,7 @@ class ScanService {
         $activePath = $path;
         $items = array();
 
-        $objects = new \RecursiveIteratorIterator(new Filesystem\RecursiveDirectoryIterator($path), RecursiveIteratorIterator::SELF_FIRST);
+        $objects = new \RecursiveIteratorIterator(new Filesystem\RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
         foreach ($objects as $name => $object) {
             if ($object->getFilename() == '.' || $object->getFilename() == '..') {
                 continue;

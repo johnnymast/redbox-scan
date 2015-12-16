@@ -21,8 +21,9 @@ class ScanService {
 
     public function __construct(Adapter\AdapterInterface $adapter = null)
     {
-        if ($adapter)
+        if ($adapter) {
             $this->adapter = $adapter;
+        }
 
     }
 
@@ -59,8 +60,9 @@ class ScanService {
         $objects = new \RecursiveIteratorIterator(new TestDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
         foreach ($objects as $name => $object) {
 
-            if ($object->getFilename() == '.' || $object->getFilename() == '..')
+            if ($object->getFilename() == '.' || $object->getFilename() == '..') {
                 continue;
+            }
 
             if ($object->isDir()) {
                 $activePath = $object->getPathName();
@@ -73,7 +75,7 @@ class ScanService {
         $adapter->write($report);
     }
 
-    public function scan($path = "", Adapter\AdapterInterface $adapter = null)
+    public function scan(Adapter\AdapterInterface $adapter = null)
     {
         if (!$adapter) {
             if (!$this->getAdapter()) {

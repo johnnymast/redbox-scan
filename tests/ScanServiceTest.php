@@ -37,10 +37,18 @@ class AuthenticationServiceTest extends Assets\TestBase {
      * set via either the constructor or via the scan method.
      *
      *
-     * @expectedException        PHPUnit_Framework_Error
+     * @expectedException        PHPUnit_Framework_Error1
      * @coversDefaultClass       \Redbox\Scan\ScanService
      */
     public function test_constructor_should_throw_invalid_argument_on_invalid_adaptor() {
+
+        if (phpversion() < 7.0) {
+            $this->setExpectedException('PHPUnit_Framework_Error');
+
+        } elseif (phpversion() >= 7.0) {
+            $this->setExpectedException('TypeError');
+        }
+
         $service = $this->getNewService(new Assets\Adapter\WithoutAbstract());
         $service->scan("/");
     }

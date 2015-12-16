@@ -5,7 +5,6 @@ namespace Redbox\Scan\Report;
 
 abstract class AbstractReport implements ReportInterface
 {
-
     /**
      * Return the items
      *
@@ -37,7 +36,6 @@ abstract class AbstractReport implements ReportInterface
 
     public function __construct()
     {
-       // $this->setItems(array());
     }
 
     /**

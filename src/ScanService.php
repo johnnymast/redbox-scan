@@ -87,14 +87,17 @@ class ScanService {
         // Todo: could throw exceptions for permission denied
         $items = $adapter->read()['scan']['items'];
 
-        foreach($items as $path => $files) {
-            if ($path != './tmp') continue;
+        foreach ($items as $path => $files) {
+            if ($path != './tmp') {
+                continue;
+            }
 
             $objects = new \RecursiveIteratorIterator(new TestDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
             foreach ($objects as $object) {
                 if ($object->isFile() && isset($files[$object->getPathname()])) {
-                    if ($files[$object->getPathname()] != $object->getMD5Hash())
-                        echo('Veranderd: '.$object->getPathname())."\r\n";
+                    if ($files[$object->getPathname()] != $object->getMD5Hash()) {
+                        echo ('Veranderd: ' . $object->getPathname()) . "\r\n";
+                    }
                 } elseif ($object->isFile() && !isset($files[$object->getPathname()])) {
                         echo 'Nieuw bestand: '.$object->getPathname()."\r\n";
                 }

@@ -29,7 +29,7 @@ class AuthenticationServiceTest extends Assets\TestBase {
      */
     public function test_scan_should_throw_runtime_exception() {
         $service = $this->getNewService();
-        $service->scan("/");
+        $service->scan();
     }
 
     /**
@@ -40,7 +40,7 @@ class AuthenticationServiceTest extends Assets\TestBase {
      * @expectedException        PHPUnit_Framework_Error1
      * @coversDefaultClass       \Redbox\Scan\ScanService
      */
-    public function test_constructor_should_throw_invalid_argument_on_invalid_adaptor() {
+    public function test_constructor_should_throw_exception_on_invalid_adaptor() {
 
         if (phpversion() < 7.0) {
             $this->setExpectedException('PHPUnit_Framework_Error');

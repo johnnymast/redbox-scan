@@ -96,7 +96,7 @@ class ScanService {
             foreach ($objects as $object) {
                 if ($object->isFile() && isset($files[$object->getPathname()])) {
                     if ($files[$object->getPathname()] != $object->getMD5Hash()) {
-                        echo ('Veranderd: ' . $object->getPathname()) . "\r\n";
+                        echo ('Veranderd: '.$object->getPathname())."\r\n";
                     }
                 } elseif ($object->isFile() && !isset($files[$object->getPathname()])) {
                         echo 'Nieuw bestand: '.$object->getPathname()."\r\n";

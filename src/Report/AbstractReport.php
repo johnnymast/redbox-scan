@@ -1,8 +1,15 @@
 <?php
 namespace Redbox\Scan\Report;
 
-/* TODO: Make array */
+// TODO: Make this class iteratable on the items so we can make the codebase in ScanService its scan() smaller
 
+/**
+ * This AbstractReport report class contains all the base tools
+ * needed for the reportClass. It might be deprecated as we move along
+ * because all the logic is in this class and Report is empty right now.
+ *
+ * @package Redbox\Scan\Report
+ */
 abstract class AbstractReport implements ReportInterface
 {
     /**
@@ -32,11 +39,6 @@ abstract class AbstractReport implements ReportInterface
      * @var \DateTime
      */
     protected $date = null;
-
-
-    public function __construct()
-    {
-    }
 
     /**
      * @param array $items
@@ -102,7 +104,11 @@ abstract class AbstractReport implements ReportInterface
         return $this->date;
     }
 
-
+    /**
+     * Return the report in array form.
+     *
+     * @return array
+     */
     public function toArray() {
         return array(
             'scan' => array(
@@ -113,9 +119,4 @@ abstract class AbstractReport implements ReportInterface
             )
         );
     }
-
-
-
-
-
 }

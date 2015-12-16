@@ -24,4 +24,6 @@ class DefaultAdaptorsTest extends Assets\TestBase
         $filesystem = new Scan\Adapter\Filesystem('somefile.yml');
         $filesystem->write(new Assets\Report\InvalidReport());
     }
+
+    // TODO: PHP 7 test Scan\Adapter\Filesystem() without argument
 }

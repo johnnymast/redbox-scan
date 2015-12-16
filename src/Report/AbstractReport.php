@@ -5,8 +5,7 @@ namespace Redbox\Scan\Report;
 
 /**
  * This AbstractReport report class contains all the base tools
- * needed for the reportClass. It might be deprecated as we move along
- * because all the logic is in this class and Report is empty right now.
+ * needed for Redbox\Scan\Report\Report.
  *
  * @package Redbox\Scan\Report
  */

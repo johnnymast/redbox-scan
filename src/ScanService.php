@@ -60,7 +60,6 @@ class ScanService {
         $report->setDate(new \DateTime());
         $report->setPath($path);
 
-
         $activePath = $path;
         $items = array();
 

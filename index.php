@@ -30,6 +30,8 @@ function commandLine() {
 
 $path = commandLine();
 */
+
+
 $path = "./";
 $scan = new Redbox\Scan\ScanService(new Redbox\Scan\Adapter\Filesystem('tmp/data.yml'));
 $scan->index($path);

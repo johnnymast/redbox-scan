@@ -39,10 +39,10 @@ class AuthenticationServiceTest extends Assets\TestBase {
      *
      * @expectedException        PHPUnit_Framework_Error
      * @coversDefaultClass       \Redbox\Scan\ScanService
-
+     */
     public function test_constructor_should_throw_invalid_argument_on_invalid_adaptor() {
         $service = $this->getNewService(new Assets\Adapter\WithoutAbstract());
         $service->scan("/");
     }
-     */
+
 }

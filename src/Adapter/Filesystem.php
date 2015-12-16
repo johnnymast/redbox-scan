@@ -18,9 +18,14 @@ class Filesystem extends AbstractAdapter
         return $data;
     }
 
+    // TODO: This should be an universial exception
     public function write(Report\Report $report = null) {
-        $data = $report->toArray();
-        $data = Yaml::dump($data,99);
-        file_put_contents($this->filename, $data);
+        if ($report) {
+            $data = $report->toArray();
+            $data = Yaml::dump($data, 99);
+            file_put_contents($this->filename, $data);
+            return true;
+        }
+        return false;
     }
 }

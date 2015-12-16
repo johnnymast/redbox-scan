@@ -65,7 +65,7 @@ abstract class AbstractReport implements ReportInterface
     }
 
     /**
-     * @param mixed $path
+     * @param string $path
      */
     public function setPath($path)
     {
@@ -104,19 +104,5 @@ abstract class AbstractReport implements ReportInterface
         return $this->date;
     }
 
-    /**
-     * Return the report in array form.
-     *
-     * @return array
-     */
-    public function toArray() {
-        return array(
-            'scan' => array(
-                'name' => $this->getName(),
-                'date' => $this->getDate(),
-                'path' => $this->getPath(),
-                'items' => $this->getItems(),
-            )
-        );
-    }
+    abstract public function toArray();
 }

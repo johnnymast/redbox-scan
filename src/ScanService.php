@@ -50,7 +50,7 @@ class ScanService {
 
         $report = new Report\Report();
         $report->setName('a scan');
-        $report->setDate('Date');
+        $report->setDate(new \DateTime());
         $report->setPath($path);
 
         // TODO: This should be the relative with to

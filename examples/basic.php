@@ -7,7 +7,7 @@ require '../vendor/autoload.php';
  * for your needs.
  */
 $path = "../";
-$scan = new Redbox\Scan\ScanService(new Redbox\Scan\Adapter\Filesystem('../tmp/data.yml'));
+$scan = new Redbox\Scan\ScanService(new Redbox\Scan\Adapter\Filesystem('assets/data.yml'));
 $scan->index($path);
 
 

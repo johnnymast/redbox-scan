@@ -7,7 +7,7 @@ scan:
             ../.DS_Store: 7b24dcaaa092225aee88073f0d8a7722
         ../.git: {  }
         ../.git/branches:
-            ../.git/COMMIT_EDITMSG: dd03a578faa66773c4b7dbf7cedc004c
+            ../.git/COMMIT_EDITMSG: a4ef86f32ff9e92824979b26222da2f7
             ../.git/config: 1426b2949e0b989e9c0d3251aeec4324
             ../.git/description: a0a7c3fff21f2aea3cfa1d0316dd816c
             ../.git/FETCH_HEAD: 04ab948a0e96876449aed72583d785bc
@@ -22,18 +22,18 @@ scan:
             ../.git/hooks/pre-rebase.sample: 81005745454846bb79cc3c7c0c57658d
             ../.git/hooks/prepare-commit-msg.sample: 7dfe15854212a30f346da5255c1d794b
             ../.git/hooks/update.sample: f51b02427757e79621b5235d7efdf117
-            ../.git/index: fa2e2b4f9476727b109615b22c602d87
+            ../.git/index: eabee74b0df312cd84dbddfea5fff43f
         ../.git/info:
             ../.git/info/exclude: 036208b4a1ab4a235d75c181e685e5a3
         ../.git/logs:
-            ../.git/logs/HEAD: b8d7636088133b9c2ce3053107a1852e
+            ../.git/logs/HEAD: 30bf2c73ae1f5364e16db97ebbe6a733
         ../.git/logs/refs: {  }
         ../.git/logs/refs/heads:
-            ../.git/logs/refs/heads/master: b8d7636088133b9c2ce3053107a1852e
+            ../.git/logs/refs/heads/master: 30bf2c73ae1f5364e16db97ebbe6a733
         ../.git/logs/refs/remotes: {  }
         ../.git/logs/refs/remotes/origin:
             ../.git/logs/refs/remotes/origin/HEAD: 9cdac51781411f8f8a9894b9cf6144c1
-            ../.git/logs/refs/remotes/origin/master: a3be2196c32ed7b79d89fe2e7f05762f
+            ../.git/logs/refs/remotes/origin/master: 63338ee7053c21dd24110ea4b5e2f101
         ../.git/objects: {  }
         ../.git/objects/01:
             ../.git/objects/01/6236dea88b7bf1a19e6e6f5868eaee07b4fb94: 45111b3813f76ffa84f55a9d9c3aa744
@@ -129,6 +129,7 @@ scan:
         ../.git/objects/25:
             ../.git/objects/25/8cd40cd7a1f27c2606bda51deac5e5df05058b: 68263e856d127de9d38ea8bd9712e822
             ../.git/objects/25/9d77dc06ba314ba15c5c504b9327ce1788ceae: ecca105a191b063edada6942024493a0
+            ../.git/objects/25/ba91346f4a14e775814cd4657bf05029be23b4: dbd00a224e46258b95f9959cb305b4f9
         ../.git/objects/26:
             ../.git/objects/26/3b88dd3610493e3db586fea79ea3bb5a0b5a8b: e64302fe4565f01eac0b6259dee2d358
         ../.git/objects/27:
@@ -140,6 +141,7 @@ scan:
             ../.git/objects/28/dfe3d2291994491ed8ed3b882d7cd4d0a85439: 5c0ea0603e2951a495f3dadb9e6611a8
             ../.git/objects/28/f64983b6d82db138859a061e077e12772747b5: 2eef25a26047eb8fec84aa6e3d617853
         ../.git/objects/29:
+            ../.git/objects/29/747bd15271c0ce9bad1f73b916c6ddceece587: 50f09a0179e81e43bbca3eb2db1a7f15
             ../.git/objects/29/d4e4cb2d87fa2a22c0ba2c63eba75f540c45a0: d5a327f1bfa53ec8eda9105927a8b3f3
         ../.git/objects/2a:
             ../.git/objects/2a/324a55be40564af288d385b3430a10461582c1: 945bbc70e82bf72a9d7453531183b01e
@@ -153,8 +155,10 @@ scan:
         ../.git/objects/30:
             ../.git/objects/30/6b7219db69ecf4b77b74a5e9034b2f945fcb7c: ed3684a66eda3a1429f85643e70292d1
         ../.git/objects/31:
+            ../.git/objects/31/a919018340765ccf1fa75e3a7e69842e6dec72: b9864cf657680e2f4b4503ba0c7b1e3b
             ../.git/objects/31/c19a3f216084bdbfa1eed3eda3d5aad2e69414: b30880711d8a1af311bd056a19782276
         ../.git/objects/33:
+            ../.git/objects/33/46c0d58dd7effb21789fa17e0c3a3ad5ec536b: b2f4d5a2a5804c8a9a6ffa2d8f1dfe77
             ../.git/objects/33/cc04907f03598f92466c0eb6f2183cdf8c3014: 67ccc33d156c5de8124de9dbccc3f16f
         ../.git/objects/34:
             ../.git/objects/34/0f3d05996474b8aa6beeaa98fd2c1681d4620b: 9ed878f3d9ef8d6b5baaec6ecfcf52a6
@@ -344,6 +348,8 @@ scan:
             ../.git/objects/79/4bccaa25fac7939f076d32a9c11a3d162e4346: 82f5b10bf33c6a945d9742cb3ca1b4d8
         ../.git/objects/7b:
             ../.git/objects/7b/20dd7c6dbeb8b22905c6f233f9691c9197ccbf: bd94e306a2626032460eae0b3daf575f
+        ../.git/objects/7c:
+            ../.git/objects/7c/81adb4ffce15267b0d8f6a8b6e8ddede466bd7: bcb13a835a4e55941cb4a1cb5ddb4c72
         ../.git/objects/7d:
             ../.git/objects/7d/6d9e0adce7b8278cfa66373db22e0211269321: a8bbdb85e4229001792713220ac55b1c
             ../.git/objects/7d/72afeda9ad51d4160f914e477120ee83363a50: 76ba510d955e6dde80e3527fc917f550
@@ -383,6 +389,7 @@ scan:
         ../.git/objects/8d:
             ../.git/objects/8d/9170b5d8c0044e22b990ff92f2191a7d988bae: 5e24c9a9a5c68ca4e6e06ac1d3565dc9
         ../.git/objects/8e:
+            ../.git/objects/8e/1e8f150dbd0c2335106e60a5c0806dae8d37fd: ff7c64ef33fd52ed99262b825d2120ef
             ../.git/objects/8e/8a18257688fc828d7c3a5971f7868233dc5cdc: e1d9a4e1a7065afad5486a18d808fe81
             ../.git/objects/8e/f70e4daa11b8d7ab7f4e83083b861727b41c3b: 1dd0d28f1997bb0258cb285a4fe20e15
         ../.git/objects/91:
@@ -433,6 +440,7 @@ scan:
         ../.git/objects/a1:
             ../.git/objects/a1/dbd1b3cc770be9305347d73941b311a5a3389d: 96fa1a6051fa1423f5605bf78fa065e8
         ../.git/objects/a2:
+            ../.git/objects/a2/5980f801b6ad3b38641b7d647979d44ddc7346: 979b0c77b62874f9be8d87d2c307cb8b
             ../.git/objects/a2/efe3b85b5f21467a2914d9cc8f8996b37e9089: 6a3f711008abc878cbf6af7d34c1bd91
         ../.git/objects/a3:
             ../.git/objects/a3/56c89e27ce099315a44ebc30fd4b46ac5afa13: c9887c183ba0c4d76e0779b484557c14
@@ -646,11 +654,11 @@ scan:
             ../.git/packed-refs: 078145597288afca2179d8ceeec77a69
         ../.git/refs: {  }
         ../.git/refs/heads:
-            ../.git/refs/heads/master: 122b67cef86fb4ab89d093b921177ece
+            ../.git/refs/heads/master: 734f5cc1704e668bb4609470804ee8d8
         ../.git/refs/remotes: {  }
         ../.git/refs/remotes/origin:
             ../.git/refs/remotes/origin/HEAD: 73a00957034783b7b5c8294c54cd3e12
-            ../.git/refs/remotes/origin/master: 122b67cef86fb4ab89d093b921177ece
+            ../.git/refs/remotes/origin/master: 734f5cc1704e668bb4609470804ee8d8
         ../.git/refs/tags:
             ../.gitignore: d2b0a561e9fd2f48b7bdc30f546414d2
         ../.idea:
@@ -660,15 +668,16 @@ scan:
             ../.idea/modules.xml: ee9b38a94c7ee3e6dd87cc5f4f554a12
             ../.idea/redbox-scan.iml: c9bd9f053e6a09728e39aac3967676f1
             ../.idea/vcs.xml: 166acef3d301bd241d0d6da15bc5ad3c
-            ../.idea/workspace.xml: 8f708dd2d193efc46eecd83188c48d30
+            ../.idea/workspace.xml: c7deae913985dfc215e9f101777764b1
             ../.scrutinizer.yml: 3819efdd06cab3e70d75302039873bbe
             ../.travis.yml: 89871432a54c34d478141a4b925b8c66
             ../CHANGELOG.md: d175face9b7f7be7b01580e87dfe06e9
             ../composer.json: 1f02d6bd3f3459f250d127a7df359f34
             ../composer.lock: ca7db558a033837c4af7082baa0ab7c1
-        ../examples:
-            ../examples/basic.php: 98ed32bc4e7438657fafea982a28a04e
-            ../index.php: 94a8cd6786eeb08cb8581b502d7c4a75
+        ../examples: {  }
+        ../examples/assets:
+            ../examples/assets/data.yml: 9bc32921055dfa48218fdcb87329b0fd
+            ../examples/basic.php: a76bf35224e937e749868b2d65f74f37
             ../LICENSE: 23e963eace05cd6c5c4b0d9e3cce308d
             ../phpunit.xml: cc8b107d8a8302ca6a081f22b4c3c5dd
             ../README.md: 5ed8e23cb5ae9b4de9831925e8e088d4
@@ -695,8 +704,6 @@ scan:
             ../tests/DefaultAdaptorsTest.php: 02a205c2c3ac9154045161026bf96103
             ../tests/ScanServiceTest.php: c383ad55f4ebf6873f2414d4d5700d98
             ../tests.sh: b6b996ef491de8a44e41418e35e4acce
-        ../tmp:
-            ../tmp/data.yml: b48ed301bdb5a462d770957707d06396
         ../vendor:
             ../vendor/autoload.php: c251ae9198186d03daba172e7d484c3f
         ../vendor/bin:

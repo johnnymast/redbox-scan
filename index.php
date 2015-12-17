@@ -40,3 +40,6 @@ $scan->index($path);
 
 
 echo 'Path: '.$path."\n";
+
+
+

@@ -11,7 +11,7 @@ use Redbox\Scan\Report;
  *
  * @package Redbox\Scan\Adapter
  */
-class Filesystem extends AbstractAdapter
+class Filesystem implements AdapterInterface
 {
     /**
      * @var string

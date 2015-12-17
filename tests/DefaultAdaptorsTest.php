@@ -36,7 +36,4 @@ class DefaultAdaptorsTest extends Assets\TestBase
         $filesystem = new Scan\Adapter\Filesystem('somefile.yml');
         $this->assertFalse($filesystem->write());
     }
-
-
-
 }

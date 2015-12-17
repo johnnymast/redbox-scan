@@ -103,5 +103,11 @@ abstract class AbstractReport
         return $this->date;
     }
 
+    /**
+     * This function will convert our report into an array. This array
+     * could later be converted into any output the adaptor wishes.
+     *
+     * @return array
+     */
     abstract public function toArray();
 }

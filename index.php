@@ -1,46 +1,14 @@
 <?php
 require 'vendor/autoload.php';
-/*
-use Redbox\Cli\Cli as CLI;
 
-use Redbox\Scan\Adapter\Filesystem as FilesystemAdaptor;
-use Redbox\Scan;
-
-function commandLine() {
-    try {
-        $cli = new CLI;
-        $cli->arguments->add([
-            'path' => [
-                'prefix'       => 'p',
-                'longPrefix'   => 'path',
-                'description'  => 'Path to scan',
-                'defaultValue' => './',
-                'required'     => true,
-            ]
-        ]);
-        $cli->arguments->parse();
-        return $cli->arguments->get('path');
-
-
-    } catch (Exception $e) {
-        $cli->arguments->usage();
-    }
-}
-
-
-$path = commandLine();
-*/
-
-
+/**
+ * This file is temporary to the project it will go away and make way for
+ * examples directory showing you the ropes and also shows how to make custom adaptors
+ * for your needs.
+ */
 $path = "./";
 $scan = new Redbox\Scan\ScanService(new Redbox\Scan\Adapter\Filesystem('tmp/data.yml'));
 $scan->index($path);
-
-//$files = $scan->scan($path);
-
-
-echo 'Path: '.$path."\n";
-
 
 
 

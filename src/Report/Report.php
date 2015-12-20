@@ -18,4 +18,5 @@ class Report extends AbstractReport
             )
         );
     }
+
 }

@@ -99,6 +99,7 @@ class ScanService {
 
 
         // Todo: could throw exceptions for permission denied
+        // Todo: could crash not reliable
         $items = $adapter->read()['scan']['items'];
 
         /**
@@ -112,16 +113,18 @@ class ScanService {
         $new      = array();
         $modified = array();
 
-        foreach ($items as $path => $files) {
+        if (count($items) > 0) {
+            foreach ($items as $path => $files) {
 
-            $objects = new \RecursiveIteratorIterator(new Filesystem\RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
-            foreach ($objects as $object) {
-                if ($object->isFile() && isset($files[$object->getPathname()])) {
-                    if ($files[$object->getPathname()] != $object->getMD5Hash()) {
-                        $modified[] = $object;
+                $objects = new \RecursiveIteratorIterator(new Filesystem\RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
+                foreach ($objects as $object) {
+                    if ($object->isFile() && isset($files[$object->getPathname()])) {
+                        if ($files[$object->getPathname()] != $object->getMD5Hash()) {
+                            $modified[] = $object;
+                        }
+                    } elseif ($object->isFile() && !isset($files[$object->getPathname()])) {
+                        $new[] = $object;
                     }
-                } elseif ($object->isFile() && !isset($files[$object->getPathname()])) {
-                    $new[] = $object;
                 }
             }
         }

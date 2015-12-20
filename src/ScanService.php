@@ -1,6 +1,5 @@
 <?php
 namespace Redbox\Scan;
-use Redbox\Scan\FileSystem;
 
 /**
  * The ScanService indexes of scans the filesystem for changes. If there are
@@ -87,7 +86,6 @@ class ScanService {
      * There should be a report from the history to call this function.
      *
      * @param Adapter\AdapterInterface|null $adapter
-     * @throws Exception\RuntimeException
      * @return Report\Report
      */
     public function scan(Adapter\AdapterInterface $adapter = null)

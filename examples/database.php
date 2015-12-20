@@ -11,7 +11,8 @@ class Database extends \mysqli implements Adapter\AdapterInterface
 
     public function __construct($host, $user, $pass, $db)
     {
-        parent::__construct($host, $user, $pass, $db);
+        parent::__construct();
+        parent::connect($host, $user, $pass, $db);
     }
 
     private function getScan()
@@ -31,7 +32,7 @@ class Database extends \mysqli implements Adapter\AdapterInterface
         $result = $this->query($sql);
         if ($result) {
             while ($item = $result->fetch_object()) {
-                if (isset($items[$item->itemfolder]) == false)
+                if (isset($items[$item->itemfolder]) === false)
                     $items[$item->itemfolder] = array();
 
                 $items[$item->itemfolder][$item->itemname] = $item->md5hash;

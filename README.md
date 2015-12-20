@@ -3,6 +3,7 @@
 # redbox-scan
 Nothing here yet
 
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
 ## Author
 

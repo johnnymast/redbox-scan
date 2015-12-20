@@ -86,6 +86,7 @@ class ScanService {
      *
      * @param Adapter\AdapterInterface|null $adapter
      * @throws Exception\RuntimeException
+     * @return Report\Report;
      */
     public function scan(Adapter\AdapterInterface $adapter = null)
     {
@@ -96,24 +97,36 @@ class ScanService {
             $adapter = $this->getAdapter();
         }
 
+
         // Todo: could throw exceptions for permission denied
         $items = $adapter->read()['scan']['items'];
 
+        /**
+         * Start building a basic report
+         */
+        $report = new Report\Report();
+        $report->setName('a scan');
+        $report->setDate(new \DateTime());
+        $report->setPath($adapter->read()['scan']['path']);
+
+        $new      = array();
+        $modified = array();
+
         foreach ($items as $path => $files) {
-            if ($path != './tmp') {
-                continue;
-            }
 
             $objects = new \RecursiveIteratorIterator(new Filesystem\RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
             foreach ($objects as $object) {
                 if ($object->isFile() && isset($files[$object->getPathname()])) {
                     if ($files[$object->getPathname()] != $object->getMD5Hash()) {
-                        echo ('Veranderd: '.$object->getPathname())."\r\n";
+                        $modified[] = $object;
                     }
                 } elseif ($object->isFile() && !isset($files[$object->getPathname()])) {
-                        echo 'Nieuw bestand: '.$object->getPathname()."\r\n";
+                    $new[] = $object;
                 }
             }
         }
+        $report->setModifiedFiles($modified);
+        $report->setNewfiles($new);
+        return $report;
     }
 }

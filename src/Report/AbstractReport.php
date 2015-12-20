@@ -16,7 +16,16 @@ abstract class AbstractReport
      *
      * @var array
      */
-    protected $items;
+    protected $items = [];
+
+    /**
+     * @var array
+     */
+    protected $newfiles = [];
+    /**
+     * @var array
+     */
+    protected $modifiedFiles = [];
 
     /**
      * Report title
@@ -45,6 +54,22 @@ abstract class AbstractReport
     public function setItems($items)
     {
         $this->items = $items;
+    }
+
+    /**
+     * @param array $newfiles
+     */
+    public function setNewfiles($newfiles)
+    {
+        $this->newfiles = $newfiles;
+    }
+
+    /**
+     * @param array $modifiedFiles
+     */
+    public function setModifiedFiles($modifiedFiles)
+    {
+        $this->modifiedFiles = $modifiedFiles;
     }
 
     /**
@@ -93,6 +118,22 @@ abstract class AbstractReport
     public function getPath()
     {
         return $this->path;
+    }
+
+    /**
+     * @return array
+     */
+    public function getNewfiles()
+    {
+        return $this->newfiles;
+    }
+
+    /**
+     * @return array
+     */
+    public function getModifiedFiles()
+    {
+        return $this->modifiedFiles;
     }
 
     /**

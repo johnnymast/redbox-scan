@@ -40,6 +40,7 @@ class ScanService {
      * @param string $path
      * @param Adapter\AdapterInterface|null $adapter
      * @throws Exception\RuntimeException
+     * @return Report\Report;
      */
     public function index($path = "", Adapter\AdapterInterface $adapter = null)
     {
@@ -78,6 +79,7 @@ class ScanService {
         }
         $report->setItems($items);
         $adapter->write($report);
+        return $report;
     }
 
     /**
@@ -86,7 +88,7 @@ class ScanService {
      *
      * @param Adapter\AdapterInterface|null $adapter
      * @throws Exception\RuntimeException
-     * @return Report\Report;
+     * @return Report\Report
      */
     public function scan(Adapter\AdapterInterface $adapter = null)
     {

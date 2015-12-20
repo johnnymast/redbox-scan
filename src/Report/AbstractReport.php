@@ -1,7 +1,7 @@
 <?php
 namespace Redbox\Scan\Report;
 
-// TODO: Make this class iteratable on the items so we can make the codebase in ScanService its scan() smaller
+// TODO: Make this class inevitable on the items so we can make the codebase in ScanService its scan() smaller
 
 /**
  * This AbstractReport report class contains all the base tools

@@ -8,16 +8,22 @@ ini_set('display_errors', true);
  * examples directory showing you the ropes and also shows how to make custom adaptors
  * for your needs.
  */
-$path = dirname(__FILE__)."/assets";
-$adapter = new Redbox\Scan\Adapter\Ftp('host', 'username', 'password', '/httpdocs/data.yml');
+$path = dirname(__FILE__)."/assets"; require_once 'config.php';
+$adapter = new Redbox\Scan\Adapter\Ftp($host, $username, $password, '/httpdocs/data.yml');
 
-if ($adapter->authenticate()) {
-    $scan = new Redbox\Scan\ScanService($adapter);
-    $report = $scan->scan();
+try {
 
-    print_r($report->getModifiedFiles());
+    if ($adapter->authenticate()) {
+        $scan = new Redbox\Scan\ScanService($adapter);
+        $report = $scan->scan();
 
-} else {
-    die("Could not authorize to the ftp server");
+        print_r($report->getModifiedFiles());
+
+    } else {
+        die("Could not authorize to the ftp server");
+    }
+    $scan->index($path);
+} catch (Exception $e) {
+    print '<pre>';
+    print_r($e);
 }
-$scan->index($path);

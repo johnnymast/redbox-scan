@@ -9,7 +9,7 @@ ini_set('display_errors', true);
  * for your needs.
  */
 $path = dirname(__FILE__)."/assets";
-$adapter = new Redbox\Scan\Adapter\Ftp('locovsworld.com', 'johnnymast', 'supp3rman', '/httpdocs/data.yml');
+$adapter = new Redbox\Scan\Adapter\Ftp('host', 'username', 'password', '/httpdocs/data.yml');
 
 if ($adapter->authenticate()) {
     $scan = new Redbox\Scan\ScanService($adapter);

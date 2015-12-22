@@ -73,31 +73,22 @@ class Ftp implements AdapterInterface
      */
     public function read() {
         $stream = fopen('php://memory', 'w');
-        $fp = fopen('/tmp/file', 'w');
         $data   = '';
         if (!$stream) return false;
         if ($ret = ftp_nb_fget($this->handle, $stream, $this->filename, self::FTP_MODE_ASCII)) {
             while ($ret === FTP_MOREDATA) {
-               // $data .= '';
-               // rewind($stream);
-               // echo $data;
                 rewind($stream);
                 $data .=  stream_get_contents($stream);
                 $ret = ftp_nb_continue($this->handle);
             }
-
             if ($ret != FTP_FINISHED) {
-                die('false: '.$data);
                return false;
             } else {
                 $data = Yaml\Yaml::parse($data);
                 return $data;
             }
-
         }
-
-        $data = Yaml\Yaml::parse($data);
-        return $data;
+        return false;
     }
 
     // TODO: This should be an universial exception

@@ -5,6 +5,24 @@ Nothing here yet
 
 ![Image of Yaktocat](https://raw.githubusercontent.com/johnnymast/redbox-scan/release/1.0/examples/assets/logo.png)
 
+
+## Installation
+
+Using [composer](https://packagist.org/packages/redbox/scan):
+
+```bash
+$ composer require redbox/scan
+```
+## Requirements
+
+The following versions of PHP are supported by this version.
+
++ PHP 5.4
++ PHP 5.5
++ PHP 5.6
++ HHVM
+
+
 ## Author
 
 Johnny Mast

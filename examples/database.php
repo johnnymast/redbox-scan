@@ -1,6 +1,5 @@
 <?php
 require '../vendor/autoload.php';
-
 use Redbox\Scan\Adapter;
 use Redbox\Scan\Report\Report;
 
@@ -52,7 +51,6 @@ class Database extends \mysqli implements Adapter\AdapterInterface
         return $report->toArray();
     }
 
-    // TODO: This should be an universial exception
     /**
      * Write the report to the filesystem so we can reuse it
      * at a later stace when we invoke Redbox\Scan\ScanService's scan() method.
@@ -93,7 +91,6 @@ class Database extends \mysqli implements Adapter\AdapterInterface
                         }
                     }
                 }
-
             }
             return false;
         }
@@ -156,8 +153,7 @@ if (class_exists('mysqli')) {
         }
         echo '</ul>';
 
-
-        file_put_contents($timefile, ''); /* Keep it empty */
+        file_put_contents($timefile, '');
         unlink($tmpfile);
 
 

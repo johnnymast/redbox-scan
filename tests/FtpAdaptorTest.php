@@ -42,22 +42,4 @@ class FtpAdaptorTest extends Assets\TestBase
         $adapter->authenticate();
         unset($adapter);
     }
-
-    /**
-     * Validate that read files on non existing files
-     */
-    public function test_ftp_should_return_false_if_read_fails()
-    {
-
-        $adapter = new Adapter\Ftp (
-            $host     = 'ftp.kernel.org',
-            $username = 'anonymous',
-            $password = 'anonymous',
-            $file = '/'
-        );
-        $adapter->authenticate();
-        $this->assertFalse($adapter->read());
-
-        unset($adapter);
-    }
 }

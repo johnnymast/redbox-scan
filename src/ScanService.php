@@ -97,7 +97,6 @@ class ScanService {
             $adapter = $this->getAdapter();
         }
 
-
         // Todo: could throw exceptions for permission denied
         // Todo: could crash not reliable
         $items = $adapter->read()['scan']['items'];

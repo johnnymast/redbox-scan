@@ -95,7 +95,7 @@ class Ftp implements AdapterInterface
      */
     public function read()
     {
-        if (!$this->handle === false)
+        if ($this->handle === false)
             return false;
 
         $stream = fopen('php://memory', 'w');

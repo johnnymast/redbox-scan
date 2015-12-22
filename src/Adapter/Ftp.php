@@ -2,7 +2,7 @@
 namespace Redbox\Scan\Adapter;
 use Redbox\Scan\Exception;
 use Redbox\Scan\Report;
-use Symfony\Component\Yaml as Yamal;
+use Symfony\Component\Yaml\Yaml;
 
 /**
  * Read and write files from a given ftp location.
@@ -53,12 +53,18 @@ class Ftp implements AdapterInterface
     /**
      * We should be so nice to terminate the construction of we are done.
      */
-    public function __destruct() {
+    public function __destruct()
+    {
         if ($this->handle) {
             ftp_close($this->handle);
         }
     }
 
+    /**
+     * Authenticate to the ftp server.
+     *
+     * @return bool
+     */
     public function authenticate()
     {
 
@@ -77,7 +83,7 @@ class Ftp implements AdapterInterface
         }
 
         if ($authenticated == false) {
-            throw new Exception\RuntimeException('Could not connect to host: '.$this->host);
+            throw new Exception\RuntimeException('Could not authenticate to: '.$this->host);
         }
         return true;
     }
@@ -87,7 +93,8 @@ class Ftp implements AdapterInterface
      *
      * @return array
      */
-    public function read() {
+    public function read()
+    {
         if (!$this->handle === false)
             return false;
 
@@ -120,7 +127,8 @@ class Ftp implements AdapterInterface
      * @param Report\Report|null $report
      * @return bool
      */
-    public function write(Report\Report $report = null) {
+    public function write(Report\Report $report = null)
+    {
         if ($this->handle === false)
             return false;
 
@@ -143,5 +151,4 @@ class Ftp implements AdapterInterface
         }
         return false;
     }
-
 }

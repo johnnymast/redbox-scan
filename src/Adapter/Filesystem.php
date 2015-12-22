@@ -1,9 +1,7 @@
 <?php
 namespace Redbox\Scan\Adapter;
-use Symfony\Component\Yaml;
+use Symfony\Component\Yaml\Yaml;
 use Redbox\Scan\Report;
-
-
 
 /**
  * This is the most basic adaptor on earth. Just read and write
@@ -32,12 +30,12 @@ class Filesystem implements AdapterInterface
      *
      * @return array
      */
-    public function read() {
-        $data = Yaml\Yaml::parse(file_get_contents($this->filename));
+    public function read()
+    {
+        $data = Yaml::parse(file_get_contents($this->filename));
         return $data;
     }
 
-    // TODO: This should be an universial exception
     /**
      * Write the report to the filesystem so we can reuse it
      * at a later stace when we invoke Redbox\Scan\ScanService's scan() method.
@@ -45,10 +43,11 @@ class Filesystem implements AdapterInterface
      * @param Report\Report|null $report
      * @return bool
      */
-    public function write(Report\Report $report = null) {
+    public function write(Report\Report $report = null)
+    {
         if ($report) {
             $data = $report->toArray();
-            $data = Yaml\Yaml::dump($data, 99);
+            $data = Yaml::dump($data, 99);
             file_put_contents($this->filename, $data);
             return true;
         }

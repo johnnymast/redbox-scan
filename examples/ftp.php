@@ -15,15 +15,13 @@ try {
 
     if ($adapter->authenticate()) {
         $scan = new Redbox\Scan\ScanService($adapter);
-        $report = $scan->scan();
+        $report = $scan->index($path);
 
-        print_r($report->getModifiedFiles());
-
-    } else {
-        die("Could not authorize to the ftp server");
+        //print_r($report->getModifiedFiles());
     }
-    $scan->index($path);
+
+    //$scan->index($path);
 } catch (Exception $e) {
-    print '<pre>';
+    print '@@<pre>';
     print_r($e);
 }

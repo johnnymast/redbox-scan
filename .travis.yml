@@ -8,6 +8,7 @@ php:
 
 env:
   - COMPOSER_OPTS=""
+  - IS_TRAVIS="1"
 
 before_install:
   - php /home/travis/.phpenv/versions/hhvm/bin/composer self-update

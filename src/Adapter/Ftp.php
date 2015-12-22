@@ -1,6 +1,7 @@
 <?php
 namespace Redbox\Scan\Adapter;
 use Symfony\Component\Yaml;
+use Redbox\Scan\Exception;
 use Redbox\Scan\Report;
 
 /**
@@ -14,7 +15,7 @@ class Ftp implements AdapterInterface
     const FTP_MODE_ASCII  = FTP_ASCII;
     const FTP_MODE_BINARY = FTP_BINARY;
 
-    protected $host = '';
+    protected $host     = '';
     protected $username = '';
     protected $password = '';
     protected $filename = '';
@@ -58,12 +59,27 @@ class Ftp implements AdapterInterface
         }
     }
 
-    public function authenticate() {
-        $this->handle = ftp_connect($this->host, $this->port, $this->timeout);
-        if (!$this->handle) // TODO: Reevaluate this
-            return false;
+    public function authenticate()
+    {
 
-        return ftp_login($this->handle, $this->username, $this->password);
+        set_error_handler(
+            function () {
+            }
+        );
+
+        $this->handle  = ftp_connect($this->host, $this->port, $this->timeout);
+        $authenticated = ftp_login($this->handle, $this->username, $this->password);
+
+        restore_error_handler();
+
+        if ($this->handle === false) {
+            throw new Exception\RuntimeException('Could not connect to host: '.$this->host);
+        }
+
+        if ($authenticated == false) {
+            throw new Exception\RuntimeException('Could not connect to host: '.$this->host);
+        }
+        return true;
     }
 
     /**
@@ -72,9 +88,14 @@ class Ftp implements AdapterInterface
      * @return array
      */
     public function read() {
+        if (!$this->handle === false)
+            return false;
+
         $stream = fopen('php://memory', 'w');
+        if (!$stream)
+            return false;
+
         $data   = '';
-        if (!$stream) return false;
         if ($ret = ftp_nb_fget($this->handle, $stream, $this->filename, self::FTP_MODE_ASCII)) {
             while ($ret === FTP_MOREDATA) {
                 rewind($stream);
@@ -100,7 +121,11 @@ class Ftp implements AdapterInterface
      * @return bool
      */
     public function write(Report\Report $report = null) {
+        if ($this->handle === false)
+            return false;
+
         if ($report) {
+
             $stream = fopen('php://memory', 'w+');
             if (!$stream) return false;
             $data = $report->toArray();
@@ -108,7 +133,6 @@ class Ftp implements AdapterInterface
 
             fwrite($stream, $data);
             rewind($stream);
-       //     fclose($stream);
 
             if(ftp_fput($this->handle, $this->filename, $stream, self::FTP_MODE_ASCII)) {
                 return true;

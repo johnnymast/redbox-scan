@@ -102,7 +102,6 @@ class ScanService {
         // Todo: could crash not reliable
         $items = $adapter->read()['scan']['items'];
 
-        print_r($items);
         /**
          * Start building a basic report
          */

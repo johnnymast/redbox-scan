@@ -160,9 +160,6 @@ if (class_exists('mysqli')) {
         file_put_contents($timefile, ''); /* Keep it empty */
         unlink($tmpfile);
 
-       // $x = $databaseAdaptor->read();
-       // print_r($x->getItems());
-
 
     } catch (Exception $e) {
         print '<pre>';

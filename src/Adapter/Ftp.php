@@ -1,8 +1,8 @@
 <?php
 namespace Redbox\Scan\Adapter;
-use Symfony\Component\Yaml;
 use Redbox\Scan\Exception;
 use Redbox\Scan\Report;
+use Symfony\Component\Yaml as Yamal;
 
 /**
  * Read and write files from a given ftp location.
@@ -92,6 +92,7 @@ class Ftp implements AdapterInterface
             return false;
 
         $stream = fopen('php://memory', 'w');
+
         if (!$stream)
             return false;
 
@@ -105,14 +106,13 @@ class Ftp implements AdapterInterface
             if ($ret != FTP_FINISHED) {
                return false;
             } else {
-                $data = Yaml\Yaml::parse($data);
+                $data = Yaml::parse($data);
                 return $data;
             }
         }
         return false;
     }
 
-    // TODO: This should be an universial exception
     /**
      * Write the report to the filesystem so we can reuse it
      * at a later stace when we invoke Redbox\Scan\ScanService's scan() method.
@@ -129,16 +129,17 @@ class Ftp implements AdapterInterface
             $stream = fopen('php://memory', 'w+');
             if (!$stream) return false;
             $data = $report->toArray();
-            $data = Yaml\Yaml::dump($data, 99);
+            $data = Yaml::dump($data, 99);
 
             fwrite($stream, $data);
             rewind($stream);
 
-            if(ftp_fput($this->handle, $this->filename, $stream, self::FTP_MODE_ASCII)) {
+            if (ftp_fput($this->handle, $this->filename, $stream, self::FTP_MODE_ASCII)) {
                 return true;
             } else {
                 return false;
             }
+
         }
         return false;
     }

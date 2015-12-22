@@ -16,9 +16,7 @@ class FtpAdaptorTest extends Assets\TestBase
      */
     public function test_ftp_failing_connections_should_throw_a_exception()
     {
-        if (getenv('IS_TRAVIS') == true) {
-            $this->markTestSkipped('This test is only for testing');
-        }
+
         $adapter = new Adapter\Ftp (
             $host = 'example._com',
             $username = '',
@@ -34,9 +32,7 @@ class FtpAdaptorTest extends Assets\TestBase
      */
     public function test_ftp_invalid_authentication_should_throw_a_exception()
     {
-        if (getenv('IS_TRAVIS') == true) {
-            $this->markTestSkipped('This test is only for testing');
-        }
+
         $adapter = new Adapter\Ftp (
             $host = 'ftp.kernel.org',
             $username = 'ad',
@@ -50,10 +46,9 @@ class FtpAdaptorTest extends Assets\TestBase
     /**
      * Validate that read files on non existing files
      */
-    public function test_ftp_should_return_false_if_read_fails() {
-        if (getenv('IS_TRAVIS') == true) {
-            $this->markTestSkipped('This test is only for testing');
-        }
+    public function test_ftp_should_return_false_if_read_fails()
+    {
+
         $adapter = new Adapter\Ftp (
             $host     = 'ftp.kernel.org',
             $username = 'anonymous',

@@ -64,7 +64,6 @@ class ScanService {
         $activePath = $path;
         $items = array();
 
-        die('@@'.$path);
         $objects = new \RecursiveIteratorIterator(new Filesystem\RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
         foreach ($objects as $name => $object) {
             if ($object->getFilename() == '.' || $object->getFilename() == '..') {

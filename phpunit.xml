@@ -6,12 +6,13 @@
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
-         processIsolation="false"
+         stopOnError="false"
          stopOnFailure="false"
+         processIsolation="false"
          syntaxCheck="false"
 >
     <testsuites>
-        <testsuite name="Redbox Scan test suite">
+        <testsuite name="local">
             <directory suffix=".php">./tests/</directory>
         </testsuite>
         <testsuite name="travis">

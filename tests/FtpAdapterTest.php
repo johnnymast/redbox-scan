@@ -2,13 +2,16 @@
 namespace Redbox\Scan\Tests;
 use Redbox\Scan\Exception;
 use Redbox\Scan\Adapter;
+use Redbox\Scan;
 
 /**
+ * This clas will run tests against the default Ftp adapter. Please not that this
+ * tests will be skipped on travis. You can only run these tests on your local machine.
  *
  * @coversDefaultClass  \Redbox\Scan\Adaptor\Ftp
  * @package Redbox\Scan\Tests
  */
-class FtpAdaptorTest extends \PHPUnit_Framework_TestCase
+class FtpAdapterTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Validate that vailding connections should throw a Exception\RuntimeException

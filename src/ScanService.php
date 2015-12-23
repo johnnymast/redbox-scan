@@ -77,7 +77,9 @@ class ScanService {
             }
         }
         $report->setItems($items);
-        $adapter->write($report);
+        if ($adapter->write($report) === false) {
+            return false;
+        }
         return $report;
     }
 
@@ -99,7 +101,11 @@ class ScanService {
 
         // Todo: could throw exceptions for permission denied
         // Todo: could crash not reliable
-        $items = $adapter->read()['scan']['items'];
+        $report = $adapter->read();
+        if ($report === false)
+            return false;
+
+        $items = $report->getItems();
 
         /**
          * Start building a basic report

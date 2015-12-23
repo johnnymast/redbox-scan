@@ -14,6 +14,7 @@ class AuthenticationServiceTest extends \PHPUnit_Framework_TestCase
         return new Scan\ScanService($adapter);
     }
 
+
     /**
      * This test will make sure that an RuntimeException is thrown if there was no Adapter
      * set via either the constructor or via the index method.

@@ -48,7 +48,6 @@ class Filesystem implements AdapterInterface
      */
     public function write(Report\Report $report = null)
     {
-        var_dump('write to file :: '.$this->filename);
 
         if ($report) {
             $data = $report->toArray();

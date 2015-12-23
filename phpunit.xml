@@ -17,7 +17,7 @@
         </testsuite>
         <testsuite name="travis">
             <directory suffix=".php">./tests/</directory>
-            <exclude>./tests/FtpAdaptorTest.php</exclude>
+            <exclude>./tests/FtpAdapterTest.php</exclude>
         </testsuite>
     </testsuites>
     <filter>

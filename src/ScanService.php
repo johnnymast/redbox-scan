@@ -64,8 +64,6 @@ class ScanService {
         $activePath = $path;
         $items = array();
 
-        var_dump("@@dit is raar: ".$path);
-
         $objects = new \RecursiveIteratorIterator(new Filesystem\RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
         foreach ($objects as $name => $object) {
             if ($object->getFilename() == '.' || $object->getFilename() == '..') {

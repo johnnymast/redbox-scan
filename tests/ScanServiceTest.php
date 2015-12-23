@@ -1,9 +1,19 @@
 <?php
 namespace Redbox\Scan\Tests;
 use Redbox\Scan\Exception;
+use Redbox\Scan;
 
-class AuthenticationServiceTest extends Assets\TestBase
+class AuthenticationServiceTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * Return a scan service instance
+     *
+     * @return Scan\ScanService
+     */
+    private function getNewService(Scan\Adapter\AdapterInterface $adapter = NULL) {
+        return new Scan\ScanService($adapter);
+    }
+
     /**
      * This test will make sure that an RuntimeException is thrown if there was no Adapter
      * set via either the constructor or via the index method.

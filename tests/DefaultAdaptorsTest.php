@@ -3,8 +3,18 @@ namespace Redbox\Scan\Tests;
 use Redbox\Scan\Exception;
 use Redbox\Scan;
 
-class DefaultAdaptorsTest extends Assets\TestBase
+class DefaultAdaptorsTest extends \PHPUnit_Framework_TestCase
 {
+
+    /**
+     * Return a scan service instance
+     *
+     * @return Scan\ScanService
+     */
+    private function getNewService(Scan\Adapter\AdapterInterface $adapter = NULL) {
+        return new Scan\ScanService($adapter);
+    }
+
 
     // TODO: Update comments
 

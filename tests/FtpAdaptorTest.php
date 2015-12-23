@@ -8,7 +8,7 @@ use Redbox\Scan\Adapter;
  * @coversDefaultClass  \Redbox\Scan\Adaptor\Ftp
  * @package Redbox\Scan\Tests
  */
-class FtpAdaptorTest extends Assets\TestBase
+class FtpAdaptorTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Validate that vailding connections should throw a Exception\RuntimeException

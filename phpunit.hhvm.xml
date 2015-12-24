@@ -12,13 +12,9 @@
          verbose="true"
 >
     <testsuites>
-        <testsuite name="abc/tests">
+        <testsuite name="travis">
             <directory suffix=".php">./tests/</directory>
+            <exclude>./tests/FtpAdapterTest.php</exclude>
         </testsuite>
     </testsuites>
-    <filter>
-        <whitelist>
-            <directory suffix=".php">./src/</directory>
-        </whitelist>
-    </filter>
 </phpunit>

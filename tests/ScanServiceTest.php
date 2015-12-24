@@ -1,8 +1,9 @@
 <?php
 namespace Redbox\Scan\Tests;
+/*
 use Redbox\Scan\Exception;
 use Redbox\Scan;
-
+*/
 /**
  * This class will run tests against the ScanService class.
  *

@@ -8,13 +8,14 @@ use Redbox\Scan;
  * This class will run tests against the ScanService class.
  *
  */
-class ScanServiceTest extends \PHPUnit_Framework_TestCase
-{
+//class ScanServiceTest extends \PHPUnit_Framework_TestCase
+//{
 
+/*
     public function test_true() {
         return $this->assertFalse(false);
     }
-
+*/
     /**
      * Return a scan service instance. This instance will be used in the tests
      * below.
@@ -93,4 +94,4 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(@$service->index(dirname(__FILE__).'/Assets', new Scan\Adapter\Filesystem('I do not exist \'s invalid _ @()))@903 file / \ ')));
     }
      */
-}
+//}

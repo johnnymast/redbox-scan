@@ -21,9 +21,4 @@
             </exclude>
         </testsuite>
     </testsuites>
-    <groups>
-        <exclude>
-            <group>ExcludeFromHHVM</group>
-        </exclude>
-    </groups>
 </phpunit>

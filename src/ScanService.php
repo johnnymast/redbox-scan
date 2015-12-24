@@ -74,7 +74,7 @@ class ScanService {
                 $activePath = $object->getPathName();
                 $items[$activePath] = array();
             } else {
-                $items[$activePath][$object->getPathname()] = 'A';// $object->getMD5Hash();
+                $items[$activePath][$object->getPathname()] = $object->getMD5Hash();
             }
         }
         $report->setItems($items);

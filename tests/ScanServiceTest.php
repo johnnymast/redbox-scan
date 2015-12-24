@@ -12,6 +12,10 @@ use Redbox\Scan;
 class AuthenticationServiceTest extends \PHPUnit_Framework_TestCase
 {
 
+    public function tests_true() {
+        return $this->assertFalse(false);
+    }
+
     /**
      * Return a scan service instance. This instance will be used in the tests
      * below.

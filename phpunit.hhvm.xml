@@ -16,6 +16,8 @@
             <directory suffix=".php">./tests/</directory>
             <exclude>
                 <file>./tests/FtpAdapterTest.php</file>
+                <file>./tests/ScanServiceTest.php</file>
+                <file>./tests/FilesystemAdapterTest.php</file>
             </exclude>
         </testsuite>
     </testsuites>

@@ -16,7 +16,8 @@ class RecursiveDirectoryIterator extends \RecursiveDirectoryIterator
      */
     public function __construct($path = "")
     {
-        parent::__construct($path, 0);
         $this->setInfoClass('\Redbox\Scan\Filesystem\FileInfo');
+        parent::__construct($path, 0);
+
     }
 }

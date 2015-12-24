@@ -65,7 +65,7 @@ class ScanService {
         $items = array();
 
         $objects = new \RecursiveIteratorIterator(new Filesystem\RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
-        return false;
+
         foreach ($objects as $name => $object) {
             if ($object->getFilename() == '.' || $object->getFilename() == '..') {
                 continue;
@@ -74,7 +74,7 @@ class ScanService {
                 $activePath = $object->getPathName();
                 $items[$activePath] = array();
             } else {
-                $items[$activePath][$object->getPathname()] = $object->getMD5Hash();
+                $items[$activePath][$object->getPathname()] = 'A';// $object->getMD5Hash();
             }
         }
         $report->setItems($items);

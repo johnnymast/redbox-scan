@@ -10,6 +10,7 @@ use Redbox\Scan;
  *
  * @coversDefaultClass  \Redbox\Scan\Adaptor\Ftp
  * @package Redbox\Scan\Tests
+ * @group ExcludeFromHHVM
  */
 class FtpAdapterTest extends \PHPUnit_Framework_TestCase
 {

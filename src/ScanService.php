@@ -63,7 +63,7 @@ class ScanService {
 
         $activePath = $path;
         $items = array();
-        return false;
+
         $objects = new \RecursiveIteratorIterator(new Filesystem\RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
         foreach ($objects as $name => $object) {
             if ($object->getFilename() == '.' || $object->getFilename() == '..') {
@@ -77,6 +77,7 @@ class ScanService {
             }
         }
         $report->setItems($items);
+        return false;
         if ($adapter->write($report) === false) {
             return false;
         }

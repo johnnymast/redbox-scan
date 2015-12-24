@@ -88,6 +88,6 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
     public function test_service_scan_returns_false_if_writing_the_adaptor_fails()
     {
         $service = $this->getNewService();
-     //   $this->assertFalse(@$service->index(dirname(__FILE__).'/Assets', new Scan\Adapter\Filesystem('I do not exist \'s invalid _ @()))@903 file / \ ')));
+        $this->assertFalse(@$service->index(dirname(__FILE__).'/Assets', new Scan\Adapter\Filesystem('I do not exist \'s invalid _ @()))@903 file / \ ')));
     }
 }

@@ -14,7 +14,9 @@
     <testsuites>
         <testsuite name="travis">
             <directory>./tests/</directory>
-            <exclude>./tests/FtpAdapterTest.php</exclude>
+            <exclude>
+                <file>./tests/FtpAdapterTest.php</file>
+            </exclude>
         </testsuite>
     </testsuites>
 </phpunit>

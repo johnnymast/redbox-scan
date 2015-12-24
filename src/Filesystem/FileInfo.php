@@ -21,6 +21,8 @@ class FileInfo extends \SplFileInfo
      */
     public function getMD5Hash()
     {
+        var_dump('getMD5Hash called');
+        return 'abc';
         if ($this->isFile()) {
             return md5_file($this->getRealPath());
         }

@@ -11,7 +11,7 @@ use Redbox\Scan;
  * tests will be skipped on travis. You can only run these tests on your local machine.
  *
  */
-class FtpAdapterTest extends \PHPUnit_Framework_TestCase
+class FtpAdapterTests extends \PHPUnit_Framework_TestCase
 {
     /**
      * Validate that vailding connections should throw a Exception\RuntimeException

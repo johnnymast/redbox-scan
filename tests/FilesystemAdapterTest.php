@@ -42,13 +42,12 @@ class FilesystemAdapterTest extends \PHPUnit_Framework_TestCase
     /**
      * Test that Filesystem::read() returns false if a non existing source file
      * is passed to the adapter.
-
+     */
     public function test_filesystem_read_fails_on_unknown_file()
     {
         $filesystem = new Scan\Adapter\Filesystem('I do not exist');
         $this->assertFalse($filesystem->read());
     }
-     *  */
 
     /**
      * Test that Yaml throws an ParseException if the yml file was corrupted.

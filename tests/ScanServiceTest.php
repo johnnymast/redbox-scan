@@ -7,8 +7,6 @@ use Redbox\Scan;
 /**
  * This class will run tests against the ScanService class.
  *
- * @coversDefaultClass Scan\ScanService
- * @package Redbox\Scan\Tests
  */
 class ScanServiceTest extends \PHPUnit_Framework_TestCase
 {

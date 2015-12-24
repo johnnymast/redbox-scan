@@ -37,7 +37,7 @@ class AuthenticationServiceTest extends \PHPUnit_Framework_TestCase
         $service = $this->getNewService();
         $service->index("/");
     }
-     *  */
+     */
 
     /**
      * This test will make sure that an RuntimeException is thrown if there was no Adapter
@@ -89,6 +89,5 @@ class AuthenticationServiceTest extends \PHPUnit_Framework_TestCase
         $service = $this->getNewService();
         $this->assertFalse(@$service->index(dirname(__FILE__).'/Assets', new Scan\Adapter\Filesystem('I do not exist \'s invalid _ @()))@903 file / \ ')));
     }
-     *  */
-
+     */
 }

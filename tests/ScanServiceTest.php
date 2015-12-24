@@ -12,7 +12,7 @@ use Redbox\Scan;
 class AuthenticationServiceTest extends \PHPUnit_Framework_TestCase
 {
 
-    public function tests_true() {
+    public function test_true() {
         return $this->assertFalse(false);
     }
 

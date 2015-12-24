@@ -3,7 +3,7 @@ language: php
 sudo: false
 
 php:
-  - hhvm 3.8.0-dev
+  - hhvm
   - 5.6
   - 7
 

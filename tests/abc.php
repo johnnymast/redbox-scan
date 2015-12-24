@@ -1,5 +1,5 @@
-<?php
-namespace Redbox\Scan\Tests;
+//
+//namespace Redbox\Scan\Tests;
 /*
 use Redbox\Scan\Exception;
 use Redbox\Scan\Adapter;

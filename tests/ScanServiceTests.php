@@ -1,33 +1,31 @@
 <?php
 namespace Redbox\Scan\Tests;
-/*
 use Redbox\Scan\Exception;
 use Redbox\Scan;
-*/
+
 /**
  * This class will run tests against the ScanService class.
  *
  */
-//class ScanServiceTest extends \PHPUnit_Framework_TestCase
-//{
+class ScanServiceTest extends \PHPUnit_Framework_TestCase
+{
 
-/*
+
     public function test_true() {
         return $this->assertFalse(false);
     }
-*/
+
     /**
      * Return a scan service instance. This instance will be used in the tests
      * below.
      *
      * @param Scan\Adapter\AdapterInterface|NULL $adapter
      * @return Scan\ScanService
-
+     */
     private function getNewService(Scan\Adapter\AdapterInterface $adapter = NULL)
     {
         return new Scan\ScanService($adapter);
     }
-     */
 
     /**
      * This test will make sure that an RuntimeException is thrown if there was no Adapter
@@ -94,4 +92,4 @@ use Redbox\Scan;
         $this->assertFalse(@$service->index(dirname(__FILE__).'/Assets', new Scan\Adapter\Filesystem('I do not exist \'s invalid _ @()))@903 file / \ ')));
     }
      */
-//}
+}

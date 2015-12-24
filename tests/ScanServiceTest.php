@@ -10,7 +10,7 @@ use Redbox\Scan;
  * @coversDefaultClass Scan\ScanService
  * @package Redbox\Scan\Tests
  */
-class AuthenticationServiceTest extends \PHPUnit_Framework_TestCase
+class ScanServiceTest extends \PHPUnit_Framework_TestCase
 {
 
     public function test_true() {

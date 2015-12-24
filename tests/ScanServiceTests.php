@@ -33,13 +33,13 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
      *
      * @expectedException        \Redbox\Scan\Exception\RuntimeException
      * @expectedExceptionMessage An Adaptor must been set before calling index()
-
+     */
     public function test_index_should_throw_runtime_exception()
     {
         $service = $this->getNewService();
         $service->index("/");
     }
-     */
+
 
     /**
      * This test will make sure that an RuntimeException is thrown if there was no Adapter
@@ -47,18 +47,18 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
      *
      * @expectedException        \Redbox\Scan\Exception\RuntimeException
      * @expectedExceptionMessage An Adaptor must been set before calling scan()
-
+     */
     public function test_scan_should_throw_runtime_exception()
     {
         $service = $this->getNewService();
         $service->scan();
     }
-     */
+
     /**
      * This test will make sure that an PHPUnit_Framework_Error is thrown if there was no Adapter
      * set via either the constructor or via the scan method. In the case of PHP >= 7.0 it will throw
      * and tests to catch a TypeError.
-
+     */
     public function test_service_scan_should_throw_exception_on_no_adaptor()
     {
         if (phpversion() < 7.0) {
@@ -70,7 +70,7 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
         $service = $this->getNewService(new Assets\Adapter\WithoutInterface());
         $service->scan("/");
     }
-     */
+
     /**
      * Tests that if we call ScanService::scan() we should get a false return
      * if there as an error reading the adaptor.

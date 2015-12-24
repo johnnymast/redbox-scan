@@ -76,8 +76,8 @@ class ScanService {
                 $items[$activePath][$object->getPathname()] = $object->getMD5Hash();
             }
         }
-        $report->setItems($items);
         return false;
+        $report->setItems($items);
         if ($adapter->write($report) === false) {
             return false;
         }

@@ -174,7 +174,6 @@ if (class_exists('mysqli')) {
         /**
          * Revert our actions.
          */
-        file_put_contents($timefile, '');
         unlink($tmpfile);
 
         /**

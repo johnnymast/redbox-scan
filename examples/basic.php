@@ -8,7 +8,7 @@ require '../vendor/autoload.php';
  */
 
 $path     = dirname(__FILE__)."/assets";
-$tmpfile  = $path.'/new.tmp';
+$newfile  = $path.'/new.tmp';
 $timefile = $path.'/time.txt';
 $datafile = $path.'/data.yml';
 
@@ -23,7 +23,7 @@ $scan->index($path);
  * After indexing the directory let's create a new file and update an other so
  * we can see if the filesystem picks it up.
  */
-file_put_contents($tmpfile, 'Hello world');
+file_put_contents($newfile, 'Hello world');
 file_put_contents($timefile, time());
 
 /**
@@ -34,8 +34,7 @@ $report = $scan->scan();
 /**
  * Do the cleanup. This is not needed if this where to be real code.
  */
-file_put_contents($timefile, '');
-unlink($tmpfile);
+unlink($newfile);
 
 /**
  * Output the changes since index action.

@@ -61,7 +61,6 @@ try {
         /**
          * Do the cleanup. This is not needed if this where to be real code.
          */
-        file_put_contents($timefile, '');
         unlink($tmpfile);
 
         /**

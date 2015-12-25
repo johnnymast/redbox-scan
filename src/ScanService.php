@@ -51,7 +51,6 @@ class ScanService
         }
 
         // TODO: could throw exceptions for permission denied
-        // TODO: $activePath as a start should be relative .. maybe . ?
         // TODO: pass a name and date to index
 
         /**
@@ -102,14 +101,13 @@ class ScanService
         }
 
         // Todo: could throw exceptions for permission denied
-        // Todo: could crash not reliable
+
         $report = $adapter->read();
         if ($report === false)
             return false;
 
         $items = $report->getItems();
 
-        //print_r($report);
         /**
          * Start building a basic report
          */

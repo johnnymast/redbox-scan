@@ -114,7 +114,7 @@ class Ftp implements AdapterInterface
                return false;
             } else {
                 $data = Yaml::parse($data);
-                return $data;
+                return Report\Report::fromArray($data);
             }
         }
         return false;
@@ -147,7 +147,6 @@ class Ftp implements AdapterInterface
             } else {
                 return false;
             }
-
         }
         return false;
     }

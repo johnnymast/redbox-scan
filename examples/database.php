@@ -172,7 +172,7 @@ if (class_exists('mysqli')) {
         $report = $scan->scan();
 
         /**
-         * Revert our actions
+         * Revert our actions.
          */
         file_put_contents($timefile, '');
         unlink($tmpfile);

@@ -172,7 +172,7 @@ if (class_exists('mysqli')) {
         $report = $scan->scan();
 
         /**
-         * Output the changes since index action.
+         * Revert our actions
          */
         file_put_contents($timefile, '');
         unlink($tmpfile);

@@ -32,13 +32,13 @@ file_put_contents($timefile, time());
 $report = $scan->scan();
 
 /**
- * Do the cleanup.
+ * Do the cleanup. This is not needed if this where to be real code.
  */
 file_put_contents($timefile, '');
 unlink($tmpfile);
 
 /**
- * Output the changes since the scan.
+ * Output the changes since index action.
  */
 if(php_sapi_name() == "cli") {
 

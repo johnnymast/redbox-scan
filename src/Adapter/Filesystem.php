@@ -34,7 +34,7 @@ class Filesystem implements AdapterInterface
     {
         if (file_exists($this->filename) == true) {
             $data = Yaml::parse(@file_get_contents($this->filename));
-            return $data;
+            return new Report\Report($data);
         }
         return false;
     }

@@ -2,33 +2,26 @@
 require '../vendor/autoload.php';
 
 /**
- * This file is temporary to the project it will go away and make way for
- * examples directory showing you the ropes and also shows how to make custom adaptors
- * for your needs.
- *
- * Step 1.
- *  - Import assest/data.sql
- *
- * Stap 2.
- *  - Change the database access settings
- *
+ * This example shows you how you could use the file transfer protocol (FTP) to store information about the filesystem
+ * If you would use this code in real life please make sure you store the output file (data.yml). By using the FTP method
+ * it gets a lot harder for hackers to modify your scan file and fake the the scan results.
  */
 
-/**
- * Basic configuration
- */
 $path     = dirname(__FILE__)."/assets";
 $tmpfile  = $path.'/new.tmp';
 $timefile = $path.'/time.txt';
 
 /**
- * Change the values below to match your settings.
+ * Change the values below to match your ftp settings.
  */
 $host     = "";
 $username = "";
 $password = "";
 $datafile = "/httpdocs/data.yml";
 
+/**
+ * Create the FTP adapter.
+ */
 $adapter = new Redbox\Scan\Adapter\Ftp(
     $host,
     $username,
@@ -38,34 +31,42 @@ $adapter = new Redbox\Scan\Adapter\Ftp(
 
 try {
 
+    /**
+     * Since PSR-4 indicates the following:
+     * Autoloader implementations MUST NOT throw exceptions, MUST NOT raise errors of any level, and SHOULD NOT return a value.
+     *
+     * We needed a seperate call to connect authenticate to the ftp server that would be able to report errors if needed.
+     */
     if ($adapter->authenticate()) {
 
-        $scan = new Redbox\Scan\ScanService($adapter);
-
         /**
-         * Lets index the assets folder.
-         *
+         * Oke lets instantiate a new service and scan the assets folder inside
+         * our current folder and write the data.yml file to the filesystem using the Filesystem adapter.
          */
+        $scan = new Redbox\Scan\ScanService($adapter);
         $scan->index($path);
 
         /**
-         * Write a new tmp file so we can check if there where new or changed files found./
+         * After indexing the directory let's create a new file and update an other so
+         * we can see if the filesystem picks it up.
          */
         file_put_contents($tmpfile, 'Hello world');
-
-        /**
-         * Modify one file..
-         */
         file_put_contents($timefile, time());
 
         /**
-         * Lets see if the scanner picked it up.
+         * Oke the changes have been made lets scan the assets directory again for changes.
          */
         $report = $scan->scan();
 
+        /**
+         * Do the cleanup. This is not needed if this where to be real code.
+         */
         file_put_contents($timefile, '');
         unlink($tmpfile);
 
+        /**
+         * Output the changes since the index action.
+         */
         if(php_sapi_name() == "cli") {
 
             echo "New files\n\n";
@@ -85,7 +86,6 @@ try {
                 echo '<li>' . $file->getFilename() . ' ' . $file->getMD5hash() . '</li>';
             }
             echo '</ul>';
-
 
             echo '<h1>Modified Files</h1>';
             foreach ($report->getModifiedFiles() as $file) {

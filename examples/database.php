@@ -3,7 +3,30 @@ require '../vendor/autoload.php';
 use Redbox\Scan\Adapter;
 use Redbox\Scan\Report\Report;
 
+/**
+ * First of all done get intimidated by the number of lines in this example its mostly the database that
+ * takes the most amount of lines. In this example i will show you how to write a basic custom adapter using
+ * read() and write() functions in the interface. This example will read and write it's date from a database so it can
+ * be processed in index() and scan() on the ScanService.
+ *
+ * PS: I i do reconment you running this from a browser.
+ *
+ * Step 1.
+ *  - Import assest/data.sql
+ *
+ * Step 2.
+ *  - Change the database access settings
+ *
+ * Step 3.
+ * = Run the code
+ */
 
+/**
+ * Let me exampling about this database class. This class is not production ready its just
+ * a really simple wrapper around a sample database.
+ *
+ * Class Database
+ */
 class Database extends \mysqli implements Adapter\AdapterInterface
 {
     CONST SCAN_ID = 1;
@@ -14,6 +37,12 @@ class Database extends \mysqli implements Adapter\AdapterInterface
         parent::connect($host, $user, $pass, $db);
     }
 
+    /**
+     * This class uses just one main scan record all the time. This is ID 1 (SCAN_ID) and contains the main information
+     * about our scan name/date etc..
+     *
+     * @return array|bool
+     */
     private function getScan()
     {
         $sql = sprintf("SELECT *, scandate as `date` FROM `scan` WHERE `id`='%s'", self::SCAN_ID);
@@ -24,6 +53,12 @@ class Database extends \mysqli implements Adapter\AdapterInterface
         return false;
     }
 
+    /**
+     * Return the file items that have been stored prior to a scan action. These results are previously saved
+     * via the write write() method.
+     *
+     * @return array
+     */
     private function getReportItems()
     {
         $items = array();
@@ -48,7 +83,7 @@ class Database extends \mysqli implements Adapter\AdapterInterface
     public function read() {
         $report = new Report($this->getScan());
         $report->setItems($this->getReportItems());
-        return $report->toArray();
+        return $report;
     }
 
     /**
@@ -73,9 +108,11 @@ class Database extends \mysqli implements Adapter\AdapterInterface
             if ($this->affected_rows > 0) {
                 $items = $report->getItems();
                 if (count($items) > 0) {
+
                     /* Step 2. Delete old items */
                     $sql = sprintf("DELETE FROM `scanitems` WHERE `scanid`='%s'", self::SCAN_ID);
                     $this->query($sql);
+
 
                     /* Step 3. Insert the new items */
                     foreach($items as $path => $item) {
@@ -101,7 +138,6 @@ class Database extends \mysqli implements Adapter\AdapterInterface
 
 if (class_exists('mysqli')) {
 
-
     try {
 
         $path = dirname(__FILE__)."/assets";
@@ -112,58 +148,71 @@ if (class_exists('mysqli')) {
             "localhost",
             "root",
             "root",
-            "scan");
-
-        $scan = new Redbox\Scan\ScanService($databaseAdaptor);
+            "scan"
+        );
 
         /**
-         * Lets index the assets folder.
-         *
+         * Oke lets instantiate a new service and scan the assets folder inside
+         * our current folder and write the data.yml file to the filesystem using the Filesystem adapter.
          */
+        $scan = new Redbox\Scan\ScanService($databaseAdaptor);
         $scan->index($path);
 
-
         /**
-         * Write a new tmp file so we can check if there where new or changed files found./
+         * After indexing the directory let's create a new file and update an other so
+         * we can see if the filesystem picks it up.
          */
         file_put_contents($tmpfile,'Hello world');
-
-
-        /**
-         * Modify one file..
-         */
         file_put_contents($timefile, time());
 
 
         /**
-         * Lets see if the scanner picked it up.
+         * Oke the changes have been made lets scan the assets directory again for changes.
          */
         $report = $scan->scan();
 
-        echo '<h1>New files</h1>';
-        foreach($report->getNewfiles() as $file) {
-            echo '<li>'.$file->getFilename().' '.$file->getMD5hash().'</li>';
-        }
-        echo '</ul>';
-
-
-        echo '<h1>Modified Files</h1>';
-        foreach($report->getModifiedFiles() as $file) {
-            echo '<li>'.$file->getFilename().' '.$file->getMD5hash().'</li>';
-        }
-        echo '</ul>';
-
+        /**
+         * Output the changes since index action.
+         */
         file_put_contents($timefile, '');
         unlink($tmpfile);
 
+        /**
+         * Output the changes since index action.
+         */
+        if(php_sapi_name() == "cli") {
+
+            echo "New files\n\n";
+            foreach ($report->getNewfiles() as $file) {
+                echo $file->getFilename() . ' ' . $file->getMD5hash()."\n";
+            }
+
+            echo "\nModified Files\n\n";
+            foreach ($report->getModifiedFiles() as $file) {
+                echo $file->getFilename() . ' ' . $file->getMD5hash()."\n";
+            }
+            echo "\n";
+
+        } else {
+
+            echo '<h1>New files</h1>';
+            foreach ($report->getNewfiles() as $file) {
+                echo '<li>' . $file->getFilename() . ' ' . $file->getMD5hash() . '</li>';
+            }
+            echo '</ul>';
+
+            echo '<h1>Modified Files</h1>';
+            foreach ($report->getModifiedFiles() as $file) {
+                echo '<li>' . $file->getFilename() . ' ' . $file->getMD5hash() . '</li>';
+            }
+            echo '</ul>';
+        }
 
     } catch (Exception $e) {
         print '<pre>';
         print_r($e);
         print '</pre>';
     }
-
-
 
 } else {
     die('This example requires mysqli to be loaded.');

@@ -8,8 +8,8 @@ namespace Redbox\Scan;
  *
  * @package Redbox\Scan
  */
-class ScanService {
-
+class ScanService
+{
     /**
      * @var Adapter\AdapterInterface $adapter;
      */
@@ -114,14 +114,13 @@ class ScanService {
         $report = new Report\Report();
         $report->setName('a scan');
         $report->setDate(new \DateTime());
-        $report->setPath($adapter->read()['scan']['path']);
+        $report->setPath($report->getPath());
 
         $new      = array();
         $modified = array();
 
         if (count($items) > 0) {
             foreach ($items as $path => $files) {
-
                 $objects = new \RecursiveIteratorIterator(new Filesystem\RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
                 foreach ($objects as $object) {
                     if ($object->isFile() && isset($files[$object->getPathname()])) {

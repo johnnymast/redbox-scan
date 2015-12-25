@@ -6,7 +6,7 @@ use Redbox\Scan\Report\Report;
 /**
  * First of all don't get intimidated by the number of lines in this example its mostly the database that
  * takes the numbers. In this example i will show you how to write a basic custom adapter using
- * read() and write() functions from the interface. This example will read and write it's date from a database so it can
+ * read() and write() functions from the interface. This example will read and write it's data from a database so it can
  * be processed in index() and scan() on the ScanService.
  *
  * PS: I i do recommend you running this from a browser.

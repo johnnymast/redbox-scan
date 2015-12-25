@@ -5,7 +5,7 @@ use Redbox\Scan\Adapter;
 use Redbox\Scan;
 
 /**
- * This clas will run tests against the default Ftp adapter. Please not that this
+ * This class will run tests against the default Ftp adapter. Please not that this
  * tests will be skipped on travis. You can only run these tests on your local machine.
  *
  * @coversDefaultClass  \Redbox\Scan\Adaptor\Ftp

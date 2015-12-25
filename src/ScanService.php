@@ -52,13 +52,14 @@ class ScanService
 
         // TODO: could throw exceptions for permission denied
         // TODO: $activePath as a start should be relative .. maybe . ?
+        // TODO: pass a name and date to index
 
         /**
          * Start building a basic report
          */
         $report = new Report\Report();
         $report->setName('a scan');
-        $report->setDate(new \DateTime());
+        $report->setDate('a date');
         $report->setPath($path);
 
         $activePath = $path;
@@ -108,6 +109,7 @@ class ScanService
 
         $items = $report->getItems();
 
+        //print_r($report);
         /**
          * Start building a basic report
          */

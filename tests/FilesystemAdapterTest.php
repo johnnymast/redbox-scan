@@ -5,7 +5,7 @@ use Redbox\Scan\Exception;
 use Redbox\Scan;
 
 /**
- * This clas will run tests against the default Filesystem adapter.
+ * This class will run tests against the default Filesystem adapter.
  *
  * @coversDefaultClass  Scan\Adaptor\Filesystem
  * @package Redbox\Scan\Tests

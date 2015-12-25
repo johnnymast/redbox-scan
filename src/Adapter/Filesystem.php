@@ -33,8 +33,9 @@ class Filesystem implements AdapterInterface
     public function read()
     {
         if (file_exists($this->filename) == true) {
-            $data = Yaml::parse(@file_get_contents($this->filename));
-            return new Report\Report($data);
+            $stored_report  = Yaml::parse(@file_get_contents($this->filename));
+            $report = Report\Report::fromArray($stored_report);
+            return $report;
         }
         return false;
     }
@@ -48,7 +49,6 @@ class Filesystem implements AdapterInterface
      */
     public function write(Report\Report $report = null)
     {
-
         if ($report) {
             $data = $report->toArray();
             $data = Yaml::dump($data, 99);

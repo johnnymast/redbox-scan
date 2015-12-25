@@ -1,44 +1,45 @@
 <?php
 require '../vendor/autoload.php';
-error_reporting(E_ALL);
-ini_set('display_errors', true);
 
 /**
- * This file is temporary to the project it will go away and make way for
- * examples directory showing you the ropes and also shows how to make custom adaptors
- * for your needs.
+ * This example shows the basic usage of file filesystem it self to store scan information
+ * about your scans. If you would use this code in real life please make sure you store the output file (data.yml)
+ * in a secure location on your drive.
  */
+
 $path     = dirname(__FILE__)."/assets";
 $tmpfile  = $path.'/new.tmp';
 $timefile = $path.'/time.txt';
 $datafile = $path.'/data.yml';
 
-$scan = new Redbox\Scan\ScanService(new Redbox\Scan\Adapter\Filesystem($datafile));
-
 /**
- * Lets index the assets folder.
- *
+ * Oke lets instantiate a new service and scan the assets folder inside
+ * our current folder and write the data.yml file to the filesystem using the Filesystem adapter.
  */
+$scan = new Redbox\Scan\ScanService(new Redbox\Scan\Adapter\Filesystem($datafile));
 $scan->index($path);
 
 /**
- * Write a new tmp file so we can check if there where new or changed files found./
+ * After indexing the directory let's create a new file and update an other so
+ * we can see if the filesystem picks it up.
  */
 file_put_contents($tmpfile, 'Hello world');
-
-/**
- * Modify one file..
- */
 file_put_contents($timefile, time());
 
 /**
- * Lets see if the scanner picked it up.
+ * Oke the changes have been made lets scan the assets directory again for changes.
  */
 $report = $scan->scan();
 
+/**
+ * Do the cleanup.
+ */
 file_put_contents($timefile, '');
 unlink($tmpfile);
 
+/**
+ * Output the changes since the scan.
+ */
 if(php_sapi_name() == "cli") {
 
     echo "New files\n\n";
@@ -59,14 +60,9 @@ if(php_sapi_name() == "cli") {
     }
     echo '</ul>';
 
-
     echo '<h1>Modified Files</h1>';
     foreach ($report->getModifiedFiles() as $file) {
         echo '<li>' . $file->getFilename() . ' ' . $file->getMD5hash() . '</li>';
     }
     echo '</ul>';
 }
-
-
-
-

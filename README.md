@@ -10,8 +10,6 @@ Redbox-scan is a filesystem scanning and analyzing tool that you can use to scan
 If you combine Redbox-scan with Redbox-cli you could build a powerful CLI (Commandline Interface) application to secure your servers. An other use case for the API could be a trigger for rsyncing
 files to a new location.
 
-![Image of Yaktocat](https://raw.githubusercontent.com/johnnymast/redbox-scan/release/1.0/examples/assets/logo.png)
-
 ## Examples
 
 In the examples folder you find basic examples of how to scan your filesystem. If you want to learn howto write your own Adapter i suggest checking out the database example.

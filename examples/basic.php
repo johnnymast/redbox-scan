@@ -17,7 +17,7 @@ $datafile = $path.'/data.yml';
  * our current folder and write the data.yml file to the filesystem using the Filesystem adapter.
  */
 $scan = new Redbox\Scan\ScanService(new Redbox\Scan\Adapter\Filesystem($datafile));
-$scan->index($path);
+$scan->index($path, 'Basic scan', date("Y-m-d H:i:s"));
 
 /**
  * After indexing the directory let's create a new file and update an other so

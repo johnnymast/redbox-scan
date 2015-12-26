@@ -41,7 +41,7 @@ class ScanService
      * @throws Exception\RuntimeException
      * @return Report\Report
      */
-    public function index($path = "", Adapter\AdapterInterface $adapter = null)
+    public function index($path = "", $name="", $date="",  Adapter\AdapterInterface $adapter = null)
     {
         if (!$adapter) {
             if (!$this->getAdapter()) {
@@ -57,8 +57,8 @@ class ScanService
          * Start building a basic report
          */
         $report = new Report\Report();
-        $report->setName('a scan');
-        $report->setDate('a date');
+        $report->setName(($name) ? $name : 'a scan');
+        $report->setDate(($date) ? $date : 'a date');
         $report->setPath($path);
 
         $activePath = $path;

@@ -159,7 +159,7 @@ if (class_exists('mysqli')) {
          * our current folder and write the data.yml file to the filesystem using the Filesystem adapter.
          */
         $scan = new Redbox\Scan\ScanService($databaseAdapter);
-        $scan->index($path);
+        $scan->index($path, 'Basic scan', date("Y-m-d H:i:s"));
 
         /**
          * After indexing the directory let's create a new file and update an other so

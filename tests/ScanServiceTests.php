@@ -41,7 +41,7 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
     public function test_index_should_throw_runtime_exception()
     {
         $service = $this->getNewService();
-        $service->index("/");
+        $service->index("/", 'Basic scan', date("Y-m-d H:i:s"));
     }
 
     /**
@@ -90,7 +90,7 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
     public function test_service_index_returns_a_report()
     {
         $service = $this->getNewService(new Scan\Adapter\Filesystem(dirname(__FILE__).'/Assets/tmp/scan.yml'));
-        $report = $service->index(dirname(__FILE__));
+        $report = $service->index(dirname(__FILE__), 'Basic scan', date("Y-m-d H:i:s"));
         $this->assertInstanceOf('Redbox\Scan\Report\Report', $report);
     }
 
@@ -101,7 +101,7 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
     public function test_service_index_returns_false_on_failing_adapter()
     {
         $service = $this->getNewService(new Scan\Adapter\Filesystem('/i_cant_be_written_to.yml'));
-        $return_value = $service->index(dirname(__FILE__));
+        $return_value = $service->index(dirname(__FILE__), 'Basic scan', date("Y-m-d H:i:s"));
         $this->assertFalse($return_value);
     }
 
@@ -122,6 +122,6 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
     public function test_service_scan_returns_false_if_writing_the_adapter_fails()
     {
         $service = $this->getNewService();
-        $this->assertFalse(@$service->index(dirname(__FILE__).'/Assets', new Scan\Adapter\Filesystem('I do not exist \'s invalid _ @()))@903 file / \ ')));
+        $this->assertFalse(@$service->index(dirname(__FILE__).'/Assets',, 'Basic scan', date("Y-m-d H:i:s"), new Scan\Adapter\Filesystem('I do not exist \'s invalid _ @()))@903 file / \ ')));
     }
 }

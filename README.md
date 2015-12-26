@@ -37,8 +37,6 @@ The following versions of PHP are supported by this version.
 + PHP 7
 + HHVM
 
-
-
 ## Author
 
 This package is created and maintained by [Johnny Mast](https://github.com/johnnymast). If you have any questions feel free to contact me on twitter by using @mastjohnny in your tweet.

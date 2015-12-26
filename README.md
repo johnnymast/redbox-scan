@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/johnnymast/redbox-scan.svg?branch=master)](https://travis-ci.org/johnnymast/redbox-scan) 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/johnnymast/redbox-scan/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/johnnymast/redbox-scan/?branch=master) 
 [![Code Coverage](https://scrutinizer-ci.com/g/johnnymast/redbox-scan/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/johnnymast/redbox-scan/?branch=master)
-[![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star)](https://github.com/johnnymast/redbox-scan/stargazers)
+[![GitHub stars](https://img.shields.io/badge/HHVM-Ready-green.svg)](https://github.com/johnnymast/redbox-scan/stargazers)
 
 # Redbox-scan
 

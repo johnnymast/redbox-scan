@@ -82,7 +82,7 @@ class Ftp implements AdapterInterface
             throw new Exception\RuntimeException('Could not connect to host: '.$this->host);
         }
 
-        if ($authenticated == false) {
+        if ($authenticated === false) {
             throw new Exception\RuntimeException('Could not authenticate to: '.$this->host);
         }
         return true;

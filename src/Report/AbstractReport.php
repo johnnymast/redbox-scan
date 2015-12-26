@@ -1,8 +1,6 @@
 <?php
 namespace Redbox\Scan\Report;
 
-// TODO: Make this class inevitable on the items so we can make the codebase in ScanService its scan() smaller
-
 /**
  * This AbstractReport report class contains all the base tools
  * needed for Redbox\Scan\Report\Report.
@@ -47,8 +45,6 @@ abstract class AbstractReport
      * @var \DateTime
      */
     protected $date = null;
-
-
 
     /**
      * @param array $items

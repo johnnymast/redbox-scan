@@ -24,8 +24,8 @@ class FileInfoTest extends \PHPUnit_Framework_TestCase
      * Test that FileInfo::getFileHash() returns a non empty string (hash) on
      * success.
      */
-    function test_fileinfo_get_hash_should_return_hash() {
+    function test_fileinfo_get_hash_should_return_hash()
+    {
         $this->assertNotEmpty(Scan\Filesystem\FileInfo::getFileHash(__FILE__));
     }
-
 }

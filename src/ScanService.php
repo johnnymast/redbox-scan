@@ -115,8 +115,8 @@ class ScanService
          * Start building a basic report
          */
         $report = new Report\Report();
-        $report->setName('a scan');
-        $report->setDate(new \DateTime());
+        $report->setName($report->getName());
+        $report->setDate($report->getDate());
         $report->setPath($report->getPath());
 
         $new      = array();

@@ -37,7 +37,7 @@ class Ftp implements AdapterInterface
      * @param string $username
      * @param string $password
      * @param string $filename
-     * @param int $port;
+     * @param int $port
      * @param int $timeout
      */
     public function __construct($host = "", $username = "", $password = "", $filename = "", $port = 21, $timeout = 90)

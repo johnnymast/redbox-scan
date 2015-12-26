@@ -79,7 +79,7 @@ abstract class AbstractReport
     }
 
     /**
-     * @param \DateTime $date
+     * @param string $date
      */
     public function setDate($date)
     {

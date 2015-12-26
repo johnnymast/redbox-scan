@@ -15,7 +15,7 @@ use Redbox\Scan;
 class FtpAdapterTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Validate that vailding connections should throw a Exception\RuntimeException
+     * Validate that failing connections throw a Exception\RuntimeException
      * @expectedException \Redbox\Scan\Exception\RuntimeException
      */
     public function test_ftp_failing_connections_should_throw_a_exception()
@@ -31,7 +31,7 @@ class FtpAdapterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Validate that vailding connections should throw a Exception\RuntimeException
+     * Validate that invalid login's throw a Exception\RuntimeException
      * @expectedException \Redbox\Scan\Exception\RuntimeException
      */
     public function test_ftp_invalid_authentication_should_throw_a_exception()

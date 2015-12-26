@@ -6,6 +6,9 @@ class FileInfo
 {
     static function getFileHash($file = "")
     {
-        return md5_file($file);
+        if (file_exists($file) == true) {
+            return md5_file($file);
+        }
+        return '';
     }
 }

@@ -27,8 +27,7 @@ class Filesystem implements AdapterInterface
 
     /**
      * Read the previous scan results from the file system.
-     *
-     * @return array|bool
+     * @return bool|Report\Report
      */
     public function read()
     {

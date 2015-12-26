@@ -78,7 +78,7 @@ class Database extends \mysqli implements Adapter\AdapterInterface
     /**
      * Read the previous scan results from the file system.
      *
-     * @return array
+     * @return bool|Report
      */
     public function read() {
         $report = new Report($this->getScan());
@@ -183,12 +183,12 @@ if (class_exists('mysqli')) {
 
             echo "New files\n\n";
             foreach ($report->getNewfiles() as $file) {
-                echo $file->getFilename() . ' ' . $file->getFileHash()."\n";
+                echo $file->getFilename().' '.Redbox\Scan\Filesystem\FileInfo::getFileHash($file->getRealPath())."\n";
             }
 
             echo "\nModified Files\n\n";
             foreach ($report->getModifiedFiles() as $file) {
-                echo $file->getFilename() . ' ' . $file->getFileHash()."\n";
+                echo $file->getFilename().' '.Redbox\Scan\Filesystem\FileInfo::getFileHash($file->getRealPath())."\n";
             }
             echo "\n";
 
@@ -196,13 +196,13 @@ if (class_exists('mysqli')) {
 
             echo '<h1>New files</h1>';
             foreach ($report->getNewfiles() as $file) {
-                echo '<li>' . $file->getFilename() . ' ' . $file->getFileHash() . '</li>';
+                echo '<li>'.$file->getFilename().' '.Redbox\Scan\Filesystem\FileInfo::getFileHash($file->getRealPath()).'</li>';
             }
             echo '</ul>';
 
             echo '<h1>Modified Files</h1>';
             foreach ($report->getModifiedFiles() as $file) {
-                echo '<li>' . $file->getFilename() . ' ' . $file->getFileHash() . '</li>';
+                echo '<li>'.$file->getFilename().' '.Redbox\Scan\Filesystem\FileInfo::getFileHash($file->getRealPath()).'</li>';
             }
             echo '</ul>';
         }

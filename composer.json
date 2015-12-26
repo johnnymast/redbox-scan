@@ -1,7 +1,7 @@
 {
   "name": "redbox/scan",
-  "description": "",
-  "keywords": [],
+  "description": "Scan your filesystem for changes with ease ",
+  "keywords": ["php", "filesystem", "security", "changes", "modified", "new files", "new"],
   "license": "MIT",
   "authors": [
     {

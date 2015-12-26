@@ -4,7 +4,7 @@ use Redbox\Scan\Report;
 use Symfony\Component\Yaml\Yaml;
 
 /**
- * This is the most basic adaptor on earth. Just read and write
+ * This is the most basic adapter on earth. Just read and write
  * to somewhere on the filesystem.
  *
  * @package Redbox\Scan\Adapter

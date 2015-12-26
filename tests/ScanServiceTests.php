@@ -36,7 +36,7 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
      * set via either the constructor or via the index method.
      *
      * @expectedException        \Redbox\Scan\Exception\RuntimeException
-     * @expectedExceptionMessage An Adaptor must been set before calling index()
+     * @expectedExceptionMessage An Adapter must been set before calling index()
      */
     public function test_index_should_throw_runtime_exception()
     {
@@ -49,7 +49,7 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
      * set via either the constructor or via the ScanService::scan() method.
      *
      * @expectedException        \Redbox\Scan\Exception\RuntimeException
-     * @expectedExceptionMessage An Adaptor must been set before calling scan()
+     * @expectedExceptionMessage An Adapter must been set before calling scan()
      */
     public function test_scan_should_throw_runtime_exception()
     {
@@ -62,7 +62,7 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
      * set via either the constructor or via the ScanService::scan() method. In the case of PHP >= 7.0 it will throw
      * and tests to catch a TypeError.
      */
-    public function test_service_scan_should_throw_exception_on_no_adaptor()
+    public function test_service_scan_should_throw_exception_on_no_adapter()
     {
         if (phpversion() < 7.0) {
             $this->setExpectedException('PHPUnit_Framework_Error');
@@ -76,9 +76,9 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Tests that if we call ScanService::scan() we should get a false return
-     * if there as an error reading the adaptor.
+     * if there as an error reading the adapter.
      */
-    public function test_service_scan_returns_false_if_reading_the_adaptor_fails()
+    public function test_service_scan_returns_false_if_reading_the_adapter_fails()
     {
         $service = $this->getNewService(new Scan\Adapter\Filesystem('I do not exist'));
         $this->assertFalse($service->scan());
@@ -117,9 +117,9 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Tests that if we call ScanService::index() we should get a false return
-     * if there as an error writing to the adaptor.
+     * if there as an error writing to the adapter.
      */
-    public function test_service_scan_returns_false_if_writing_the_adaptor_fails()
+    public function test_service_scan_returns_false_if_writing_the_adapter_fails()
     {
         $service = $this->getNewService();
         $this->assertFalse(@$service->index(dirname(__FILE__).'/Assets', new Scan\Adapter\Filesystem('I do not exist \'s invalid _ @()))@903 file / \ ')));

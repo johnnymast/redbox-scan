@@ -144,7 +144,7 @@ abstract class AbstractReport
 
     /**
      * This function will convert our report into an array. This array
-     * could later be converted into any output the adaptor wishes.
+     * could later be converted into any output the adapter wishes.
      *
      * @return array
      */

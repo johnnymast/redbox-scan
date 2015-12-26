@@ -17,7 +17,7 @@ interface AdapterInterface
     public function read();
 
     /**
-     * This function should write a report to what ever the Adaptor is good for
+     * This function should write a report to what ever the Adapter is good for
      * (http|filesystem|ftp|etc ..)
      *
      * @param Report\Report|null $report

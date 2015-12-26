@@ -45,7 +45,7 @@ class ScanService
     {
         if (!$adapter) {
             if (!$this->getAdapter()) {
-                throw new Exception\RuntimeException('An Adaptor must been set before calling index()');
+                throw new Exception\RuntimeException('An Adapter must been set before calling index()');
             }
             $adapter = $this->getAdapter();
         }
@@ -85,7 +85,7 @@ class ScanService
     }
 
     /**
-     * Scan() will scan the file system based on reports given by the adaptor.
+     * Scan() will scan the file system based on reports given by the adapter.
      * There should be a report from the history to call this function.
      *
      * @param Adapter\AdapterInterface|null $adapter
@@ -95,7 +95,7 @@ class ScanService
     {
         if (!$adapter) {
             if (!$this->getAdapter()) {
-                throw new Exception\RuntimeException('An Adaptor must been set before calling scan()');
+                throw new Exception\RuntimeException('An Adapter must been set before calling scan()');
             }
             $adapter = $this->getAdapter();
         }

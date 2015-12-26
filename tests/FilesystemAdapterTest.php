@@ -6,7 +6,7 @@ use Redbox\Scan;
 /**
  * This class will run tests against the default Filesystem adapter.
  *
- * @coversDefaultClass  Scan\Adaptor\Filesystem
+ * @coversDefaultClass  Scan\Adapter\Filesystem
  * @package Redbox\Scan\Tests
  */
 class FilesystemAdapterTest extends \PHPUnit_Framework_TestCase

@@ -32,16 +32,18 @@ class ScanService
         return $this->adapter;
     }
 
+
     /**
      * Index the filesystem based on the given $path. The results will the stored
      * via the given adapter.
      *
      * @param string $path
+     * @param string $name
+     * @param string $date
      * @param Adapter\AdapterInterface|null $adapter
-     * @throws Exception\RuntimeException
-     * @return Report\Report
+     * @return bool|Report\Report
      */
-    public function index($path = "", $name="", $date="",  Adapter\AdapterInterface $adapter = null)
+    public function index($path = "", $name="", $date="", Adapter\AdapterInterface $adapter = null)
     {
         if (!$adapter) {
             if (!$this->getAdapter()) {

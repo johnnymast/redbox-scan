@@ -42,7 +42,7 @@ abstract class AbstractReport
     /**
      * Report data
      *
-     * @var \DateTime
+     * @var string
      */
     protected $date = null;
 

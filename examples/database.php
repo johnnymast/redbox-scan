@@ -33,7 +33,6 @@ class Database extends \mysqli implements Adapter\AdapterInterface
 
     public function __construct($host, $user, $pass, $db)
     {
-        parent::__construct();
         parent::connect($host, $user, $pass, $db);
     }
 

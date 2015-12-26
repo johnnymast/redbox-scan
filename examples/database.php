@@ -82,7 +82,7 @@ class Database extends \mysqli implements Adapter\AdapterInterface
      */
     public function read() {
         $scan = $this->getScan();
-        if (is_array($scan) == true) {
+        if (is_array($scan) === true) {
             $scan['items'] = $this->getReportItems();
             return Report::fromArray($scan);
         }

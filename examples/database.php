@@ -78,12 +78,12 @@ class Database extends \mysqli implements Adapter\AdapterInterface
     /**
      * Read the previous scan results from the file system.
      *
-     * @return bool|Report
+     * @return Report
      */
     public function read() {
-        $report = new Report($this->getScan());
-        $report->setItems($this->getReportItems());
-        return $report;
+        $scan = $this->getScan();
+        $scan['items'] = $this->getReportItems();
+        return Report::fromArray($scan);
     }
 
     /**

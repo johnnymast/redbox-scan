@@ -24,7 +24,7 @@ class Report extends AbstractReport
      * @param array $array
      * @return Report
      */
-    static function fromArray($array = array()) {
+    public static function fromArray($array = array()) {
         $required = array('name','date','path','items');
         $report = new Report();
 

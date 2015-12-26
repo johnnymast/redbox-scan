@@ -25,7 +25,7 @@ $ composer require redbox/scan
 ## Unit Testing 
 
 Redbox-scan comes with a large suite of tests that you can run. The packages has 2 test suites you can run its the normal phpunit default test including tests for the FTPAdapter and there is the **travis** test 
-suite that excludes the FTPAdapter tests. As the **travis** test suite implies this package has automated builds on [trevis-ci.com](https://scrutinizer-ci.com/g/johnnymast/redbox-scan/) and tests to make sure the package is stable with every commit.
+suite that excludes the FTPAdapter tests. As the **travis** test suite implies this package has automated builds on [trevis-ci.com](https://scrutinizer-ci.com/g/johnnymast/redbox-scan/) to make sure the package is stable with every commit.
 Do not download any code from any branch that has a build failed status because it will not work for you. 
 
 

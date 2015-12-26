@@ -84,12 +84,13 @@ class ScanService
         return $report;
     }
 
+
     /**
      * Scan() will scan the file system based on reports given by the adapter.
      * There should be a report from the history to call this function.
      *
      * @param Adapter\AdapterInterface|null $adapter
-     * @return Report\Report
+     * @return bool|mixed|Report\Report
      */
     public function scan(Adapter\AdapterInterface $adapter = null)
     {

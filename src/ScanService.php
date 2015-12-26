@@ -64,7 +64,7 @@ class ScanService
         $activePath = $path;
         $items = array();
 
-        $objects = new \RecursiveIteratorIterator(new Filesystem\RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
+        $objects = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
 
         foreach ($objects as $name => $object) {
             if ($object->getFilename() == '.' || $object->getFilename() == '..') {
@@ -74,7 +74,7 @@ class ScanService
                 $activePath = $object->getPathName();
                 $items[$activePath] = array();
             } else {
-                $items[$activePath][$object->getPathname()] = $object->getMD5Hash();
+                $items[$activePath][$object->getPathname()] = FileSystem\FileInfo::getFileHash($object->getRealPath());
             }
         }
         $report->setItems($items);
@@ -121,10 +121,10 @@ class ScanService
 
         if (count($items) > 0) {
             foreach ($items as $path => $files) {
-                $objects = new \RecursiveIteratorIterator(new Filesystem\RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
+                $objects = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
                 foreach ($objects as $object) {
                     if ($object->isFile() && isset($files[$object->getPathname()])) {
-                        if ($files[$object->getPathname()] != $object->getMD5Hash()) {
+                        if ($files[$object->getPathname()] != FileSystem\FileInfo::getFileHash($object->getRealPath())) {
                             $modified[] = $object;
                         }
                     } elseif ($object->isFile() && !isset($files[$object->getPathname()])) {

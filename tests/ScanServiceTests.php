@@ -9,11 +9,6 @@ use Redbox\Scan;
 class ScanServiceTest extends \PHPUnit_Framework_TestCase
 {
 
-
-    public function test_true() {
-        return $this->assertFalse(false);
-    }
-
     /**
      * Return a scan service instance. This instance will be used in the tests
      * below.
@@ -38,7 +33,6 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
         $service = $this->getNewService();
         $service->index("/");
     }
-
 
     /**
      * This test will make sure that an RuntimeException is thrown if there was no Adapter
@@ -78,6 +72,29 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
     {
         $service = $this->getNewService(new Scan\Adapter\Filesystem('I do not exist'));
         $this->assertFalse($service->scan());
+    }
+
+    public function test_service_index_returns_a_report()
+    {
+        $service = $this->getNewService(new Scan\Adapter\Filesystem(dirname(__FILE__).'/Assets/tmp/scan.yml'));
+        $report = $service->index(dirname(__FILE__));
+        $this->assertInstanceOf('Redbox\Scan\Report\Report', $report);
+    }
+
+    public function test_service_index_returns_false_on_failing_adapter()
+    {
+        $service = $this->getNewService(new Scan\Adapter\Filesystem('/i_cant_be_written_to.yml'));
+        $return_value = $service->index(dirname(__FILE__));
+        $this->assertFalse($return_value);
+    }
+
+    public function test_service_scan_returns_a_report()
+    {
+        $service = $this->getNewService(new Scan\Adapter\Filesystem(dirname(__FILE__).'/Assets/tmp/scan.yml'));
+        $service->index(dirname(__FILE__));
+        $report = $service->scan();
+
+        $this->assertInstanceOf('Redbox\Scan\Report\Report', $report);
     }
 
     /**

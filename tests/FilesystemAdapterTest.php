@@ -1,6 +1,5 @@
 <?php
 namespace Redbox\Scan\Tests;
-use Symfony\Component\Yaml\Exception\ParseException;
 use Redbox\Scan\Exception;
 use Redbox\Scan;
 

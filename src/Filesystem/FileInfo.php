@@ -14,7 +14,7 @@ class FileInfo
      * @param string $file
      * @return string
      */
-    static function getFileHash($file = "")
+    public static function getFileHash($file = "")
     {
         if (file_exists($file) === true) {
             return md5_file($file);

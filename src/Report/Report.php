@@ -32,7 +32,7 @@ class Report extends AbstractReport
          * Check if all required fields are being set.
          */
         foreach ($required as $req) {
-            if (isset($array[$req]) == false) {
+            if (isset($array[$req]) === false) {
                 throw new Exception\RuntimeException('Could not create a report from this array field ' . $req . ' was not set the following fields are required (' . implode(',', $required) . ')');
             }
         }

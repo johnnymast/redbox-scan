@@ -25,7 +25,8 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
      * Test if the Adapter set by the constructor gets set properly. We can do this by calling
      * ScanService::getAdapter().
      */
-    public function test_construct_should_set_the_adapter_correct() {
+    public function test_construct_should_set_the_adapter_correct()
+    {
         $adapter = new Scan\Adapter\Filesystem(dirname(__FILE__).'/Assets/tmp/scan.yml');
         $service = $this->getNewService($adapter);
         $this->assertEquals($adapter, $service->getAdapter());
@@ -122,6 +123,6 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
     public function test_service_scan_returns_false_if_writing_the_adapter_fails()
     {
         $service = $this->getNewService();
-        $this->assertFalse(@$service->index(dirname(__FILE__).'/Assets',, 'Basic scan', date("Y-m-d H:i:s"), new Scan\Adapter\Filesystem('I do not exist \'s invalid _ @()))@903 file / \ ')));
+        $this->assertFalse(@$service->index(dirname(__FILE__).'/Assets', 'Basic scan', date("Y-m-d H:i:s"), new Scan\Adapter\Filesystem('I do not exist \'s invalid _ @()))@903 file / \ ')));
     }
 }

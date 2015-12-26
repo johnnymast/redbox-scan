@@ -91,9 +91,7 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
     public function test_service_scan_returns_a_report()
     {
         $service = $this->getNewService(new Scan\Adapter\Filesystem(dirname(__FILE__).'/Assets/tmp/scan.yml'));
-        $service->index(dirname(__FILE__));
         $report = $service->scan();
-
         $this->assertInstanceOf('Redbox\Scan\Report\Report', $report);
     }
 

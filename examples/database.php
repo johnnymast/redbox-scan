@@ -144,7 +144,7 @@ if (class_exists('mysqli')) {
         $tmpfile  = $path.'/new.tmp';
         $timefile = $path.'/time.txt';
 
-        $databaseAdaptor = new Database(
+        $databaseAdapter = new Database(
             "localhost",
             "root",
             "root",
@@ -155,7 +155,7 @@ if (class_exists('mysqli')) {
          * Oke lets instantiate a new service and scan the assets folder inside
          * our current folder and write the data.yml file to the filesystem using the Filesystem adapter.
          */
-        $scan = new Redbox\Scan\ScanService($databaseAdaptor);
+        $scan = new Redbox\Scan\ScanService($databaseAdapter);
         $scan->index($path);
 
         /**
@@ -183,12 +183,12 @@ if (class_exists('mysqli')) {
 
             echo "New files\n\n";
             foreach ($report->getNewfiles() as $file) {
-                echo $file->getFilename() . ' ' . $file->getMD5hash()."\n";
+                echo $file->getFilename() . ' ' . $file->getFileHash()."\n";
             }
 
             echo "\nModified Files\n\n";
             foreach ($report->getModifiedFiles() as $file) {
-                echo $file->getFilename() . ' ' . $file->getMD5hash()."\n";
+                echo $file->getFilename() . ' ' . $file->getFileHash()."\n";
             }
             echo "\n";
 
@@ -196,13 +196,13 @@ if (class_exists('mysqli')) {
 
             echo '<h1>New files</h1>';
             foreach ($report->getNewfiles() as $file) {
-                echo '<li>' . $file->getFilename() . ' ' . $file->getMD5hash() . '</li>';
+                echo '<li>' . $file->getFilename() . ' ' . $file->getFileHash() . '</li>';
             }
             echo '</ul>';
 
             echo '<h1>Modified Files</h1>';
             foreach ($report->getModifiedFiles() as $file) {
-                echo '<li>' . $file->getFilename() . ' ' . $file->getMD5hash() . '</li>';
+                echo '<li>' . $file->getFilename() . ' ' . $file->getFileHash() . '</li>';
             }
             echo '</ul>';
         }

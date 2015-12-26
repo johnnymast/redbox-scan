@@ -52,10 +52,9 @@ class Filesystem implements AdapterInterface
         if ($report) {
             $data = $report->toArray();
             $data = Yaml::dump($data, 99);
-            if (is_writable($this->filename) == true) {
-                if (file_put_contents($this->filename, $data) !== false) /* I hate the @ with a passion with if we dont do it the tests will fail */
-                    return true;
-            }
+            if (@file_put_contents($this->filename, $data) !== false) /* I hate the @ with a passion with if we dont do it the tests will fail */
+                return true;
+
         }
         return false;
     }

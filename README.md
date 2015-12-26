@@ -1,6 +1,9 @@
-[![Build Status](https://travis-ci.org/johnnymast/redbox-scan.svg?branch=master)](https://travis-ci.org/johnnymast/redbox-scan) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/johnnymast/redbox-scan/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/johnnymast/redbox-scan/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/johnnymast/redbox-scan/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/johnnymast/redbox-scan/?branch=master)
+[![Build Status](https://travis-ci.org/johnnymast/redbox-scan.svg?branch=master)](https://travis-ci.org/johnnymast/redbox-scan) 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/johnnymast/redbox-scan/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/johnnymast/redbox-scan/?branch=master) 
+[![Code Coverage](https://scrutinizer-ci.com/g/johnnymast/redbox-scan/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/johnnymast/redbox-scan/?branch=master)
+[![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star)](https://github.com/johnnymast/redbox-scan/stargazers)
 
-# redbox-scan
+# Redbox-scan
 
 Redbox-scan is a filesystem scanning and analyzing tool that you can use to scan your filesystem for new and modified files. The API is flexible and easy to use even for beginning developers.
 If you combine Redbox-scan with Redbox-cli you could build a powerful CLI (Commandline Interface) application to secure your servers. An other use case for the API could be a trigger for rsyncing

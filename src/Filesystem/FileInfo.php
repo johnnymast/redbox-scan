@@ -1,11 +1,9 @@
 <?php
-namespace Redbox\Scan\FileSystem;
+namespace Redbox\Scan\Filesystem;
 
 
-class FileInfo extends \SplFileInfo
+class FileInfo
 {
-
-
     static function getFileHash($file = "")
     {
         return md5_file($file);

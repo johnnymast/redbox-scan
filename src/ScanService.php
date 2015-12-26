@@ -74,7 +74,7 @@ class ScanService
                 $activePath = $object->getPathName();
                 $items[$activePath] = array();
             } else {
-                $items[$activePath][$object->getPathname()] = FileSystem\FileInfo::getFileHash($object->getRealPath());
+                $items[$activePath][$object->getPathname()] = Filesystem\FileInfo::getFileHash($object->getRealPath());
             }
         }
         $report->setItems($items);
@@ -124,7 +124,7 @@ class ScanService
                 $objects = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
                 foreach ($objects as $object) {
                     if ($object->isFile() && isset($files[$object->getPathname()])) {
-                        if ($files[$object->getPathname()] != FileSystem\FileInfo::getFileHash($object->getRealPath())) {
+                        if ($files[$object->getPathname()] != Filesystem\FileInfo::getFileHash($object->getRealPath())) {
                             $modified[] = $object;
                         }
                     } elseif ($object->isFile() && !isset($files[$object->getPathname()])) {

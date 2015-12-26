@@ -1,7 +1,7 @@
 <?php
 namespace Redbox\Scan\Adapter;
-use Symfony\Component\Yaml\Yaml;
 use Redbox\Scan\Report;
+use Symfony\Component\Yaml\Yaml;
 
 /**
  * This is the most basic adaptor on earth. Just read and write

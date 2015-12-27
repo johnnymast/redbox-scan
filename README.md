@@ -39,12 +39,12 @@ The following versions of PHP are supported by this version.
 
 ## Author
 
-This package is created and maintained by [Johnny Mast](https://github.com/johnnymast). If you have any questions feel free to contact me on twitter by using @mastjohnny in your tweet.
+This package is created and maintained by [Johnny Mast](https://github.com/johnnymast). If you have any questions feel free to contact me on twitter by using [@mastjohnny](https://twitter.com/intent/tweet?text=@mastjohnny) in your tweet.
 
 
 ## License
 
 Redbox-scan is released under the MIT public license.
 
-<https://github.com/johnnymast/redbox-scan/blob/master/LICENSE>
+<https://github.com/johnnymast/redbox-scan/blob/master/LICENSE.md>
  

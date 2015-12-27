@@ -52,9 +52,6 @@ class ScanService
             $adapter = $this->getAdapter();
         }
 
-        // TODO: could throw exceptions for permission denied
-        // TODO: pass a name and date to index
-
         /**
          * Start building a basic report
          */
@@ -102,8 +99,6 @@ class ScanService
             }
             $adapter = $this->getAdapter();
         }
-
-        // Todo: could throw exceptions for permission denied
 
         $report = $adapter->read();
         if ($report === false)

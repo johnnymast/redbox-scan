@@ -22,6 +22,7 @@ class FilesystemAdapterTest extends \PHPUnit_Framework_TestCase
             $this->setExpectedException('PHPUnit_Framework_Error');
 
         } elseif (phpversion() >= 7.0) {
+            die('ka good');
             $this->setExpectedException('TypeError');
         }
         $filesystem = new Scan\Adapter\Filesystem('somefile.yml');

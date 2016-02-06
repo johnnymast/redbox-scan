@@ -1,7 +1,7 @@
 ## 1.1
 
 - Removed README.md
-
+- Updated LiCENSE.md and added my Email address
 
 
 ## 1.0  2015-12-27

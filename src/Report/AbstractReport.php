@@ -14,16 +14,16 @@ abstract class AbstractReport
      *
      * @var array
      */
-    protected $items = [];
+    protected $items = array();
 
     /**
      * @var array
      */
-    protected $newfiles = [];
+    protected $newfiles = array();
     /**
      * @var array
      */
-    protected $modifiedFiles = [];
+    protected $modifiedFiles = array();
 
     /**
      * Report title

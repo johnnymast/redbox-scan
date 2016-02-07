@@ -1,5 +1,6 @@
 <?php
 namespace Redbox\Scan\Tests;
+use Symfony\Component\Yaml\Yaml as Yaml;
 use Redbox\Scan\Exception;
 use Redbox\Scan;
 
@@ -58,4 +59,59 @@ class FilesystemAdapterTest extends \PHPUnit_Framework_TestCase
         $filesystem = new Scan\Adapter\Filesystem(dirname(__FILE__).'/Assets/Data/Corrupt.yml');
         $filesystem->read();
     }
+
+
+    public function test_filesystem_read_returns_correct_data()
+    {
+        $data_file = dirname(__FILE__).'/Assets/Filesystem/data.yml';
+        $local_data = Yaml::parse(@file_get_contents($data_file));
+
+        /**
+         * Create new filesystem adapter and read the same file.
+         * Then we compare the report to the $local_data array.
+         */
+        $filesystem = new Scan\Adapter\Filesystem($data_file);
+        $report = $filesystem->read();
+
+        /**
+         * Compare the results
+         */
+        $this->assertEquals($local_data['name'], $report->getName());
+        $this->assertEquals($local_data['path'], $report->getPath());
+        $this->assertEquals($local_data['date'], $report->getDate());
+        $this->assertEquals(array(), $report->getModifiedFiles());
+        $this->assertEquals(array(), $report->getNewfiles());
+    }
+
+    public function test_filesystem_write_and_read_get_the_same_data()
+    {
+        $src_file    = dirname(__FILE__).'/Assets/Filesystem/data.yml';
+        $target_file = dirname(__FILE__).'/Assets/tmp/filesystem.yml';
+        $local_data  = Yaml::parse(@file_get_contents($src_file));
+
+        /**
+         * Read the source file and create a report from it.
+         * We will write te file to a temp location and then read it
+         * and compare the results.
+         */
+        $fs1     = new Scan\Adapter\Filesystem($target_file);
+        $report1 = Scan\Report\Report::fromArray($local_data);
+        $fs1->write($report1);
+
+        $fs2 = new Scan\Adapter\Filesystem($target_file);
+        $report2 = $fs2->read($local_data);
+
+        $this->assertEquals($report2->getName(), $report1->getName());
+        $this->assertEquals($report2->getPath(), $report1->getPath());
+        $this->assertEquals($report2->getDate(), $report1->getDate());
+        $this->assertEquals(array(), $report1->getModifiedFiles());
+        $this->assertEquals(array(), $report1->getNewfiles());
+
+        unset($fs1);
+        unset($fs2);
+        unset($report1);
+        unset($report2);
+        unlink($target_file);
+    }
+
 }

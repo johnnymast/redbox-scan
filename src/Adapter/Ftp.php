@@ -142,7 +142,7 @@ class Ftp implements AdapterInterface
             if ($ret != FTP_FINISHED) {
                return false;
             } else {
-                $data = Yaml::parse($data);
+                $data = (array)Yaml::parse($data);
                 return Report\Report::fromArray($data);
             }
         }

@@ -49,4 +49,6 @@ Redbox-scan is released under the MIT public license.
 <https://github.com/johnnymast/redbox-scan/blob/master/LICENSE.md>
  
  
- 
+ ## Enjoy
+
+ Oh and if you've come down this far, you might as well [follow me](https://twitter.com/mastjohnny) on twitter.

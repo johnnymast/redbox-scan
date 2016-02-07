@@ -32,7 +32,7 @@ class Filesystem implements AdapterInterface
     public function read()
     {
         if (file_exists($this->filename) === true) {
-            $stored_report  = Yaml::parse(@file_get_contents($this->filename));
+            $stored_report  = (array)Yaml::parse(@file_get_contents($this->filename));
             $report = Report\Report::fromArray($stored_report);
             return $report;
         }

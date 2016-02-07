@@ -57,8 +57,19 @@ class Ftp implements AdapterInterface
      *
      * @param $transfer_mode
      */
-    public function setTransferMode($transfer_mode) {
+    public function setTransferMode($transfer_mode)
+    {
         $this->transfer_mode = $transfer_mode;
+    }
+
+    /**
+     * Return the current TransferMode.
+     *
+     * @return int
+     */
+    public function getTransferMode()
+    {
+        return $this->transfer_mode;
     }
 
     /**
@@ -66,18 +77,20 @@ class Ftp implements AdapterInterface
      * only use this mode after you have authenticated the user.
      *
      * @param bool $status
+     * @return mixed
      */
-    public function setPassiveMode(bool $status) {
-        ftp_pasv($this->handle, $status);
+    public function setPassiveMode(bool $status)
+    {
+        return ftp_pasv($this->handle, $status);
     }
 
     /**
      * Disable passive mode and switch to active mode.
      */
-    public function setActiveMode() {
+    public function setActiveMode()
+    {
         return $this->setPassiveMode(false);
     }
-
 
     /**
      * We should be so nice to terminate the construction of we are done.

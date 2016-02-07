@@ -61,7 +61,6 @@ class Ftp implements AdapterInterface
         $this->transfer_mode = $transfer_mode;
     }
 
-
     /**
      * Set passive mode on or off. Please not that you can
      * only use this mode after you have authenticated the user.

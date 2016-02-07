@@ -17,7 +17,7 @@ $timefile = $path.'/time.txt';
 $host     = "";
 $username = "";
 $password = "";
-$datafile = "/httpdocs/data.yml";
+$datafile = "httpdocs/data.yml";
 
 /**
  * Create the FTP adapter.
@@ -38,6 +38,19 @@ try {
      * We needed a seperate call to connect authenticate to the ftp server that would be able to report errors if needed.
      */
     if ($adapter->authenticate()) {
+
+        /**
+         * Enable transfer mode for FTP this can only be done after
+         * the user is authenticated.
+         */
+        $adapter->setPassiveMode(true);
+
+
+        /**
+         * Enable Binary mode. Other options are FTP_MODE_ASCII.
+         * The last mentioned is the default set by the adapter.
+         */
+        $adapter->setTransferMode(Redbox\Scan\Adapter\Ftp::FTP_MODE_BINARY);
 
         /**
          * Oke lets instantiate a new service and scan the assets folder inside

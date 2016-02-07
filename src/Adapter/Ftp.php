@@ -15,14 +15,16 @@ class Ftp implements AdapterInterface
     const FTP_MODE_ASCII  = FTP_ASCII;
     const FTP_MODE_BINARY = FTP_BINARY;
 
-    protected $host     = '';
-    protected $username = '';
-    protected $password = '';
-    protected $filename = '';
-    protected $port     = 21;
 
-    protected $timeout  = 90;
-    protected $handle   = null;
+    protected $transfer_mode = self::FTP_MODE_ASCII;
+    protected $host          = '';
+    protected $username      = '';
+    protected $password      = '';
+    protected $filename      = '';
+    protected $port          = 21;
+
+    protected $timeout       = 90;
+    protected $handle        = null;
 
     /**
      * You might think just connect to the ftp server from the constructor
@@ -49,6 +51,34 @@ class Ftp implements AdapterInterface
         $this->timeout  = $timeout;
         $this->port     = $port;
     }
+
+    /**
+     * Set the connection transfermode to FTP_MODE_ASCII or FTP_MODE_BINARY.
+     *
+     * @param $transfer_mode
+     */
+    public function setTransferMode($transfer_mode) {
+        $this->transfer_mode = $transfer_mode;
+    }
+
+
+    /**
+     * Set passive mode on or off. Please not that you can
+     * only use this mode after you have authenticated the user.
+     *
+     * @param bool $status
+     */
+    public function setPassiveMode(bool $status) {
+        ftp_pasv($this->handle, $status);
+    }
+
+    /**
+     * Disable passive mode and switch to active mode.
+     */
+    public function setActiveMode() {
+        return $this->setPassiveMode(false);
+    }
+
 
     /**
      * We should be so nice to terminate the construction of we are done.
@@ -104,7 +134,7 @@ class Ftp implements AdapterInterface
             return false;
 
         $data   = '';
-        if ($ret = ftp_nb_fget($this->handle, $stream, $this->filename, self::FTP_MODE_ASCII)) {
+        if ($ret = ftp_nb_fget($this->handle, $stream, $this->filename, $this->transfer_mode)) {
             while ($ret === FTP_MOREDATA) {
                 rewind($stream);
                 $data .=  stream_get_contents($stream);
@@ -142,7 +172,7 @@ class Ftp implements AdapterInterface
             fwrite($stream, $data);
             rewind($stream);
 
-            if (ftp_fput($this->handle, $this->filename, $stream, self::FTP_MODE_ASCII)) {
+            if (ftp_fput($this->handle, $this->filename, $stream, $this->transfer_mode)) {
                 return true;
             } else {
                 return false;

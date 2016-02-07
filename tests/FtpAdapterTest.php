@@ -46,4 +46,16 @@ class FtpAdapterTest extends \PHPUnit_Framework_TestCase
         $adapter->authenticate();
         unset($adapter);
     }
+
+    public function test_ftp_set_and_get_transfer_mode_return_the_same()
+    {
+        $adapter = new Adapter\Ftp (
+            $host = 'ftp.kernel.org',
+            $username = 'ad',
+            $password = 'anonymous',
+            $file = ''
+        );
+        $adapter->setTransferMode(Adapter\Ftp::FTP_MODE_BINARY);
+        $this->assertEquals(Adapter\Ftp::FTP_MODE_BINARY, $adapter->getTransferMode());
+    }
 }

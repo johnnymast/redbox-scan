@@ -60,7 +60,9 @@ class FilesystemAdapterTest extends \PHPUnit_Framework_TestCase
         $filesystem->read();
     }
 
-
+    /**
+     * Test that Filesystem::read returns the correct information.
+     */
     public function test_filesystem_read_returns_correct_data()
     {
         $data_file = dirname(__FILE__).'/Assets/Filesystem/data.yml';
@@ -83,6 +85,10 @@ class FilesystemAdapterTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(array(), $report->getNewfiles());
     }
 
+    /**
+     * Compare a write and read operation on the filesystem adapter.
+     * Lets hope this passes.
+     */
     public function test_filesystem_write_and_read_get_the_same_data()
     {
         $src_file    = dirname(__FILE__).'/Assets/Filesystem/data.yml';
@@ -98,9 +104,15 @@ class FilesystemAdapterTest extends \PHPUnit_Framework_TestCase
         $report1 = Scan\Report\Report::fromArray($local_data);
         $fs1->write($report1);
 
+        /**
+         * Read the test file and compare the results.
+         */
         $fs2 = new Scan\Adapter\Filesystem($target_file);
         $report2 = $fs2->read($local_data);
 
+        /**
+         * Here go comparing the 2 results.
+         */
         $this->assertEquals($report2->getName(), $report1->getName());
         $this->assertEquals($report2->getPath(), $report1->getPath());
         $this->assertEquals($report2->getDate(), $report1->getDate());

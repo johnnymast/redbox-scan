@@ -1,5 +1,5 @@
 <?php
-require '../vendor/autoload.php';
+require 'autoload.php';
 
 /**
  * This example shows you how you could use the file transfer protocol (FTP) to store information about the filesystem
@@ -14,9 +14,9 @@ $timefile = $path.'/time.txt';
 /**
  * Change the values below to match your ftp settings.
  */
-$host     = "";
-$username = "";
-$password = "";
+$host     = "localhost";
+$username = "johnny";
+$password = "supp3rman";
 $datafile = "/httpdocs/data.yml";
 
 /**
@@ -92,6 +92,10 @@ try {
             }
             echo '</ul>';
         }
+    } else {
+        echo '<h1>Something went wrong</h1>';
+        echo '<p>Could not authenticate user</p>';
+
     }
 
 } catch (Exception $e) {

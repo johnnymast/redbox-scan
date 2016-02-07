@@ -1,5 +1,5 @@
 <?php
-require '../vendor/autoload.php';
+require 'autoload.php';
 
 /**
  * This example shows the basic usage of file filesystem it self to store scan information

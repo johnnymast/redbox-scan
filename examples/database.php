@@ -1,5 +1,5 @@
 <?php
-require '../vendor/autoload.php';
+require 'autoload.php';
 use Redbox\Scan\Adapter;
 use Redbox\Scan\Report\Report;
 

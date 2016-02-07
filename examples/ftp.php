@@ -14,9 +14,9 @@ $timefile = $path.'/time.txt';
 /**
  * Change the values below to match your ftp settings.
  */
-$host     = "localhost";
-$username = "johnny";
-$password = "supp3rman";
+$host     = "";
+$username = "";
+$password = "";
 $datafile = "/httpdocs/data.yml";
 
 /**
@@ -44,7 +44,9 @@ try {
          * our current folder and write the data.yml file to the filesystem using the Filesystem adapter.
          */
         $scan = new Redbox\Scan\ScanService($adapter);
-        $scan->index($path, 'Basic scan', date("Y-m-d H:i:s"));
+        if ($scan->index($path, 'Basic scan', date("Y-m-d H:i:s")) == false) {
+            throw new Exception('Writing datafile failed.');
+        }
 
         /**
          * After indexing the directory let's create a new file and update an other so

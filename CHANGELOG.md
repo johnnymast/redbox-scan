@@ -7,6 +7,7 @@
 - Downgraded dependency to 5.3
 - Added support for active / pasive connections in the FTP Adapter.
 - Added support for FTP_MODE_BINARY or FTP_MODE_ASCII in  the FTP Adapter (See examples/ftp.php) for details.
+- Fixed wrong test filename: ScanServiceTests.php now renamed to ScanServiceTest.php,
 
 
 ## 1.0  2015-12-27

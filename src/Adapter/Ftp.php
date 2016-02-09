@@ -15,7 +15,6 @@ class Ftp implements AdapterInterface
     const FTP_MODE_ASCII  = FTP_ASCII;
     const FTP_MODE_BINARY = FTP_BINARY;
 
-
     protected $transfer_mode = self::FTP_MODE_ASCII;
     protected $host          = '';
     protected $username      = '';
@@ -81,7 +80,7 @@ class Ftp implements AdapterInterface
      */
     public function setPassiveMode(bool $status)
     {
-        return ftp_pasv($this->handle, $status);
+        return @ftp_pasv($this->handle, $status);
     }
 
     /**
@@ -116,7 +115,7 @@ class Ftp implements AdapterInterface
         );
 
         $this->handle  = ftp_connect($this->host, $this->port, $this->timeout);
-        $authenticated = ftp_login($this->handle, $this->username, $this->password);
+        $result        = ftp_login($this->handle, $this->username, $this->password);
 
         restore_error_handler();
 
@@ -124,10 +123,11 @@ class Ftp implements AdapterInterface
             throw new Exception\RuntimeException('Could not connect to host: '.$this->host);
         }
 
-        if ($authenticated === false) {
+        if ($result === false) {
             throw new Exception\RuntimeException('Could not authenticate to: '.$this->host);
         }
-        return true;
+
+        return $result;
     }
 
     /**

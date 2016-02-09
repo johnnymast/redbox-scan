@@ -14,48 +14,23 @@ use Redbox\Scan;
  */
 class FtpAdapterTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * Validate that failing connections throw a Exception\RuntimeException
-     * @expectedException \Redbox\Scan\Exception\RuntimeException
-     */
-    public function test_ftp_failing_connections_should_throw_a_exception()
-    {
-
-        $adapter = new Adapter\Ftp (
-            $host = 'example._com',
-            $username = '',
-            $password = '',
-            $file = ''
-        );
-        $adapter->authenticate();
-    }
 
     /**
-     * Validate that invalid login's throw a Exception\RuntimeException
-     * @expectedException \Redbox\Scan\Exception\RuntimeException
+     * Test that ftp.kernel.org allows anonymous login's
      */
-    public function test_ftp_invalid_authentication_should_throw_a_exception()
+    public function test_ftp_authenticate_returns_true()
     {
-
-        $adapter = new Adapter\Ftp (
-            $host = 'ftp.kernel.org',
-            $username = 'ad',
-            $password = 'anonymous',
-            $file = ''
+        $anonymous_ftp_adapter = new Adapter\Ftp (
+            'ftp.kernel.org',
+            'anonymous',
+            'anonymous',
+            ''
         );
-        $adapter->authenticate();
-        unset($adapter);
-    }
 
-    public function test_ftp_set_and_get_transfer_mode_return_the_same()
-    {
-        $adapter = new Adapter\Ftp (
-            $host = 'ftp.kernel.org',
-            $username = 'ad',
-            $password = 'anonymous',
-            $file = ''
-        );
-        $adapter->setTransferMode(Adapter\Ftp::FTP_MODE_BINARY);
-        $this->assertEquals(Adapter\Ftp::FTP_MODE_BINARY, $adapter->getTransferMode());
+        if ($this->assertTrue($anonymous_ftp_adapter->authenticate()) === true)
+        {
+            $this->assertTrue($anonymous_ftp_adapter->setPassiveMode(true));
+            $this->assertTrue($anonymous_ftp_adapter->setActiveMode());
+        }
     }
 }

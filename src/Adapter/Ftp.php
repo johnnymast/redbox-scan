@@ -97,7 +97,7 @@ class Ftp implements AdapterInterface
     public function __destruct()
     {
         if ($this->handle) {
-            ftp_close($this->handle);
+            @ftp_close($this->handle);
         }
     }
 
@@ -137,7 +137,7 @@ class Ftp implements AdapterInterface
      */
     public function read()
     {
-        if ($this->handle === false)
+        if (!$this->handle)
             return false;
 
         $stream = fopen('php://memory', 'w');
@@ -171,7 +171,7 @@ class Ftp implements AdapterInterface
      */
     public function write(Report\Report $report = null)
     {
-        if ($this->handle === false)
+        if (!$this->handle)
             return false;
 
         if ($report) {
@@ -186,8 +186,6 @@ class Ftp implements AdapterInterface
 
             if (ftp_fput($this->handle, $this->filename, $stream, $this->transfer_mode)) {
                 return true;
-            } else {
-                return false;
             }
         }
         return false;

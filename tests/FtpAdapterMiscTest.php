@@ -2,6 +2,7 @@
 namespace Redbox\Scan\Tests;
 use Redbox\Scan\Exception;
 use Redbox\Scan\Adapter;
+use Redbox\Scan\Report;
 use Redbox\Scan;
 
 /**
@@ -15,7 +16,9 @@ use Redbox\Scan;
 class FtpAdapterMiscTest extends \PHPUnit_Framework_TestCase
 {
 
-
+    /**
+     *
+     */
     public function test_ftp_set_passive_mode_returns_null_if_not_connected()
     {
         $anonymous_ftp_adapter = new Adapter\Ftp (
@@ -27,6 +30,9 @@ class FtpAdapterMiscTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($anonymous_ftp_adapter->setPassiveMode(true));
     }
 
+    /**
+     *
+     */
     public function test_ftp_set_active_mode_returns_null_if_not_connected()
     {
         $anonymous_ftp_adapter = new Adapter\Ftp (
@@ -100,5 +106,103 @@ class FtpAdapterMiscTest extends \PHPUnit_Framework_TestCase
         );
         $adapter->setTransferMode(Adapter\Ftp::FTP_MODE_BINARY);
         $this->assertEquals(Adapter\Ftp::FTP_MODE_BINARY, $adapter->getTransferMode());
+    }
+
+    /**
+     * Assert that reading from a local ftp server will work if the credentials are correct.
+     */
+    public function test_ftp_local_connection_file_read()
+    {
+        if (($user = getenv('FTP_USER'))  && ($pass = getenv('FTP_PASSWORD')) && ($host = getenv('FTP_HOST')))
+        {
+            $ftp = new Adapter\Ftp (
+                $host,
+                $user,
+                $pass,
+                'httpdocs/scan.yml'
+            );
+            $ret = $ftp->authenticate();
+            $this->assertTrue($ret);
+
+            if ($ret === true)
+            {
+                $report = $ftp->read();
+                $this->assertInstanceOf('Redbox\Scan\Report\Report', $report);
+            }
+            unset($ftp);
+        }
+    }
+
+    /**
+     * Assert that writing to a local ftp server will work if the credentials are correct.
+     */
+    public function test_ftp_local_connection_file_write()
+    {
+        if (($user = getenv('FTP_USER'))  && ($pass = getenv('FTP_PASSWORD')) && ($host = getenv('FTP_HOST')))
+        {
+            $ftp = new Adapter\Ftp (
+                $host,
+                $user,
+                $pass,
+                'httpdocs/scan_new.yml'
+            );
+            $ret = $ftp->authenticate();
+            $this->assertTrue($ret);
+
+            if ($ret === true)
+            {
+                $report = new Scan\Report\Report();
+                $items  = array('a' => 'b');
+                $report->setItems($items);
+
+                $didWrite = $ftp->write($report);
+                $this->assertTrue($didWrite);
+            }
+            unset($ftp);
+        }
+    }
+
+    /**
+     * Assert that reading from a local ftp server will fail if the user is not authenticated.
+     */
+    public function test_ftp_local_connection_file_read_fails()
+    {
+        if (($user = getenv('FTP_USER'))  && ($pass = getenv('FTP_PASSWORD')) && ($host = getenv('FTP_HOST')))
+        {
+            $ftp = new Adapter\Ftp (
+                $host,
+                $user,
+                $pass,
+                'httpdocs/scan.yml'
+            );
+
+            $result = $ftp->read();
+            $this->assertFalse($result);
+            unset($ftp);
+        }
+    }
+
+    /**
+     * Assert that writing to a local ftp server will fail if the user is not authenticated.
+     */
+    public function test_ftp_local_connection_file_write_fails()
+    {
+        if (($user = getenv('FTP_USER'))  && ($pass = getenv('FTP_PASSWORD')) && ($host = getenv('FTP_HOST')))
+        {
+            $ftp = new Adapter\Ftp (
+                '',
+                '',
+                '',
+                'httpdocs/scan_new.yml'
+            );
+
+            $report = new Scan\Report\Report();
+            $items  = array('a' => 'b');
+            $report->setItems($items);
+
+            $result = $ftp->write($report);
+            $this->assertFalse($result);
+            unset($ftp);
+        }
     }
 }

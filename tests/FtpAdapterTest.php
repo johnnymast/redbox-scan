@@ -27,7 +27,10 @@ class FtpAdapterTest extends \PHPUnit_Framework_TestCase
             ''
         );
 
-        if ($this->assertTrue($anonymous_ftp_adapter->authenticate()) === true)
+        $ret = $anonymous_ftp_adapter->authenticate();
+        $this->assertTrue($ret);
+
+        if ($ret === true)
         {
             $this->assertTrue($anonymous_ftp_adapter->setPassiveMode(true));
             $this->assertTrue($anonymous_ftp_adapter->setActiveMode());

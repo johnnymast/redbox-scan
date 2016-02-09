@@ -97,7 +97,7 @@ class Ftp implements AdapterInterface
     public function __destruct()
     {
         if ($this->handle) {
-            @ftp_close($this->handle);
+            ftp_close($this->handle);
         }
     }
 

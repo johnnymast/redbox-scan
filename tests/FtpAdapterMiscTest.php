@@ -17,7 +17,8 @@ class FtpAdapterMiscTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
-     *
+     * That that Adapter\Ftp::setPassiveMode() will return NULL if there
+     * is no connection.
      */
     public function test_ftp_set_passive_mode_returns_null_if_not_connected()
     {
@@ -31,7 +32,8 @@ class FtpAdapterMiscTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     *
+     * That that Adapter\Ftp::setActiveMode() will return NULL if there
+     * is no connection.
      */
     public function test_ftp_set_active_mode_returns_null_if_not_connected()
     {

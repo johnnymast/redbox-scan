@@ -70,9 +70,9 @@ class ScanService
             $pathName = $object->getPathname();
             $realPath = $object->getRealPath();
 
-            if ($filename === '.' || $filename === '..') {
+            if ($filename === '.' || $filename === '..')
                 continue;
-            }
+
 
             if ($object->isDir() === true) {
                 $activePath = $pathName;
@@ -82,10 +82,8 @@ class ScanService
             }
         }
         $report->setItems($items);
-        if ($adapter->write($report) === false) {
-            return false;
-        }
-        return $report;
+        $result = $adapter->write($report);
+        return ($result  !== false) ? $report : false;
     }
 
 

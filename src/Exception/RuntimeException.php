@@ -2,7 +2,7 @@
 namespace Redbox\Scan\Exception;
 
 /**
- * Our own implementation of of the RuntimeExcaption so we can
+ * Our own implementation of of the RuntimeException so we can
  * catch it better in the tests. Not only that but i might have future plans
  * to extend its functionality.
  *

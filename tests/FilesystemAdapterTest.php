@@ -125,5 +125,4 @@ class FilesystemAdapterTest extends \PHPUnit_Framework_TestCase
         unset($report2);
         unlink($target_file);
     }
-
 }

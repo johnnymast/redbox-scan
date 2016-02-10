@@ -20,6 +20,7 @@ abstract class AbstractReport
      * @var array
      */
     protected $newfiles = array();
+
     /**
      * @var array
      */

@@ -52,7 +52,7 @@ class Ftp implements AdapterInterface
     }
 
     /**
-     * Set the connection transfermode to FTP_MODE_ASCII or FTP_MODE_BINARY.
+     * Set the connection transfer mode to FTP_MODE_ASCII or FTP_MODE_BINARY.
      *
      * @param $transfer_mode
      */

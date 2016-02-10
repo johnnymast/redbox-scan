@@ -45,7 +45,6 @@ class ScanService
      */
     public function index($path = "", $name="", $date="", Adapter\AdapterInterface $adapter = null)
     {
-
         if (!$adapter) {
             if (!$this->getAdapter()) {
                 throw new Exception\RuntimeException('An Adapter must been set before calling index()');
@@ -102,6 +101,7 @@ class ScanService
         }
 
         $report = $adapter->read();
+
         if ($report === false)
             return false;
 
@@ -109,11 +109,15 @@ class ScanService
 
         /**
          * Start building a basic report
-         */
+
         $report = new Report\Report();
         $report->setName($report->getName());
         $report->setDate($report->getDate());
         $report->setPath($report->getPath());
+         */
+        // set date
+
+
 
         $new      = array();
         $modified = array();

@@ -56,8 +56,8 @@ class ScanService
          * Start building a basic report
          */
         $report = new Report\Report();
-        $report->setName(($name) ? $name : 'a scan');
-        $report->setDate(($date) ? $date : 'a date');
+        $report->setName(($name) ? $name : 'a scan'); // FIXME
+        $report->setDate(($date) ? $date : 'a date'); // FIXME
         $report->setPath($path);
 
         $activePath = $path;
@@ -66,14 +66,19 @@ class ScanService
         $objects = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
 
         foreach ($objects as $name => $object) {
-            if ($object->getFilename() == '.' || $object->getFilename() == '..') {
+            $filename = $object->getFilename();
+            $pathName = $object->getPathname();
+            $realPath = $object->getRealPath();
+
+            if ($filename === '.' || $filename === '..') {
                 continue;
             }
-            if ($object->isDir()) {
-                $activePath = $object->getPathName();
+
+            if ($object->isDir() === true) {
+                $activePath = $pathName;
                 $items[$activePath] = array();
             } else {
-                $items[$activePath][$object->getPathname()] = Filesystem\FileInfo::getFileHash($object->getRealPath());
+                $items[$activePath][$pathName] = Filesystem\FileInfo::getFileHash($realPath;
             }
         }
         $report->setItems($items);

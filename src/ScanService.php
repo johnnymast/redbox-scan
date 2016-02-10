@@ -65,7 +65,8 @@ class ScanService
 
         $objects = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
 
-        foreach ($objects as $name => $object) {
+        foreach ($objects as $name => $object)
+        {
             $filename = $object->getFilename();
             $pathName = $object->getPathname();
             $realPath = $object->getRealPath();

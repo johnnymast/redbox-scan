@@ -6,7 +6,7 @@
 - Updtated composer.json to use phpunit 4.8
 - Downgraded dependency to 5.3
 - Added support for active / pasive connections in the FTP Adapter.
-- Added support for FTP_MODE_BINARY or FTP_MODE_ASCII in  the FTP Adapter (See examples/ftp.php) for details.
+- Added support for FTP_MODE_BINARY or FTP_MODE_ASCII in the FTP Adapter (See examples/ftp.php) for details.
 - Fixed wrong test filename: ScanServiceTests.php now renamed to ScanServiceTest.php,
 
 

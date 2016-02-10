@@ -108,7 +108,7 @@ class FilesystemAdapterTest extends \PHPUnit_Framework_TestCase
          * Read the test file and compare the results.
          */
         $fs2 = new Scan\Adapter\Filesystem($target_file);
-        $report2 = $fs2->read($local_data);
+        $report2 = $fs2->read();
 
         /**
          * Here go comparing the 2 results.

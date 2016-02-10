@@ -45,6 +45,7 @@ class ScanService
      */
     public function index($path = "", $name="", $date="", Adapter\AdapterInterface $adapter = null)
     {
+
         if (!$adapter) {
             if (!$this->getAdapter()) {
                 throw new Exception\RuntimeException('An Adapter must been set before calling index()');

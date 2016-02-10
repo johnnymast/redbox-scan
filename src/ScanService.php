@@ -71,6 +71,10 @@ class ScanService
           //  if ($object->getFilename() == '.' || $object->getFilename() == '..') {
             //    continue;
            // }
+            if (in_array($object->getFilename(), array('.', '..'))) {
+                continue;
+            }
+
             if ($object->isDir()) {
                 $activePath = $object->getPathName();
                 $items[$activePath] = array();

@@ -78,7 +78,7 @@ class ScanService
                 $activePath = $pathName;
                 $items[$activePath] = array();
             } else {
-                $items[$activePath][$pathName] = Filesystem\FileInfo::getFileHash($realPath;
+                $items[$activePath][$pathName] = Filesystem\FileInfo::getFileHash($realPath);
             }
         }
         $report->setItems($items);

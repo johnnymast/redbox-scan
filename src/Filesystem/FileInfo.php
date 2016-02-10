@@ -16,9 +16,9 @@ class FileInfo
      */
     public static function getFileHash($file = "")
     {
-     //   if (file_exists($file) === true) {
+        if (file_exists($file) === true) {
             return md5_file($file);
-       // }
+        }
         return '';
     }
 }

@@ -65,7 +65,7 @@ class ScanService
 
         $objects = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
 
-        $objects = iterator_to_array($objects, false);
+     //   $objects = iterator_to_array($objects, false);
 
         foreach ($objects as $object)
         {

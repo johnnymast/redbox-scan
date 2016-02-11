@@ -25,7 +25,7 @@ $ composer require redbox/scan
 ## Installation trough archive download
 
 If you download the package from a website (for example github.io or phpclasse.org) you will need composer installed on your machine.
-The reason for this is that Redbox-scan comes without the require vendor directory which is required to run the examples.
+The reason for this is that Redbox-scan comes without the require vendor directory which is required to run the package.
 
 First of all if you don't have composer installed you can find it [here](https://getcomposer.org/) follow the instructions and don't get intimidated in fact its really really easy to install.
 
@@ -35,7 +35,7 @@ In the this sample i will assume you have composer installed (on any machine). G
 $ composer install  --no-dev
 ```
 
-Now your allmost ready to go. In your project require the redbox-scan.php (located in the project root). Assuming that Redbox-scan was installed in ./lib/redbox-scan/ your php file would look like this.
+Now your almost ready to go. In your project require the redbox-scan.php (located in the package root). Assuming that Redbox-scan was installed in ./lib/redbox-scan/ your php file would look like this.
 
 ```php
 <?php

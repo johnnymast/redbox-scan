@@ -29,7 +29,7 @@ The reason for this is that Redbox-scan comes without the require vendor directo
 
 First of all if you don't have composer installed you can find it [here](https://getcomposer.org/) follow the instructions and don't get intimidated in fact its really really easy to install.
 
-In the this sample i will assume you have composer installed (on any machine). Go to your package root (where composer.json is located) and execute the following command.
+In the this sample i will assume you have composer installed (on any machine). Go to the package root (where composer.json is located) and execute the following command.
 
 ```bash
 $ composer install  --no-dev

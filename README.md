@@ -35,7 +35,15 @@ In the this sample i will assume you have composer installed (on any machine). G
 $ composer install
 ```
 
-Now your all done and ready to go.
+Now your allmost ready to go. In your project require the redbox-scan.php (located in the project root). Assuming that Redbox-scan was installed in ./lib/redbox-scan/ your php file would look like this.
+
+```php
+<?php
+require 'lib/redbox-scan/redbox-scan.php';
+// more of your nice code below
+```
+
+And you are ready use Redbox-scan in your package.
 
 
 ## Unit Testing 

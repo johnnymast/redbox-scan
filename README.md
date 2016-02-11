@@ -22,6 +22,19 @@ Using [composer](https://packagist.org/packages/redbox/scan):
 $ composer require redbox/scan
 ```
 
+## Installation trough archive download
+
+If you download the package from any website (for example github or phpclasse.org) you will need composer installed on your machine.
+The reason for this is that Redbox-scan comes without the require vendor directory winch is required to run the examples.
+
+First of all if you don't have composer installed you can find it [here](https://getcomposer.org/download/) follow the instructions and don't get intimidated in fact its really easy to install.
+
+In the this sample i will assume you have composer installed (on any machine). Go to your package root and execute the following command.
+
+```bash
+$ composer install
+```
+
 ## Unit Testing 
 
 Redbox-scan comes with a large suite of tests that you can run. The packages has 2 test suites you can run its the normal phpunit default test including tests for the FTPAdapter and there is the **travis** test 

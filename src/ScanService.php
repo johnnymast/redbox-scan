@@ -63,9 +63,13 @@ class ScanService
         $activePath = $path;
         $items = array();
 
-        $objects = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path));//, \RecursiveIteratorIterator::SELF_FIRST);
+//        $objects = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
 
-
+   //     $objects = iterator_to_array($objects, false);
+        $objects = new \RecursiveDirectoryIterator($path);
+        print '<pre>';
+        print_r($objects);
+        print '</pre>';// exit;
         foreach ($objects as $object)
         {
           //  if ($object->getFilename() == '.' || $object->getFilename() == '..') { // HUGE!!

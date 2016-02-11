@@ -65,6 +65,10 @@ The following versions of PHP are supported by this version.
 + HHVM
 + Symfony Yaml 2.8
 
+## Development Requirements
+
++ Phpunit 4.8
+
 
 ## Author
 

@@ -32,7 +32,6 @@ class ScanService
         return $this->adapter;
     }
 
-
     /**
      * Index the filesystem based on the given $path. The results will the stored
      * via the given adapter.
@@ -63,19 +62,14 @@ class ScanService
         $activePath = $path;
         $items = array();
 
-//        $objects = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
 
-   //     $objects = iterator_to_array($objects, false);
-        $objects = new \RecursiveDirectoryIterator($path);
-        print '<pre>';
-        print_r($objects);
-        print '</pre>';// exit;
+        $objects = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
+
         foreach ($objects as $object)
         {
           //  if ($object->getFilename() == '.' || $object->getFilename() == '..') { // HUGE!!
             //    continue;
            // }
-
 
             if ($object->isDir()) {
                 $activePath = $object->getPathName();
@@ -84,6 +78,7 @@ class ScanService
                 $items[$activePath][$object->getPathname()] = Filesystem\FileInfo::getFileHash($object->getRealPath());
             }
         }
+
         $report->setItems($items);
         if ($adapter->write($report) === false) {
             return false;

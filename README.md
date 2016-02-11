@@ -79,8 +79,8 @@ This package is created and maintained by [Johnny Mast](https://github.com/johnn
 
 Redbox-scan is released under the MIT public license.
 
-<https://github.com/johnnymast/redbox-scan/blob/master/LICENSE.md>
- 
+[LICENSE](https://github.com/johnnymast/redbox-scan/blob/master/LICENSE.md)
+
  
  ## Enjoy
 

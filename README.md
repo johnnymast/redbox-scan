@@ -43,7 +43,7 @@ require 'lib/redbox-scan/redbox-scan.php';
 // more of your nice code below
 ```
 
-And you are ready use Redbox-scan in your package.
+And you are ready use Redbox-scan in your application.
 
 
 ## Unit Testing 

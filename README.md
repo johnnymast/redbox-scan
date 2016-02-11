@@ -32,7 +32,7 @@ First of all if you don't have composer installed you can find it [here](https:/
 In the this sample i will assume you have composer installed (on any machine). Go to your package root (where composer.json is located) and execute the following command.
 
 ```bash
-$ composer install
+$ composer install  --no-dev
 ```
 
 Now your allmost ready to go. In your project require the redbox-scan.php (located in the project root). Assuming that Redbox-scan was installed in ./lib/redbox-scan/ your php file would look like this.

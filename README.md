@@ -63,6 +63,8 @@ The following versions of PHP are supported by this version.
 + PHP 5.6
 + PHP 7
 + HHVM
++ symfony/yaml 2.8
+
 
 ## Author
 

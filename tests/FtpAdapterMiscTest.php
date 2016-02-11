@@ -164,11 +164,9 @@ class FtpAdapterMiscTest extends \PHPUnit_Framework_TestCase
         }
     }
 
-    /**
-     * Assert that reading from a local ftp server will fail if the user is not authenticated.
-     */
-    public function test_ftp_local_connection_file_read_fails()
+    public function test_ftp_local_connection_file_write_fails_on_bad_report()
     {
+
         if (($user = getenv('FTP_USER'))  && ($pass = getenv('FTP_PASSWORD')) && ($host = getenv('FTP_HOST')))
         {
             $ftp = new Adapter\Ftp (
@@ -181,6 +179,24 @@ class FtpAdapterMiscTest extends \PHPUnit_Framework_TestCase
             $result = $ftp->read();
             $this->assertFalse($result);
             unset($ftp);
+        }
+    }
+
+    /**
+     * Assert that reading from a local ftp server will fail if the report is invalid.
+     */
+    public function test_ftp_local_connection_file_read_fails()
+    {
+        if (($user = getenv('FTP_USER'))  && ($pass = getenv('FTP_PASSWORD')) && ($host = getenv('FTP_HOST')))
+        {
+            $ftp = new Adapter\Ftp (
+                $host,
+                $user,
+                $pass,
+                'httpdocs/scan.yml'
+            );
+            $result = $ftp->write();
+            $this->assertFalse($result);
         }
     }
 

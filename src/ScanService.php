@@ -116,17 +116,8 @@ class ScanService
 
         $items = $report->getItems();
 
-        /**
-         * Start building a basic report
-
-        $report = new Report\Report();
-        $report->setName($report->getName());
-        $report->setDate($report->getDate());
-        $report->setPath($report->getPath());
-         */
         // set date
         $report->setDate(new \DateTime());
-
 
 
         $new      = array();
@@ -136,11 +127,14 @@ class ScanService
             foreach ($items as $path => $files) {
                 $objects = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
                 foreach ($objects as $object) {
-                    if ($object->isFile() && isset($files[$object->getPathname()])) {
-                        if ($files[$object->getPathname()] != Filesystem\FileInfo::getFileHash($object->getRealPath())) {
+                    $pathname = $object->getPathname();
+                    $realpath = $object->getRealPath();
+
+                    if ($object->isFile() && isset($files[$pathname])) {
+                        if ($files[$pathname] != Filesystem\FileInfo::getFileHash($realpath)) {
                             $modified[] = $object;
                         }
-                    } elseif ($object->isFile() && !isset($files[$object->getPathname()])) {
+                    } elseif ($object->isFile() && !isset($files[$pathname])) {
                         $new[] = $object;
                     }
                 }

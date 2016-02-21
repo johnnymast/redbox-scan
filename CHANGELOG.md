@@ -1,4 +1,4 @@
-## 1.1
+## 1.1 2016-02-21
 
 - Removed README.md
 - Updated LICENSE.md and added my Email address
@@ -15,6 +15,7 @@
 - Updated general test coverage of the codebase.
 - Added loads new tests.
 - Improved on speed!
+- Added Tag 1.1
 
 
 ## 1.0  2015-12-27

@@ -89,7 +89,7 @@ class ScanService
         }
         return $report;
     }
-
+    
     /**
      * Scan() will scan the file system based on reports given by the adapter.
      * There should be a report from the history to call this function.

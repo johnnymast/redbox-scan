@@ -14,6 +14,7 @@
 - Updated for performance on Redbox\Scan\ScanService::index() and Redbox\Scan\ScanService::scan().
 - Updated general test coverage of the codebase.
 - Added loads new tests.
+- Improved on speed!
 
 
 ## 1.0  2015-12-27

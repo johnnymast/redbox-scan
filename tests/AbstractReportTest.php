@@ -11,6 +11,7 @@ use Redbox\Scan;
  */
 class AbstractReportTest extends \PHPUnit_Framework_TestCase
 {
+
     /**
      * Tests that set and get Items files return the same.
      */

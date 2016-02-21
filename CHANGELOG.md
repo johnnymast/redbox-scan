@@ -1,14 +1,19 @@
 ## 1.1
 
 - Removed README.md
-- Updated LiCENSE.md and added my Email address
+- Updated LICENSE.md and added my Email address
 - Removed SUMMARY.md
-- Updtated composer.json to use phpunit 4.8
+- Updated composer.json to use phpunit 4.8
 - Downgraded dependency to 5.3
-- Added support for active / pasive connections in the FTP Adapter.
+- Added support for active / passive connections in the FTP Adapter.
 - Added support for FTP_MODE_BINARY or FTP_MODE_ASCII in the FTP Adapter (See examples/ftp.php) for details.
 - Fixed wrong test filename: ScanServiceTests.php now renamed to ScanServiceTest.php,
 - Added a section to README.md on how to install the package from downloads.
+- Fixed a lot of grammar issues.
+- Added a whole new world of FTP Coverage.
+- Updated for performance on Redbox\Scan\ScanService::index() and Redbox\Scan\ScanService::scan().
+- Updated general test coverage of the codebase.
+- Added loads new tests.
 
 
 ## 1.0  2015-12-27

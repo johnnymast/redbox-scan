@@ -12,6 +12,7 @@ use Redbox\Scan;
  */
 class ReportTest extends \PHPUnit_Framework_TestCase
 {
+
     /**
      * We need to validate that a RuntimeException if the input array for method
      * Report::fromArray() does not contain the required keys.

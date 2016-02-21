@@ -62,20 +62,18 @@ class ScanService
         $activePath = $path;
         $items = array();
 
-
         $objects = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
 
         foreach ($objects as $object)
         {
             $filename = $object->getFilename();
 
-            if ($filename== '.' || $filename == '..') { // HUGE!!
+            if ($filename== '.' || $filename == '..') {
                 continue;
             }
 
             $pathname = $object->getPathName();
             $realpath = $object->getRealPath();
-
 
             if ($object->isDir()) {
                 $activePath = $pathname;
@@ -115,10 +113,7 @@ class ScanService
             return false;
 
         $items = $report->getItems();
-
-        // set date
         $report->setDate(new \DateTime());
-
 
         $new      = array();
         $modified = array();

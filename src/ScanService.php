@@ -67,15 +67,21 @@ class ScanService
 
         foreach ($objects as $object)
         {
-            if ($object->getFilename() == '.' || $object->getFilename() == '..') { // HUGE!!
+            $filename = $object->getFilename();
+
+            if ($filename== '.' || $filename == '..') { // HUGE!!
                 continue;
             }
 
+            $pathname = $object->getPathName();
+            $realpath = $object->getRealPath();
+
+
             if ($object->isDir()) {
-                $activePath = $object->getPathName();
+                $activePath = $pathname;
                 $items[$activePath] = array();
             } else {
-                $items[$activePath][$object->getPathname()] = Filesystem\FileInfo::getFileHash($object->getRealPath());
+                $items[$activePath][$pathname] = Filesystem\FileInfo::getFileHash($realpath);
             }
         }
 
@@ -119,6 +125,7 @@ class ScanService
         $report->setPath($report->getPath());
          */
         // set date
+        $report->setDate(new \DateTime());
 
 
 

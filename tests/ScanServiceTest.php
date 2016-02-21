@@ -125,4 +125,23 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
         $service = $this->getNewService();
         $this->assertFalse(@$service->index(dirname(__FILE__).'/Assets', 'Basic scan', date("Y-m-d H:i:s"), new Scan\Adapter\Filesystem('I do not exist \'s invalid _ @()))@903 file / \ ')));
     }
+
+    public function test_service_scan_will_detect_modified_files()
+    {
+        $filesystem = new Scan\Adapter\Filesystem(dirname(__FILE__).'/Assets/tmp/scan.yml');
+        $service = $this->getNewService($filesystem);
+
+        file_put_contents(dirname(__FILE__).'/Assets/tmp/tmp.txt', '');
+
+        $service->index(dirname(__FILE__).'/Assets/tmp/');
+
+
+        file_put_contents(dirname(__FILE__).'/Assets/tmp/tmp.txt', time());
+
+        $report = $service->scan();
+        $this->assertTrue(count($report->getModifiedFiles()) > 0);
+
+        /* Unlink the tmp file */
+        unlink(dirname(__FILE__).'/Assets/tmp/tmp.txt');
+    }
 }

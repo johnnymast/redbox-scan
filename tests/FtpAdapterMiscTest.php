@@ -177,6 +177,8 @@ class FtpAdapterMiscTest extends \PHPUnit_Framework_TestCase
             );
 
             $result = $ftp->read();
+
+            /** @noinspection PhpParamsInspection */
             $this->assertFalse($result);
             unset($ftp);
         }

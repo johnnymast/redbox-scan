@@ -67,9 +67,9 @@ class ScanService
 
         foreach ($objects as $object)
         {
-          //  if ($object->getFilename() == '.' || $object->getFilename() == '..') { // HUGE!!
-            //    continue;
-           // }
+            if ($object->getFilename() == '.' || $object->getFilename() == '..') { // HUGE!!
+                continue;
+            }
 
             if ($object->isDir()) {
                 $activePath = $object->getPathName();

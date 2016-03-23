@@ -30,7 +30,7 @@ class FtpAdapterMiscTest extends \PHPUnit_Framework_TestCase
         );
         $this->assertNull($anonymous_ftp_adapter->setPassiveMode(true));
     }
-
+    
     /**
      * That that Adapter\Ftp::setActiveMode() will return NULL if there
      * is no connection.

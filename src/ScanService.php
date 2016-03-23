@@ -11,15 +11,57 @@ namespace Redbox\Scan;
 class ScanService
 {
     /**
-     * @var Adapter\AdapterInterface $adapter;
+     * @var Adapter\AdapterInterface $adapter ;
      */
     protected $adapter;
 
+    /**
+     * @var array
+     */
+    protected $exclude;
+
+    /**
+     * ScanService constructor.
+     * @param Adapter\AdapterInterface|null $adapter
+     */
     public function __construct(Adapter\AdapterInterface $adapter = null)
     {
         if ($adapter) {
             $this->adapter = $adapter;
         }
+
+        $this->exclude = array();
+    }
+
+    /**
+     * Exclude a directory from being scanned or indexed.
+     *
+     * @param $args
+     * @return $this
+     */
+    public function addExclude($arg)
+    {
+        if (is_array($arg) == true) {
+            $this->addManyExcludes($arg);
+        }
+        $this->exclude[] = $arg;
+        print_r($this->exclude);
+        return $this;
+    }
+
+    /**
+     * Exclude a whole range of directories to skip while
+     * scanning or indexing the filesystem.
+     *
+     * @param array $args
+     * @return $this
+     */
+    public function addManyExcludes(array $args = array())
+    {
+        foreach ($args as $dir) {
+            $this->addExclude($dir);
+        }
+        return $this;
     }
 
     /**
@@ -42,7 +84,7 @@ class ScanService
      * @param Adapter\AdapterInterface|null $adapter
      * @return bool|Report\Report
      */
-    public function index($path = "", $name="", $date="", Adapter\AdapterInterface $adapter = null)
+    public function index($path = "", $name = "", $date = "", Adapter\AdapterInterface $adapter = null)
     {
         if (!$adapter) {
             if (!$this->getAdapter()) {
@@ -64,11 +106,12 @@ class ScanService
 
         $objects = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::SELF_FIRST);
 
-        foreach ($objects as $object)
-        {
+        /** @var \SplFileInfo $object */
+        foreach ($objects as $object) {
+
             $filename = $object->getFilename();
 
-            if ($filename== '.' || $filename == '..') {
+            if ($filename == '.' || $filename == '..') {
                 continue;
             }
 
@@ -79,6 +122,7 @@ class ScanService
                 $activePath = $pathname;
                 $items[$activePath] = array();
             } else {
+                if (isset($items[$activePath]) == true)
                 $items[$activePath][$pathname] = Filesystem\FileInfo::getFileHash($realpath);
             }
         }
@@ -114,7 +158,7 @@ class ScanService
         $items = $report->getItems();
         $report->setDate(new \DateTime());
 
-        $new      = array();
+        $new = array();
         $modified = array();
 
         if (count($items) > 0) {

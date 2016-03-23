@@ -54,7 +54,7 @@ try {
 
         /**
          * Oke lets instantiate a new service and scan the assets folder inside
-         * our current folder and write the data.yml file to the filesystem using the Filesystem adapter.
+         * our current folder and write the data.yml file to the remote system using the FTP adapter.
          */
         $scan = new Redbox\Scan\ScanService($adapter);
         if ($scan->index($path, 'Basic scan', date("Y-m-d H:i:s")) == false) {

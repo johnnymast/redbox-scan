@@ -36,7 +36,7 @@ class ScanService
     /**
      * Exclude a directory from being scanned or indexed.
      *
-     * @param $args
+     * @param $arg
      * @return $this
      */
     public function addExclude($arg)

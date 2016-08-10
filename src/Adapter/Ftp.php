@@ -1,5 +1,6 @@
 <?php
 namespace Redbox\Scan\Adapter;
+
 use Redbox\Scan\Exception;
 use Redbox\Scan\Report;
 use Symfony\Component\Yaml\Yaml;
@@ -12,18 +13,18 @@ use Symfony\Component\Yaml\Yaml;
  */
 class Ftp implements AdapterInterface
 {
-    const FTP_MODE_ASCII  = FTP_ASCII;
+    const FTP_MODE_ASCII = FTP_ASCII;
     const FTP_MODE_BINARY = FTP_BINARY;
 
     protected $transfer_mode = self::FTP_MODE_ASCII;
-    protected $host          = '';
-    protected $username      = '';
-    protected $password      = '';
-    protected $filename      = '';
-    protected $port          = 21;
+    protected $host = '';
+    protected $username = '';
+    protected $password = '';
+    protected $filename = '';
+    protected $port = 21;
 
-    protected $timeout       = 90;
-    protected $handle        = null;
+    protected $timeout = 90;
+    protected $handle = null;
 
     /**
      * You might think just connect to the ftp server from the constructor
@@ -43,12 +44,12 @@ class Ftp implements AdapterInterface
      */
     public function __construct($host = "", $username = "", $password = "", $filename = "", $port = 21, $timeout = 90)
     {
-        $this->host     = $host;
+        $this->host = $host;
         $this->username = $username;
         $this->password = $password;
         $this->filename = $filename;
-        $this->timeout  = $timeout;
-        $this->port     = $port;
+        $this->timeout = $timeout;
+        $this->port = $port;
     }
 
     /**
@@ -114,17 +115,17 @@ class Ftp implements AdapterInterface
             }
         );
 
-        $this->handle  = ftp_connect($this->host, $this->port, $this->timeout);
-        $result        = ftp_login($this->handle, $this->username, $this->password);
+        $this->handle = ftp_connect($this->host, $this->port, $this->timeout);
+        $result = ftp_login($this->handle, $this->username, $this->password);
 
         restore_error_handler();
 
         if ($this->handle === false) {
-            throw new Exception\RuntimeException('Could not connect to host: '.$this->host);
+            throw new Exception\RuntimeException('Could not connect to host: ' . $this->host);
         }
 
         if ($result === false) {
-            throw new Exception\RuntimeException('Could not authenticate to: '.$this->host);
+            throw new Exception\RuntimeException('Could not authenticate to: ' . $this->host);
         }
 
         return $result;
@@ -133,27 +134,29 @@ class Ftp implements AdapterInterface
     /**
      * Read the previous scan results from the file system.
      *
-     * @return array
+     * @return array|bool
      */
     public function read()
     {
-        if (!$this->handle)
+        if (!$this->handle) {
             return false;
+        }
 
         $stream = fopen('php://memory', 'w');
 
-        if (!$stream)
+        if (!$stream) {
             return false;
+        }
 
-        $data   = '';
+        $data = '';
         if ($ret = ftp_nb_fget($this->handle, $stream, $this->filename, $this->transfer_mode)) {
             while ($ret === FTP_MOREDATA) {
                 rewind($stream);
-                $data .=  stream_get_contents($stream);
+                $data .= stream_get_contents($stream);
                 $ret = ftp_nb_continue($this->handle);
             }
             if ($ret != FTP_FINISHED) {
-               return false;
+                return false;
             } else {
                 $data = (array)Yaml::parse($data);
                 return Report\Report::fromArray($data);
@@ -171,13 +174,16 @@ class Ftp implements AdapterInterface
      */
     public function write(Report\Report $report = null)
     {
-        if (!$this->handle)
+        if (!$this->handle) {
             return false;
+        }
 
         if ($report) {
 
             $stream = fopen('php://memory', 'w+');
-            if (!$stream) return false;
+            if (!$stream) {
+                return false;
+            }
             $data = $report->toArray();
             $data = Yaml::dump($data, 99);
 

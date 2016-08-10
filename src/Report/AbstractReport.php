@@ -41,9 +41,9 @@ abstract class AbstractReport
     protected $path = null;
 
     /**
-     * Report data
+     * Report date
      *
-     * @var string
+     * @var \DateTime
      */
     protected $date = null;
 

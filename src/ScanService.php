@@ -115,7 +115,7 @@ class ScanService
                 continue;
             }
 
-            $pathname = $object->getPathName();
+            $pathname = $object->getPathname();
             $realpath = $object->getRealPath();
 
             if ($object->isDir()) {

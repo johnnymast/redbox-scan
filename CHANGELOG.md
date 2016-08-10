@@ -1,3 +1,9 @@
+## 1.2
+
+- Cleanup code for in PHPStorm and conform PSR-4 #44
+- Fixed a comment in examples/ftp addressing #37
+
+
 ## 1.1 2016-02-21
 
 - Removed README.md

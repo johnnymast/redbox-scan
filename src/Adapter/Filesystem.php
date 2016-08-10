@@ -53,7 +53,6 @@ class Filesystem implements AdapterInterface
             $data = Yaml::dump($data, 99);
             if (@file_put_contents($this->filename, $data) !== false) /* I hate the @ with a passion with if we don't do it the tests will fail */
                 return true;
-
         }
         return false;
     }

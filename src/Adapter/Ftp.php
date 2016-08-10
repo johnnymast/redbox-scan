@@ -81,7 +81,10 @@ class Ftp implements AdapterInterface
      */
     public function setPassiveMode($status)
     {
-        return @ftp_pasv($this->handle, $status);
+        $result = ftp_pasv($this->handle, $status);
+        if ($result == FALSE)
+            return NULL;
+        return $result;
     }
 
     /**

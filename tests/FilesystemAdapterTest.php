@@ -1,7 +1,6 @@
 <?php
 namespace Redbox\Scan\Tests;
-use Symfony\Component\Yaml\Yaml as Yaml;
-use Redbox\Scan\Exception;
+use Symfony\Component\Yaml\Yaml;
 use Redbox\Scan;
 
 /**
@@ -16,15 +15,11 @@ class FilesystemAdapterTest extends \PHPUnit_Framework_TestCase
     /**
      * This test will make sure that an PHPUnit_Framework_Error is thrown if there was no Adapter
      * set via either the constructor or via the scan method.
+     *
+     * @expectedException PHPUnit_Framework_Error
      */
     public function test_filesystem_write_should_throw_exception_on_invalid_report_argument()
     {
-        if (phpversion() < 7.0) {
-            $this->setExpectedException('PHPUnit_Framework_Error');
-
-        } elseif (phpversion() >= 7.0) {
-            $this->setExpectedException('TypeError');
-        }
         $filesystem = new Scan\Adapter\Filesystem('somefile.yml');
         $filesystem->write(new Assets\Report\InvalidReport());
     }

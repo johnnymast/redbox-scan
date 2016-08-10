@@ -1,6 +1,5 @@
 <?php
 namespace Redbox\Scan\Tests;
-use Redbox\Scan\Exception;
 use Redbox\Scan;
 
 /**
@@ -28,7 +27,7 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
      * Test if the Adapter set by the constructor gets set properly. We can do this by calling
      * ScanService::getAdapter().
      */
-    public function test_construct_should_set_the_adapter_correct()
+    public function test_construct_should_set_the_adapter_correct ()
     {
         $adapter = new Scan\Adapter\Filesystem(dirname(__FILE__).'/Assets/tmp/scan.yml');
         $service = $this->getNewService($adapter);
@@ -63,17 +62,12 @@ class ScanServiceTest extends \PHPUnit_Framework_TestCase
 
     /**
      * This test will make sure that an PHPUnit_Framework_Error is thrown if there was no Adapter
-     * set via either the constructor or via the ScanService::scan() method. In the case of PHP >= 7.0 it will throw
-     * and tests to catch a TypeError.
+     * set via either the constructor or via the ScanService::scan() method.
+     *
+     * @expectedException PHPUnit_Framework_Error
      */
     public function test_service_scan_should_throw_exception_on_no_adapter()
     {
-        if (phpversion() < 7.0) {
-            $this->setExpectedException('PHPUnit_Framework_Error');
-
-        } elseif (phpversion() >= 7.0) {
-            $this->setExpectedException('TypeError');
-        }
         $service = $this->getNewService(new Assets\Adapter\WithoutInterface());
         $service->scan("/");
     }
